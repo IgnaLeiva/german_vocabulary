@@ -434,5 +434,26 @@
       "due": "2026-07-19T09:27:30.592Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Speck",
+    "english": "bacon",
+    "notes": "Refers to cured or smoked pork fat/bacon, a common ingredient in German cuisine.",
+    "noun": {
+      "gender": "der",
+      "plural": "Specke",
+      "genitiveSingular": "Specks",
+      "pluralDative": "Specken"
+    },
+    "id": "w_mrrlz0jggibsmy",
+    "createdAt": "2026-07-19T09:43:45.532Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-19T09:43:45.532Z",
+      "lastResult": null
+    }
   }
 ]
