@@ -332,11 +332,11 @@
     "id": "w_mrrkiyfp503l9m",
     "createdAt": "2026-07-19T09:03:16.693Z",
     "srs": {
-      "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-19T09:03:16.693Z",
-      "lastResult": null
+      "ef": 2.65,
+      "interval": 3,
+      "reps": 1,
+      "due": "2026-07-22T10:08:20.429Z",
+      "lastResult": 3
     },
     "_dir": "de-en"
   },
@@ -358,7 +358,8 @@
       "reps": 0,
       "due": "2026-07-19T09:03:16.693Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "adjective",
