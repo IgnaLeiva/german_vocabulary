@@ -548,11 +548,11 @@
     "id": "w_mrrp6esm7yov7u",
     "createdAt": "2026-07-19T11:13:29.446Z",
     "srs": {
-      "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-19T11:13:29.446Z",
-      "lastResult": null
+      "ef": 2.35,
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-20T11:17:58.886Z",
+      "lastResult": 1
     },
     "_dir": "de-en"
   }
