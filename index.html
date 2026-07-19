@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vokabeltrainer — German Vocabulary Trainer</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇩🇪</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-badge">DE</span>
+      <div>
+        <h1>Vokabeltrainer</h1>
+        <p class="tagline">Learn German vocabulary &amp; grammar, Anki-style</p>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab-btn active" data-view="study">📚 Study</button>
+      <button class="tab-btn" data-view="words">🗂 Words</button>
+      <button class="tab-btn" data-view="add">➕ Add</button>
+      <button class="tab-btn" data-view="settings">⚙️ Settings</button>
+    </nav>
+    <div class="sync-status" id="syncStatus" title="Sync status">●</div>
+  </header>
+
+  <main>
+
+    <!-- STUDY -->
+    <section id="view-study" class="view active">
+      <div class="study-toolbar">
+        <div class="due-count" id="dueCount">0 cards due</div>
+        <div class="direction-toggle" id="directionToggle">
+          <button class="dir-btn active" data-dir="de-en">DE → EN</button>
+          <button class="dir-btn" data-dir="en-de">EN → DE</button>
+          <button class="dir-btn" data-dir="mixed">Mixed</button>
+        </div>
+      </div>
+
+      <div class="card-stage" id="cardStage">
+        <div class="flashcard" id="flashcard">
+          <div class="fc-type" id="fcType"></div>
+          <div class="fc-front" id="fcFront">—</div>
+          <button class="speak-btn" id="fcSpeakBtn" title="Pronounce">🔊</button>
+
+          <div class="fc-back" id="fcBack" hidden>
+            <hr>
+            <div class="fc-answer" id="fcAnswer"></div>
+            <div class="fc-hint" id="fcHint"></div>
+          </div>
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <p>🎉 No cards due right now.</p>
+          <p class="muted">Add more words or come back later.</p>
+        </div>
+      </div>
+
+      <div class="study-controls">
+        <button class="btn ghost" id="showAnswerBtn">Show answer (space)</button>
+        <div class="grade-btns" id="gradeBtns" hidden>
+          <button class="grade-btn again" data-grade="0">Again</button>
+          <button class="grade-btn hard" data-grade="1">Hard</button>
+          <button class="grade-btn good" data-grade="2">Good</button>
+          <button class="grade-btn easy" data-grade="3">Easy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORDS -->
+    <section id="view-words" class="view">
+      <div class="words-toolbar">
+        <input type="search" id="wordSearch" placeholder="Search German or English…">
+        <div class="filter-chips" id="filterChips">
+          <button class="chip active" data-type="all">All</button>
+          <button class="chip" data-type="verb">Verbs</button>
+          <button class="chip" data-type="noun">Nouns</button>
+          <button class="chip" data-type="adjective">Adjectives</button>
+        </div>
+      </div>
+      <div class="word-list" id="wordList"></div>
+    </section>
+
+    <!-- ADD -->
+    <section id="view-add" class="view">
+      <div class="add-panel">
+        <h2>Add a word</h2>
+        <p class="muted">Type a German or English word. If you've added your Claude API key in Settings, click "Look up with AI" to auto-fill translation, conjugation, gender, and declension — then review and save.</p>
+
+        <div class="add-lookup-row">
+          <input type="text" id="addWordInput" placeholder="e.g. sprechen, der Hund, langsam…">
+          <select id="addTypeHint">
+            <option value="auto">Auto-detect type</option>
+            <option value="verb">Verb</option>
+            <option value="noun">Noun</option>
+            <option value="adjective">Adjective</option>
+          </select>
+          <button class="btn primary" id="aiLookupBtn">✨ Look up with AI</button>
+          <button class="btn ghost" id="manualEntryBtn">Enter manually</button>
+        </div>
+        <div class="ai-status" id="aiStatus"></div>
+
+        <form id="wordForm" class="word-form" hidden></form>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="view-settings" class="view">
+      <div class="settings-grid">
+
+        <div class="settings-card">
+          <h2>AI lookup (Claude)</h2>
+          <p class="muted">Your key is stored only in this browser's local storage and sent directly to api.anthropic.com — never to any other server.</p>
+          <label>Anthropic API key
+            <input type="password" id="aiApiKey" placeholder="sk-ant-...">
+          </label>
+          <label>Model
+            <select id="aiModel">
+              <option value="claude-haiku-4-5-20251001">Haiku 4.5 (fast, recommended)</option>
+              <option value="claude-sonnet-5">Sonnet 5 (higher quality)</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="settings-card">
+          <h2>GitHub sync</h2>
+          <p class="muted">Reads/writes a <code>data.json</code> file in your repo so this page shows the same words &amp; progress on every device. Use a fine-grained token scoped to just this repo (Contents: read &amp; write).</p>
+          <label>Personal access token
+            <input type="password" id="ghToken" placeholder="github_pat_...">
+          </label>
+          <label>Owner / username
+            <input type="text" id="ghOwner" placeholder="e.g. ignaleiva">
+          </label>
+          <label>Repository
+            <input type="text" id="ghRepo" placeholder="e.g. german_vocabulary">
+          </label>
+          <label>Branch
+            <input type="text" id="ghBranch" placeholder="main" value="main">
+          </label>
+          <label>File path
+            <input type="text" id="ghPath" placeholder="data.json" value="data.json">
+          </label>
+          <div class="settings-actions">
+            <button class="btn" id="ghPullBtn">⬇ Pull now</button>
+            <button class="btn" id="ghPushBtn">⬆ Push now</button>
+          </div>
+          <div class="ai-status" id="ghStatus"></div>
+        </div>
+
+        <div class="settings-card">
+          <h2>Backup</h2>
+          <p class="muted">Manual JSON backup as a fallback / extra safety net.</p>
+          <div class="settings-actions">
+            <button class="btn" id="exportBtn">⬇ Export JSON</button>
+            <button class="btn" id="importBtn">⬆ Import JSON</button>
+            <input type="file" id="importFile" accept="application/json" hidden>
+          </div>
+        </div>
+
+        <div class="settings-actions save-row">
+          <button class="btn primary" id="saveSettingsBtn">Save settings</button>
+          <span class="ai-status" id="settingsSavedMsg"></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Word detail modal -->
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" id="wordModal"></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/srs.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/speech.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
