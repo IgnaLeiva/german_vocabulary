@@ -137,3 +137,68 @@ function uid() {
 function freshSrs() {
   return { ef: 2.5, interval: 0, reps: 0, due: new Date().toISOString(), lastResult: null };
 }
+
+/* ---------------- Confusable-word detection ---------------- */
+// Flags word pairs worth an explicit "don't confuse X with Y" warning, from
+// three independent signals: identical spelling (classic homograph trap,
+// e.g. der See/die See), near-identical spelling (seit/seid, wieder/wider),
+// and identical translation (kennen/wissen both "to know"). This only ever
+// *suggests* — linking is always a deliberate user action (see
+// linkConfusable in app.js), since spelling/meaning heuristics alone would
+// produce too many irrelevant pairs to link automatically.
+
+function levenshtein(a, b) {
+  const m = a.length;
+  const n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  let prev = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i += 1) {
+    const curr = [i];
+    for (let j = 1; j <= n; j += 1) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+    }
+    prev = curr;
+  }
+  return prev[n];
+}
+
+function isSimilarSpelling(a, b) {
+  const x = a.toLowerCase();
+  const y = b.toLowerCase();
+  if (x === y) return false; // handled separately as an exact-homograph match
+  const dist = levenshtein(x, y);
+  const maxLen = Math.max(x.length, y.length);
+  if (maxLen <= 4) return dist <= 1;
+  if (maxLen <= 8) return dist <= 2;
+  return dist <= 3;
+}
+
+function normalizeTranslation(english) {
+  return (english || '').toLowerCase().replace(/^to\s+/, '').trim();
+}
+
+function sameTranslation(englishA, englishB) {
+  const a = normalizeTranslation(englishA);
+  const b = normalizeTranslation(englishB);
+  return !!a && a === b;
+}
+
+// Returns [{ id, reason }] for words in allWords worth suggesting as
+// confusable with `word`, excluding itself and anything already linked.
+function findConfusableCandidates(word, allWords) {
+  const linked = new Set(word.confusables || []);
+  const candidates = [];
+  allWords.forEach((other) => {
+    if (other.id === word.id || linked.has(other.id)) return;
+    if (word.german.toLowerCase() === other.german.toLowerCase()) {
+      candidates.push({ id: other.id, reason: 'Same spelling as a different word — a classic mix-up.' });
+    } else if (isSimilarSpelling(word.german, other.german)) {
+      candidates.push({ id: other.id, reason: 'Spelled almost the same — easy to misread or mistype.' });
+    } else if (sameTranslation(word.english, other.english)) {
+      candidates.push({ id: other.id, reason: `Same translation ("${word.english}") — easy to reach for the wrong one.` });
+    }
+  });
+  return candidates;
+}

@@ -198,7 +198,21 @@ function revealAnswer() {
   document.getElementById('fcBack').hidden = false;
   document.getElementById('showAnswerBtn').hidden = true;
   document.getElementById('gradeBtns').hidden = false;
+  renderConfusableWarning(currentCard);
   if (dir === 'en-de') speak(currentCard.german, 'de-DE');
+}
+
+function renderConfusableWarning(w) {
+  const el = document.getElementById('fcConfusable');
+  const confusables = (w.confusables || []).map((id) => WORDS.find((x) => x.id === id)).filter(Boolean);
+  if (!confusables.length) { el.hidden = true; el.innerHTML = ''; return; }
+  el.hidden = false;
+  el.innerHTML = `⚠️ Don't confuse "${escapeHtml(w.german)}" with: ` + confusables.map((c) =>
+    `<strong>${escapeHtml(c.german)}</strong> (${escapeHtml(c.english)}) <button type="button" class="inline-speak" data-speak="${escapeHtml(c.german)}">🔊</button>`
+  ).join(', ');
+  el.querySelectorAll('[data-speak]').forEach((btn) => {
+    btn.addEventListener('click', () => speak(btn.dataset.speak, 'de-DE'));
+  });
 }
 
 function grammarHint(w) {
@@ -292,6 +306,80 @@ function openWordModal(id) {
       renderAll();
     }
   });
+
+  modal.querySelectorAll('[data-unlink]').forEach((btn) => {
+    btn.addEventListener('click', () => unlinkConfusable(id, btn.dataset.unlink));
+  });
+
+  const searchInput = modal.querySelector('#confusableSearch');
+  const resultsEl = modal.querySelector('#confusableSearchResults');
+  let confusableSearchTimer = null;
+  searchInput.addEventListener('input', () => {
+    clearTimeout(confusableSearchTimer);
+    const query = searchInput.value;
+    confusableSearchTimer = setTimeout(() => renderConfusableSearchResults(w, query, resultsEl), 200);
+  });
+
+  modal.querySelector('#suggestConfusablesBtn').addEventListener('click', () => {
+    renderConfusableSuggestions(w, modal.querySelector('#confusableSuggestions'));
+  });
+}
+
+function linkConfusable(wordId, otherId) {
+  const w = WORDS.find((x) => x.id === wordId);
+  const o = WORDS.find((x) => x.id === otherId);
+  if (!w || !o) return;
+  w.confusables = w.confusables || [];
+  o.confusables = o.confusables || [];
+  if (!w.confusables.includes(otherId)) w.confusables.push(otherId);
+  if (!o.confusables.includes(wordId)) o.confusables.push(wordId);
+  persistNow();
+  openWordModal(wordId);
+}
+
+function unlinkConfusable(wordId, otherId) {
+  const w = WORDS.find((x) => x.id === wordId);
+  const o = WORDS.find((x) => x.id === otherId);
+  if (w) w.confusables = (w.confusables || []).filter((cid) => cid !== otherId);
+  if (o) o.confusables = (o.confusables || []).filter((cid) => cid !== wordId);
+  persistNow();
+  openWordModal(wordId);
+}
+
+function renderConfusableSearchResults(w, query, el) {
+  const q = query.trim().toLowerCase();
+  if (!q) { el.innerHTML = ''; return; }
+  const linked = new Set(w.confusables || []);
+  const matches = WORDS.filter((x) => x.id !== w.id && !linked.has(x.id)
+    && (x.german.toLowerCase().includes(q) || x.english.toLowerCase().includes(q))).slice(0, 6);
+  if (!matches.length) { el.innerHTML = '<p class="muted">No matches.</p>'; return; }
+  el.innerHTML = matches.map((m) => `
+    <div class="confusable-result" data-link="${escapeHtml(m.id)}">
+      <span><span class="word-badge ${TYPE_BADGE_CLASS[m.type] || 'badge-verb'}">${escapeHtml(m.type)}</span> ${escapeHtml(m.german)} — ${escapeHtml(m.english)}</span>
+      <span class="btn ghost small">+ Link</span>
+    </div>
+  `).join('');
+  el.querySelectorAll('[data-link]').forEach((row) => {
+    row.addEventListener('click', () => linkConfusable(w.id, row.dataset.link));
+  });
+}
+
+function renderConfusableSuggestions(w, el) {
+  const candidates = findConfusableCandidates(w, WORDS).slice(0, 6);
+  if (!candidates.length) { el.innerHTML = '<p class="muted">No suggestions found — link one manually with the search box above if you know of one.</p>'; return; }
+  el.innerHTML = candidates.map((c) => {
+    const other = WORDS.find((x) => x.id === c.id);
+    if (!other) return '';
+    return `
+      <div class="confusable-suggestion">
+        <div><span class="word-badge ${TYPE_BADGE_CLASS[other.type] || 'badge-verb'}">${escapeHtml(other.type)}</span> <strong>${escapeHtml(other.german)}</strong> — ${escapeHtml(other.english)}<span class="reason">${escapeHtml(c.reason)}</span></div>
+        <button type="button" class="btn ghost small" data-suggest-add="${escapeHtml(other.id)}">+ Add</button>
+      </div>
+    `;
+  }).join('');
+  el.querySelectorAll('[data-suggest-add]').forEach((btn) => {
+    btn.addEventListener('click', () => linkConfusable(w.id, btn.dataset.suggestAdd));
+  });
 }
 
 function closeModal() {
@@ -307,11 +395,36 @@ function buildWordDetailHtml(w) {
   return `
     <h2>${escapeHtml(w.german)} <button class="inline-speak" data-speak="${escapeHtml(w.german)}">🔊</button></h2>
     <p class="muted">${escapeHtml(w.english)}${w.notes ? ` — ${escapeHtml(w.notes)}` : ''}</p>
+    ${confusablesSectionHtml(w)}
     ${body}
     <div class="modal-close-row">
       <button class="btn danger" id="modalDeleteBtn">Delete</button>
       <button class="btn primary" id="modalCloseBtn">Close</button>
     </div>
+  `;
+}
+
+function confusablesSectionHtml(w) {
+  const linked = (w.confusables || []).map((id) => WORDS.find((x) => x.id === id)).filter(Boolean);
+  const rows = linked.length ? linked.map((c) => `
+    <div class="confusable-row">
+      <span class="word-badge ${TYPE_BADGE_CLASS[c.type] || 'badge-verb'}">${escapeHtml(c.type)}</span>
+      <span class="german">${escapeHtml(c.german)}</span>
+      <span class="english">${escapeHtml(c.english)}</span>
+      <button type="button" class="inline-speak" data-speak="${escapeHtml(c.german)}">🔊</button>
+      <button type="button" class="btn ghost small" data-unlink="${escapeHtml(c.id)}">✕</button>
+    </div>
+  `).join('') : '<p class="muted">None linked yet.</p>';
+
+  return `
+    <div class="section-title">⚠️ Don't confuse with</div>
+    <div id="confusablesList">${rows}</div>
+    <div class="confusable-add-row">
+      <input type="text" id="confusableSearch" placeholder="Search a word to link…" autocomplete="off">
+      <button type="button" class="btn ghost small" id="suggestConfusablesBtn">💡 Suggest</button>
+    </div>
+    <div id="confusableSearchResults"></div>
+    <div id="confusableSuggestions"></div>
   `;
 }
 
