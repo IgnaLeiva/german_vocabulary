@@ -69,12 +69,25 @@ function renderAll() {
 
 /* ---------------- Persistence ---------------- */
 
+// Debounced push — used for high-frequency changes (grading cards during a
+// study session) so we don't fire an API call on every single grade.
 function persist() {
   saveLocalWords(WORDS);
   if (githubConfigured(SETTINGS)) {
     setSyncStatus('pending');
     clearTimeout(pushTimer);
     pushTimer = setTimeout(pushToGithub, 1500);
+  }
+}
+
+// Immediate push — used for deliberate, one-off changes (adding/deleting a
+// word, importing a backup) where the user expects it to sync right away.
+function persistNow() {
+  saveLocalWords(WORDS);
+  clearTimeout(pushTimer);
+  if (githubConfigured(SETTINGS)) {
+    setSyncStatus('pending');
+    pushToGithub();
   }
 }
 
@@ -272,7 +285,7 @@ function openWordModal(id) {
   modal.querySelector('#modalDeleteBtn').addEventListener('click', () => {
     if (confirm(`Delete "${w.german}" from your word list?`)) {
       WORDS = WORDS.filter((x) => x.id !== id);
-      persist();
+      persistNow();
       closeModal();
       renderAll();
     }
@@ -700,7 +713,7 @@ function saveWordForm(form) {
   word.srs = freshSrs();
 
   WORDS.push(word);
-  persist();
+  persistNow();
   renderAll();
 
   form.hidden = true;
@@ -796,7 +809,7 @@ function wireSettings() {
         const imported = JSON.parse(reader.result);
         if (!Array.isArray(imported)) throw new Error('File is not a word list array.');
         WORDS = imported;
-        persist();
+        persistNow();
         renderAll();
         alert(`Imported ${imported.length} words.`);
       } catch (err) {
