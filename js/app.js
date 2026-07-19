@@ -510,32 +510,66 @@ function renderGrammarView() {
 }
 
 function articleReferenceTable(articleMap) {
+  const { der, die, das } = EXAMPLE_NOUNS;
+  const phrase = (genderKey, c, noun) => `${articleMap[genderKey][c]} ${exampleNounWord(noun, genderKey, c)}`;
   return `
     <table>
       <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
-      ${Object.keys(CASE_LABELS).map((c) => `<tr><td>${CASE_LABELS[c]}</td><td>${articleMap.der[c]}</td><td>${articleMap.die[c]}</td><td>${articleMap.das[c]}</td><td>${articleMap.plural[c]}</td></tr>`).join('')}
+      ${Object.keys(CASE_LABELS).map((c) => `<tr>
+        <td>${CASE_LABELS[c]}</td>
+        <td>${phrase('der', c, der)}</td>
+        <td>${phrase('die', c, die)}</td>
+        <td>${phrase('das', c, das)}</td>
+        <td>${phrase('plural', c, der)}</td>
+      </tr>`).join('')}
     </table>
   `;
 }
 
 function possessiveReferenceTable(stem) {
   const decl = possessiveDeclension(stem);
+  const { der, die, das } = EXAMPLE_NOUNS;
+  const phrase = (colKey, genderKey, c, noun) => `${decl[c][colKey]} ${exampleNounWord(noun, genderKey, c)}`;
   return `
     <table>
       <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
-      ${Object.keys(CASE_LABELS).map((c) => `<tr><td>${CASE_LABELS[c]}</td><td>${decl[c].m}</td><td>${decl[c].f}</td><td>${decl[c].n}</td><td>${decl[c].pl}</td></tr>`).join('')}
+      ${Object.keys(CASE_LABELS).map((c) => `<tr>
+        <td>${CASE_LABELS[c]}</td>
+        <td>${phrase('m', 'der', c, der)}</td>
+        <td>${phrase('f', 'die', c, die)}</td>
+        <td>${phrase('n', 'das', c, das)}</td>
+        <td>${phrase('pl', 'plural', c, der)}</td>
+      </tr>`).join('')}
     </table>
   `;
 }
 
 function adjectiveEndingsReferenceTables() {
+  const { der, die, das } = EXAMPLE_NOUNS;
   return Object.keys(ADJ_ENDINGS).map((k) => {
     const t = ADJ_ENDINGS[k];
+    const articleWord = (genderKey, c) => {
+      if (k === 'weak') return DEF_ARTICLES[genderKey][c];
+      if (k === 'mixed') return INDEF_ARTICLES[genderKey][c];
+      return '';
+    };
+    const phrase = (genderKey, colKey, c, noun) => {
+      const art = articleWord(genderKey, c);
+      const adj = `${EXAMPLE_ADJECTIVE}${t[c][colKey]}`;
+      const word = exampleNounWord(noun, genderKey, c);
+      return `${art ? `${art} ` : ''}${adj} ${word}`;
+    };
     return `
       <div class="section-title">${escapeHtml(t.label)}</div>
       <table>
-        <tr><th>Case</th>${Object.keys(GENDER_COL_LABELS).map((g) => `<th>${GENDER_COL_LABELS[g]}</th>`).join('')}</tr>
-        ${Object.keys(CASE_LABELS).map((c) => `<tr><td>${CASE_LABELS[c]}</td>${Object.keys(GENDER_COL_LABELS).map((g) => `<td>-${t[c][g]}</td>`).join('')}</tr>`).join('')}
+        <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
+        ${Object.keys(CASE_LABELS).map((c) => `<tr>
+          <td>${CASE_LABELS[c]}</td>
+          <td>${phrase('der', 'm', c, der)}</td>
+          <td>${phrase('die', 'f', c, die)}</td>
+          <td>${phrase('das', 'n', c, das)}</td>
+          <td>${phrase('plural', 'pl', c, der)}</td>
+        </tr>`).join('')}
       </table>
     `;
   }).join('');
@@ -545,23 +579,24 @@ function renderGrammarReference() {
   document.getElementById('grammarReference').innerHTML = `
     <div class="ref-card">
       <h3>1) Definite articles — der / die / das</h3>
+      <p class="muted">Worked with example nouns: der Mann, die Frau, das Kind (plural: die Männer).</p>
       ${articleReferenceTable(DEF_ARTICLES)}
     </div>
     <div class="ref-card">
       <h3>2) Indefinite articles — ein / eine / einen…</h3>
-      <p class="muted">"ein" has no plural (you'd just drop the article). Shown instead: <strong>kein</strong> (not a/no), which follows the identical pattern and does have a plural.</p>
+      <p class="muted">"ein" has no plural (you'd just drop the article). Shown instead: <strong>kein</strong> (not a/no) in the plural column, since it follows the identical pattern and does have one.</p>
       ${articleReferenceTable(INDEF_ARTICLES)}
     </div>
     <div class="ref-card">
       <h3>3) Possessives — mein, dein, sein…</h3>
-      <p class="muted">Every possessive declines exactly like "ein" (same endings) — just swap the stem. Worked example uses <strong>mein</strong> (my):</p>
+      <p class="muted">Every possessive declines exactly like "ein" (same endings) — just swap the stem. Worked example below uses <strong>mein</strong> (my):</p>
       <div class="stem-list">${Object.entries(POSSESSIVE_STEMS).map(([stem, meaning]) => `<div class="stem-chip"><strong>${escapeHtml(stem)}</strong> — ${escapeHtml(meaning)}</div>`).join('')}</div>
       ${possessiveReferenceTable('mein')}
-      <p class="muted">Irregular: <strong>euer</strong> contracts to <em>eur-</em> before any ending (euer → eure, euren, eurem…), never "euere".</p>
+      <p class="muted">Irregular: <strong>euer</strong> contracts to <em>eur-</em> before any ending (euer → eure Frau, euren Mann, eurem Kind…), never "euere".</p>
     </div>
     <div class="ref-card">
       <h3>4) Adjective endings after an article</h3>
-      <p class="muted">Which set of endings an adjective takes depends on what (if anything) precedes it — a der-word, an ein-word, or nothing.</p>
+      <p class="muted">Which set of endings an adjective takes depends on what (if anything) precedes it — a der-word, an ein-word, or nothing. Worked with the regular adjective <strong>klein</strong> (small) so the ending pattern stays clear — a few adjectives (hoch, gut…) also shift their stem; check the word's own detail page for those.</p>
       ${adjectiveEndingsReferenceTables()}
     </div>
   `;
@@ -651,11 +686,12 @@ function buildQuizQuestion() {
   const endingPool = Object.values(ADJ_ENDINGS).flatMap((p) => Object.keys(CASE_LABELS).flatMap((cc) => Object.values(p[cc])));
   const options = addRandomDistractors(new Set([correct]), endingPool, 4);
   return {
-    prompt: `${article ? `${article} ` : ''}${adjWord.german}___ ${nounDisplay}`,
-    context: `Adjective ending · ${paradigm.label} · ${CASE_LABELS[c]} · ${numberLabel}`,
+    prompt: `${article ? `${article} ` : ''}___ ${nounDisplay}`,
+    context: `"${adjWord.german}" · ${paradigm.label} · ${CASE_LABELS[c]} · ${numberLabel}`,
     correct,
     options: shuffle([...options]),
     isEnding: true,
+    adjStem: adjWord.german,
   };
 }
 
@@ -666,7 +702,7 @@ function nextQuizQuestion() {
 
 function renderQuizQuestion() {
   const q = quizCurrent;
-  const displayOpt = (opt) => (q.isEnding ? `-${opt}` : opt);
+  const displayOpt = (opt) => (q.isEnding ? `${q.adjStem}${opt}` : opt);
   document.getElementById('grammarQuiz').innerHTML = `
     <div class="quiz-card">
       <div class="quiz-question">${escapeHtml(q.prompt)}</div>
@@ -695,7 +731,7 @@ function answerQuiz(chosen) {
     else if (btn.dataset.opt === chosen) btn.classList.add('wrong');
   });
 
-  const displayCorrect = q.isEnding ? `-${q.correct}` : q.correct;
+  const displayCorrect = q.isEnding ? `${q.adjStem}${q.correct}` : q.correct;
   const feedback = document.getElementById('quizFeedback');
   feedback.textContent = correct ? '✓ Correct!' : `✗ Not quite — correct answer: ${displayCorrect}`;
   feedback.className = `quiz-feedback ${correct ? 'correct-text' : 'wrong-text'}`;

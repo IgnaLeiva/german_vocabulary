@@ -112,6 +112,22 @@ const GENERIC_NOUNS = [
   { german: 'Auto', gender: 'das', plural: 'Autos' },
 ];
 
+// One worked example noun per gender for the Grammar tab's reference tables —
+// shown as full phrases ("der kleine Mann") rather than bare articles/endings.
+// Plural column always uses the masculine noun's plural, since the plural
+// article/ending pattern is identical regardless of the singular's gender.
+const EXAMPLE_NOUNS = {
+  der: { german: 'Mann', gender: 'der', plural: 'Männer', genitiveSingular: 'Mannes', pluralDative: 'Männern' },
+  die: { german: 'Frau', gender: 'die', plural: 'Frauen', genitiveSingular: 'Frau', pluralDative: 'Frauen' },
+  das: { german: 'Kind', gender: 'das', plural: 'Kinder', genitiveSingular: 'Kindes', pluralDative: 'Kindern' },
+};
+const EXAMPLE_ADJECTIVE = 'klein'; // regular, no stem change, keeps the ending pattern unambiguous
+
+function exampleNounWord(noun, genderKey, caseKey) {
+  if (genderKey === 'plural') return caseKey === 'dat' ? noun.pluralDative : noun.plural;
+  return caseKey === 'gen' ? noun.genitiveSingular : noun.german;
+}
+
 function buildNounDeclension(noun, word) {
   const g = noun.gender;
   const genitiveS = noun.genitiveSingular || `${word}s`;
