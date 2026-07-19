@@ -512,5 +512,26 @@
       "lastResult": 2
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "noun",
+    "german": "Gericht",
+    "english": "dish / court",
+    "notes": "Has two main meanings: a prepared food dish, or a court of law; context determines which is meant.",
+    "noun": {
+      "gender": "das",
+      "plural": "Gerichte",
+      "genitiveSingular": "Gerichts",
+      "pluralDative": "Gerichten"
+    },
+    "id": "w_mrrp4tguw0l497",
+    "createdAt": "2026-07-19T11:12:15.150Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-19T11:12:15.150Z",
+      "lastResult": null
+    }
   }
 ]
