@@ -29,6 +29,7 @@ async function init() {
   wireTabs();
   wireStudy();
   wireWords();
+  wireGrammar();
   wireAdd();
   wireSettings();
 
@@ -127,6 +128,7 @@ function switchView(view) {
   document.querySelectorAll('.view').forEach((v) => v.classList.toggle('active', v.id === `view-${view}`));
   if (view === 'study') renderStudy();
   if (view === 'words') renderWordList();
+  if (view === 'grammar') renderGrammarView();
 }
 
 /* ================= STUDY ================= */
@@ -489,6 +491,223 @@ function adjectiveDetailHtml(w) {
 
 function escapeHtml(str) {
   return String(str ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+/* ================= GRAMMAR (reference + practice) ================= */
+
+let grammarQuizStarted = false;
+
+function wireGrammar() {
+  // Quiz option/next buttons are wired per-render in renderQuizQuestion/answerQuiz.
+}
+
+function renderGrammarView() {
+  renderGrammarReference();
+  if (!grammarQuizStarted) {
+    grammarQuizStarted = true;
+    nextQuizQuestion();
+  }
+}
+
+function articleReferenceTable(articleMap) {
+  return `
+    <table>
+      <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
+      ${Object.keys(CASE_LABELS).map((c) => `<tr><td>${CASE_LABELS[c]}</td><td>${articleMap.der[c]}</td><td>${articleMap.die[c]}</td><td>${articleMap.das[c]}</td><td>${articleMap.plural[c]}</td></tr>`).join('')}
+    </table>
+  `;
+}
+
+function possessiveReferenceTable(stem) {
+  const decl = possessiveDeclension(stem);
+  return `
+    <table>
+      <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
+      ${Object.keys(CASE_LABELS).map((c) => `<tr><td>${CASE_LABELS[c]}</td><td>${decl[c].m}</td><td>${decl[c].f}</td><td>${decl[c].n}</td><td>${decl[c].pl}</td></tr>`).join('')}
+    </table>
+  `;
+}
+
+function adjectiveEndingsReferenceTables() {
+  return Object.keys(ADJ_ENDINGS).map((k) => {
+    const t = ADJ_ENDINGS[k];
+    return `
+      <div class="section-title">${escapeHtml(t.label)}</div>
+      <table>
+        <tr><th>Case</th>${Object.keys(GENDER_COL_LABELS).map((g) => `<th>${GENDER_COL_LABELS[g]}</th>`).join('')}</tr>
+        ${Object.keys(CASE_LABELS).map((c) => `<tr><td>${CASE_LABELS[c]}</td>${Object.keys(GENDER_COL_LABELS).map((g) => `<td>-${t[c][g]}</td>`).join('')}</tr>`).join('')}
+      </table>
+    `;
+  }).join('');
+}
+
+function renderGrammarReference() {
+  document.getElementById('grammarReference').innerHTML = `
+    <div class="ref-card">
+      <h3>1) Definite articles — der / die / das</h3>
+      ${articleReferenceTable(DEF_ARTICLES)}
+    </div>
+    <div class="ref-card">
+      <h3>2) Indefinite articles — ein / eine / einen…</h3>
+      <p class="muted">"ein" has no plural (you'd just drop the article). Shown instead: <strong>kein</strong> (not a/no), which follows the identical pattern and does have a plural.</p>
+      ${articleReferenceTable(INDEF_ARTICLES)}
+    </div>
+    <div class="ref-card">
+      <h3>3) Possessives — mein, dein, sein…</h3>
+      <p class="muted">Every possessive declines exactly like "ein" (same endings) — just swap the stem. Worked example uses <strong>mein</strong> (my):</p>
+      <div class="stem-list">${Object.entries(POSSESSIVE_STEMS).map(([stem, meaning]) => `<div class="stem-chip"><strong>${escapeHtml(stem)}</strong> — ${escapeHtml(meaning)}</div>`).join('')}</div>
+      ${possessiveReferenceTable('mein')}
+      <p class="muted">Irregular: <strong>euer</strong> contracts to <em>eur-</em> before any ending (euer → eure, euren, eurem…), never "euere".</p>
+    </div>
+    <div class="ref-card">
+      <h3>4) Adjective endings after an article</h3>
+      <p class="muted">Which set of endings an adjective takes depends on what (if anything) precedes it — a der-word, an ein-word, or nothing.</p>
+      ${adjectiveEndingsReferenceTables()}
+    </div>
+  `;
+}
+
+/* ---- Practice quiz ---- */
+
+let quizScore = { correct: 0, total: 0 };
+let quizCurrent = null;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function pickNounForQuiz() {
+  const pool = WORDS.filter((w) => w.type === 'noun' && w.noun && w.noun.gender);
+  const source = pool.length ? pool.map((w) => ({ german: w.german, gender: w.noun.gender, plural: w.noun.plural })) : GENERIC_NOUNS;
+  return source[Math.floor(Math.random() * source.length)];
+}
+
+function pickAdjectiveForQuiz() {
+  const pool = WORDS.filter((w) => w.type === 'adjective');
+  return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+}
+
+function genderColKey(genderOrPlural) {
+  return genderOrPlural === 'plural' ? 'pl' : { der: 'm', die: 'f', das: 'n' }[genderOrPlural];
+}
+
+function addRandomDistractors(options, pool, max) {
+  const p = [...pool];
+  while (options.size < max && options.size < new Set(p).size) {
+    options.add(p[Math.floor(Math.random() * p.length)]);
+  }
+  return options;
+}
+
+function buildQuizQuestion() {
+  const noun = pickNounForQuiz();
+  const cases = Object.keys(CASE_LABELS);
+  const c = cases[Math.floor(Math.random() * cases.length)];
+  const canPlural = noun.plural && noun.plural !== '—';
+  const isPlural = canPlural && Math.random() < 0.35;
+  const genderKey = isPlural ? 'plural' : noun.gender;
+  const nounDisplay = isPlural ? (noun.plural || noun.german) : noun.german;
+  const numberLabel = isPlural ? 'plural' : 'singular';
+
+  const adjWord = Math.random() < 0.35 ? pickAdjectiveForQuiz() : null;
+  const type = adjWord ? 'adjective' : ['definite', 'indefinite', 'possessive'][Math.floor(Math.random() * 3)];
+
+  if (type === 'definite') {
+    const correct = DEF_ARTICLES[genderKey][c];
+    const pool = Object.values(DEF_ARTICLES).flatMap((g) => Object.values(g));
+    const options = addRandomDistractors(new Set([correct]), pool, 4);
+    return { prompt: `___ ${nounDisplay}`, context: `Definite article · ${CASE_LABELS[c]} · ${numberLabel}`, correct, options: shuffle([...options]) };
+  }
+
+  if (type === 'indefinite') {
+    const correct = INDEF_ARTICLES[genderKey][c];
+    const pool = Object.values(INDEF_ARTICLES).flatMap((g) => Object.values(g));
+    const options = addRandomDistractors(new Set([correct]), pool, 4);
+    return { prompt: `___ ${nounDisplay}`, context: `Indefinite article${isPlural ? ' (kein-)' : ''} · ${CASE_LABELS[c]} · ${numberLabel}`, correct, options: shuffle([...options]) };
+  }
+
+  if (type === 'possessive') {
+    const stems = Object.keys(POSSESSIVE_STEMS);
+    const stem = stems[Math.floor(Math.random() * stems.length)];
+    const decl = possessiveDeclension(stem);
+    const correct = decl[c][genderColKey(genderKey)];
+    const pool = Object.values(decl).flatMap((row) => Object.values(row));
+    const options = addRandomDistractors(new Set([correct]), pool, 4);
+    return { prompt: `___ ${nounDisplay}`, context: `Possessive "${stem}" (${POSSESSIVE_STEMS[stem]}) · ${CASE_LABELS[c]} · ${numberLabel}`, correct, options: shuffle([...options]) };
+  }
+
+  // adjective ending
+  const paradigmKeys = ['weak', 'mixed', 'strong'];
+  const paradigmKey = paradigmKeys[Math.floor(Math.random() * paradigmKeys.length)];
+  const paradigm = ADJ_ENDINGS[paradigmKey];
+  const genderCol = genderColKey(genderKey);
+  const correct = paradigm[c][genderCol];
+  const article = paradigmKey === 'weak' ? DEF_ARTICLES[genderKey][c] : paradigmKey === 'mixed' ? INDEF_ARTICLES[genderKey][c] : '';
+  const endingPool = Object.values(ADJ_ENDINGS).flatMap((p) => Object.keys(CASE_LABELS).flatMap((cc) => Object.values(p[cc])));
+  const options = addRandomDistractors(new Set([correct]), endingPool, 4);
+  return {
+    prompt: `${article ? `${article} ` : ''}${adjWord.german}___ ${nounDisplay}`,
+    context: `Adjective ending · ${paradigm.label} · ${CASE_LABELS[c]} · ${numberLabel}`,
+    correct,
+    options: shuffle([...options]),
+    isEnding: true,
+  };
+}
+
+function nextQuizQuestion() {
+  quizCurrent = buildQuizQuestion();
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  const q = quizCurrent;
+  const displayOpt = (opt) => (q.isEnding ? `-${opt}` : opt);
+  document.getElementById('grammarQuiz').innerHTML = `
+    <div class="quiz-card">
+      <div class="quiz-question">${escapeHtml(q.prompt)}</div>
+      <div class="quiz-context">${escapeHtml(q.context)}</div>
+      <div class="quiz-options">
+        ${q.options.map((opt) => `<button type="button" class="quiz-option" data-opt="${escapeHtml(opt)}">${escapeHtml(displayOpt(opt))}</button>`).join('')}
+      </div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+      <div class="quiz-scoreboard" id="quizScoreboard"><span>Score: <strong>${quizScore.correct}/${quizScore.total}</strong></span></div>
+    </div>
+  `;
+  document.querySelectorAll('#grammarQuiz .quiz-option').forEach((btn) => {
+    btn.addEventListener('click', () => answerQuiz(btn.dataset.opt));
+  });
+}
+
+function answerQuiz(chosen) {
+  const q = quizCurrent;
+  const correct = chosen === q.correct;
+  quizScore.total += 1;
+  if (correct) quizScore.correct += 1;
+
+  document.querySelectorAll('#grammarQuiz .quiz-option').forEach((btn) => {
+    btn.disabled = true;
+    if (btn.dataset.opt === q.correct) btn.classList.add('correct');
+    else if (btn.dataset.opt === chosen) btn.classList.add('wrong');
+  });
+
+  const displayCorrect = q.isEnding ? `-${q.correct}` : q.correct;
+  const feedback = document.getElementById('quizFeedback');
+  feedback.textContent = correct ? '✓ Correct!' : `✗ Not quite — correct answer: ${displayCorrect}`;
+  feedback.className = `quiz-feedback ${correct ? 'correct-text' : 'wrong-text'}`;
+  document.getElementById('quizScoreboard').innerHTML = `<span>Score: <strong>${quizScore.correct}/${quizScore.total}</strong></span>`;
+
+  const nextBtn = document.createElement('button');
+  nextBtn.type = 'button';
+  nextBtn.className = 'btn primary';
+  nextBtn.style.marginTop = '16px';
+  nextBtn.textContent = 'Next question →';
+  nextBtn.addEventListener('click', nextQuizQuestion);
+  document.querySelector('#grammarQuiz .quiz-card').appendChild(nextBtn);
 }
 
 /* ================= ADD ================= */

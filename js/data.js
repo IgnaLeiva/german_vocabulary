@@ -84,6 +84,34 @@ const INDEF_ARTICLES = {
 
 const CASE_LABELS = { nom: 'Nominativ', akk: 'Akkusativ', dat: 'Dativ', gen: 'Genitiv' };
 
+// Possessive determiners (mein/dein/sein…) decline exactly like ein-words
+// (mixed declension) but — unlike "ein" — they also have plural forms.
+// "euer" is the one irregular stem: it contracts to "eur-" before any ending.
+const POSSESSIVE_STEMS = {
+  mein: 'my', dein: 'your (informal, singular owner)', sein: 'his / its',
+  ihr: 'her / their', unser: 'our', euer: 'your (informal, plural owner)', Ihr: 'your (formal)',
+};
+
+function possessiveDeclension(stem) {
+  const base = stem === 'euer' ? 'eur' : stem;
+  return {
+    nom: { m: stem, f: `${base}e`, n: stem, pl: `${base}e` },
+    akk: { m: `${base}en`, f: `${base}e`, n: stem, pl: `${base}e` },
+    dat: { m: `${base}em`, f: `${base}er`, n: `${base}em`, pl: `${base}en` },
+    gen: { m: `${base}es`, f: `${base}er`, n: `${base}es`, pl: `${base}er` },
+  };
+}
+
+// Fallback nouns for the practice quiz when the user's own list is too thin.
+const GENERIC_NOUNS = [
+  { german: 'Mann', gender: 'der', plural: 'Männer' },
+  { german: 'Frau', gender: 'die', plural: 'Frauen' },
+  { german: 'Kind', gender: 'das', plural: 'Kinder' },
+  { german: 'Tisch', gender: 'der', plural: 'Tische' },
+  { german: 'Blume', gender: 'die', plural: 'Blumen' },
+  { german: 'Auto', gender: 'das', plural: 'Autos' },
+];
+
 function buildNounDeclension(noun, word) {
   const g = noun.gender;
   const genitiveS = noun.genitiveSingular || `${word}s`;
