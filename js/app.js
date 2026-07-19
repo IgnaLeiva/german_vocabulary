@@ -498,51 +498,69 @@ function escapeHtml(str) {
 let grammarQuizStarted = false;
 
 function wireGrammar() {
+  wireCustomWordTool();
   // Quiz option/next buttons are wired per-render in renderQuizQuestion/answerQuiz.
 }
 
 function renderGrammarView() {
   renderGrammarReference();
+  populateCustomDatalists();
   if (!grammarQuizStarted) {
     grammarQuizStarted = true;
     nextQuizQuestion();
   }
 }
 
-// Bolds+colors whatever part of `fullWord` comes after `stem`, so learners
-// can see at a glance which letters actually change/get added between cases
-// (e.g. "d" + "en", "mein" + "en", "klein" + "en", "Mann" + "es").
+const CASE_COLOR_CLASS = { nom: 'ending-nom', akk: 'ending-akk', dat: 'ending-dat', gen: 'ending-gen' };
+
+// Bolds+colors (by case) whatever part of `fullWord` comes after `stem`, so
+// learners can see at a glance which letters actually change/get added
+// between cases (e.g. "d" + "en", "mein" + "en", "klein" + "en", "Mann" + "es"),
+// with a consistent color per case across every table.
 // Falls back to the plain (escaped) word when fullWord isn't stem+suffix.
-function highlightSuffix(fullWord, stem) {
+function highlightSuffix(fullWord, stem, caseKey) {
   if (!fullWord.startsWith(stem)) return escapeHtml(fullWord);
   const suffix = fullWord.slice(stem.length);
   if (!suffix) return escapeHtml(fullWord);
-  return `${escapeHtml(stem)}<span class="ending">${escapeHtml(suffix)}</span>`;
+  const cls = CASE_COLOR_CLASS[caseKey] || '';
+  return `${escapeHtml(stem)}<span class="ending ${cls}">${escapeHtml(suffix)}</span>`;
 }
 
-function highlightDefiniteArticle(word) {
-  return highlightSuffix(word, 'd'); // der/die/das/den/dem/des are all "d" + a 2-letter marker
+function highlightDefiniteArticle(word, caseKey) {
+  return highlightSuffix(word, 'd', caseKey); // der/die/das/den/dem/des are all "d" + a 2-letter marker
 }
 
-function highlightIndefiniteArticle(word) {
-  return highlightSuffix(word, word.startsWith('kein') ? 'kein' : 'ein');
+function highlightIndefiniteArticle(word, caseKey) {
+  return highlightSuffix(word, word.startsWith('kein') ? 'kein' : 'ein', caseKey);
 }
 
-function highlightPossessive(word, stem) {
-  return highlightSuffix(word, stem === 'euer' ? 'eur' : stem);
+function highlightPossessive(word, stem, caseKey) {
+  return highlightSuffix(word, stem === 'euer' ? 'eur' : stem, caseKey);
 }
 
+// Fills in the same genitive-singular/dative-plural fallbacks buildNounDeclension
+// uses, so a noun typed fresh in the "try your own word" tool (with no explicit
+// genitive/dative-plural forms) still renders something reasonable.
 function highlightNounWord(noun, genderKey, caseKey) {
+  const plural = noun.plural || '—';
+  const genitiveS = noun.genitiveSingular || `${noun.german}s`;
+  const pluralDat = noun.pluralDative || (noun.plural && !/[ns]$/.test(noun.plural) ? `${noun.plural}n` : plural);
   if (genderKey === 'plural') {
-    return caseKey === 'dat' ? highlightSuffix(noun.pluralDative, noun.plural) : escapeHtml(noun.plural);
+    return caseKey === 'dat' ? highlightSuffix(pluralDat, plural, caseKey) : escapeHtml(plural);
   }
-  return caseKey === 'gen' ? highlightSuffix(noun.genitiveSingular, noun.german) : escapeHtml(noun.german);
+  return caseKey === 'gen' ? highlightSuffix(genitiveS, noun.german, caseKey) : escapeHtml(noun.german);
+}
+
+const CASE_LEGEND_HTML = `<div class="case-legend">${Object.keys(CASE_LABELS).map((c) => `<span class="${CASE_COLOR_CLASS[c]}">${CASE_LABELS[c]}</span>`).join('')}</div>`;
+
+function wrapTable(html) {
+  return `<div class="table-scroll">${html}</div>`;
 }
 
 function articleReferenceTable(articleMap, highlightArticleFn) {
   const { der, die, das } = EXAMPLE_NOUNS;
-  const phrase = (genderKey, c, noun) => `${highlightArticleFn(articleMap[genderKey][c])} ${highlightNounWord(noun, genderKey, c)}`;
-  return `
+  const phrase = (genderKey, c, noun) => `${highlightArticleFn(articleMap[genderKey][c], c)} ${highlightNounWord(noun, genderKey, c)}`;
+  return wrapTable(`
     <table>
       <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
       ${Object.keys(CASE_LABELS).map((c) => `<tr>
@@ -553,14 +571,14 @@ function articleReferenceTable(articleMap, highlightArticleFn) {
         <td>${phrase('plural', c, der)}</td>
       </tr>`).join('')}
     </table>
-  `;
+  `);
 }
 
 function possessiveReferenceTable(stem) {
   const decl = possessiveDeclension(stem);
   const { der, die, das } = EXAMPLE_NOUNS;
-  const phrase = (colKey, genderKey, c, noun) => `${highlightPossessive(decl[c][colKey], stem)} ${highlightNounWord(noun, genderKey, c)}`;
-  return `
+  const phrase = (colKey, genderKey, c, noun) => `${highlightPossessive(decl[c][colKey], stem, c)} ${highlightNounWord(noun, genderKey, c)}`;
+  return wrapTable(`
     <table>
       <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
       ${Object.keys(CASE_LABELS).map((c) => `<tr>
@@ -571,7 +589,7 @@ function possessiveReferenceTable(stem) {
         <td>${phrase('pl', 'plural', c, der)}</td>
       </tr>`).join('')}
     </table>
-  `;
+  `);
 }
 
 function adjectiveEndingsReferenceTables() {
@@ -579,19 +597,19 @@ function adjectiveEndingsReferenceTables() {
   return Object.keys(ADJ_ENDINGS).map((k) => {
     const t = ADJ_ENDINGS[k];
     const articleWord = (genderKey, c) => {
-      if (k === 'weak') return highlightDefiniteArticle(DEF_ARTICLES[genderKey][c]);
-      if (k === 'mixed') return highlightIndefiniteArticle(INDEF_ARTICLES[genderKey][c]);
+      if (k === 'weak') return highlightDefiniteArticle(DEF_ARTICLES[genderKey][c], c);
+      if (k === 'mixed') return highlightIndefiniteArticle(INDEF_ARTICLES[genderKey][c], c);
       return '';
     };
     const phrase = (genderKey, colKey, c, noun) => {
       const art = articleWord(genderKey, c);
-      const adj = highlightSuffix(`${EXAMPLE_ADJECTIVE}${t[c][colKey]}`, EXAMPLE_ADJECTIVE);
+      const adj = highlightSuffix(`${EXAMPLE_ADJECTIVE}${t[c][colKey]}`, EXAMPLE_ADJECTIVE, c);
       const word = highlightNounWord(noun, genderKey, c);
       return `${art ? `${art} ` : ''}${adj} ${word}`;
     };
     return `
       <div class="section-title">${escapeHtml(t.label)}</div>
-      <table>
+      ${wrapTable(`<table>
         <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
         ${Object.keys(CASE_LABELS).map((c) => `<tr>
           <td>${CASE_LABELS[c]}</td>
@@ -600,13 +618,18 @@ function adjectiveEndingsReferenceTables() {
           <td>${phrase('das', 'n', c, das)}</td>
           <td>${phrase('plural', 'pl', c, der)}</td>
         </tr>`).join('')}
-      </table>
+      </table>`)}
     `;
   }).join('');
 }
 
 function renderGrammarReference() {
   document.getElementById('grammarReference').innerHTML = `
+    <div class="ref-card">
+      <h3>Case color key</h3>
+      <p class="muted">Every highlighted ending below is colored by which case it marks, consistently across all tables.</p>
+      ${CASE_LEGEND_HTML}
+    </div>
     <div class="ref-card">
       <h3>1) Definite articles — der / die / das</h3>
       <p class="muted">Worked with example nouns: der Mann, die Frau, das Kind (plural: die Männer).</p>
@@ -630,6 +653,126 @@ function renderGrammarReference() {
       ${adjectiveEndingsReferenceTables()}
     </div>
   `;
+}
+
+/* ---- Try your own word ---- */
+
+function populateCustomDatalists() {
+  document.getElementById('customNounList').innerHTML = WORDS.filter((w) => w.type === 'noun')
+    .map((w) => `<option value="${escapeHtml(w.german)}">`).join('');
+  document.getElementById('customAdjList').innerHTML = WORDS.filter((w) => w.type === 'adjective')
+    .map((w) => `<option value="${escapeHtml(w.german)}">`).join('');
+}
+
+function customArticleTable(noun) {
+  const g = noun.gender;
+  const row = (c) => `<tr>
+    <td>${CASE_LABELS[c]}</td>
+    <td>${highlightDefiniteArticle(DEF_ARTICLES[g][c], c)} ${highlightNounWord(noun, g, c)}</td>
+    <td>${highlightIndefiniteArticle(INDEF_ARTICLES[g][c], c)} ${highlightNounWord(noun, g, c)}</td>
+    <td>${highlightDefiniteArticle(DEF_ARTICLES.plural[c], c)} ${highlightNounWord(noun, 'plural', c)}</td>
+    <td>${highlightIndefiniteArticle(INDEF_ARTICLES.plural[c], c)} ${highlightNounWord(noun, 'plural', c)}</td>
+  </tr>`;
+  return wrapTable(`<table>
+    <tr><th>Case</th><th>Singular (definite)</th><th>Singular (indefinite)</th><th>Plural (definite)</th><th>Plural (kein-)</th></tr>
+    ${Object.keys(CASE_LABELS).map(row).join('')}
+  </table>`);
+}
+
+function customPossessiveTable(noun, stem) {
+  const decl = possessiveDeclension(stem);
+  const colKey = genderColKey(noun.gender);
+  const row = (c) => `<tr>
+    <td>${CASE_LABELS[c]}</td>
+    <td>${highlightPossessive(decl[c][colKey], stem, c)} ${highlightNounWord(noun, noun.gender, c)}</td>
+    <td>${highlightPossessive(decl[c].pl, stem, c)} ${highlightNounWord(noun, 'plural', c)}</td>
+  </tr>`;
+  return wrapTable(`<table>
+    <tr><th>Case</th><th>Singular (mein)</th><th>Plural (mein)</th></tr>
+    ${Object.keys(CASE_LABELS).map(row).join('')}
+  </table>`);
+}
+
+function customAdjectiveTables(noun, adjStem) {
+  const colKey = genderColKey(noun.gender);
+  return Object.keys(ADJ_ENDINGS).map((k) => {
+    const t = ADJ_ENDINGS[k];
+    const articleFor = (genderKey, c) => {
+      if (k === 'weak') return highlightDefiniteArticle(DEF_ARTICLES[genderKey][c], c);
+      if (k === 'mixed') return highlightIndefiniteArticle(INDEF_ARTICLES[genderKey][c], c);
+      return '';
+    };
+    const row = (c) => {
+      const singArt = articleFor(noun.gender, c);
+      const singAdj = highlightSuffix(`${adjStem}${t[c][colKey]}`, adjStem, c);
+      const plArt = articleFor('plural', c);
+      const plAdj = highlightSuffix(`${adjStem}${t[c].pl}`, adjStem, c);
+      return `<tr>
+        <td>${CASE_LABELS[c]}</td>
+        <td>${singArt ? `${singArt} ` : ''}${singAdj} ${highlightNounWord(noun, noun.gender, c)}</td>
+        <td>${plArt ? `${plArt} ` : ''}${plAdj} ${highlightNounWord(noun, 'plural', c)}</td>
+      </tr>`;
+    };
+    return `
+      <div class="section-title">${escapeHtml(t.label)}</div>
+      ${wrapTable(`<table><tr><th>Case</th><th>Singular</th><th>Plural</th></tr>${Object.keys(CASE_LABELS).map(row).join('')}</table>`)}
+    `;
+  }).join('');
+}
+
+function renderCustomTables(noun, adjStem) {
+  const genderTag = { der: 'gender-der', die: 'gender-die', das: 'gender-das' }[noun.gender];
+  let html = `<h4><span class="gender-tag ${genderTag}">${escapeHtml(noun.gender)}</span> ${escapeHtml(noun.german)}${adjStem ? ` &middot; adjective: ${escapeHtml(adjStem)}` : ''}</h4>`;
+  html += `<div class="section-title">Definite &amp; indefinite articles</div>${customArticleTable(noun)}`;
+  html += `<div class="section-title">Possessive (mein)</div>${customPossessiveTable(noun, 'mein')}`;
+  if (adjStem) {
+    html += `<div class="section-title">With adjective "${escapeHtml(adjStem)}"</div>${customAdjectiveTables(noun, adjStem)}`;
+  }
+  document.getElementById('customTablesOutput').innerHTML = html;
+}
+
+function findWordMatch(type, german) {
+  const target = german.trim().toLowerCase();
+  return target ? WORDS.find((w) => w.type === type && w.german.toLowerCase() === target) : null;
+}
+
+function wireCustomWordTool() {
+  const nounInput = document.getElementById('customNounInput');
+  nounInput.addEventListener('input', () => {
+    const match = findWordMatch('noun', nounInput.value);
+    if (match) {
+      document.getElementById('customNounGender').value = match.noun.gender;
+      document.getElementById('customNounPlural').value = match.noun.plural || '';
+    }
+  });
+
+  document.getElementById('generateCustomBtn').addEventListener('click', () => {
+    const rawWord = nounInput.value.trim();
+    if (!rawWord) { alert('Enter a noun first.'); return; }
+
+    const existing = findWordMatch('noun', rawWord);
+    let noun;
+    if (existing) {
+      noun = { german: existing.german, gender: existing.noun.gender, plural: existing.noun.plural, genitiveSingular: existing.noun.genitiveSingular, pluralDative: existing.noun.pluralDative };
+    } else {
+      noun = {
+        german: applyGermanCasing(rawWord, 'noun'),
+        gender: document.getElementById('customNounGender').value,
+        plural: document.getElementById('customNounPlural').value.trim(),
+        genitiveSingular: null,
+        pluralDative: null,
+      };
+    }
+
+    const rawAdj = document.getElementById('customAdjInput').value.trim();
+    let adjStem = null;
+    if (rawAdj) {
+      const adjMatch = findWordMatch('adjective', rawAdj);
+      adjStem = adjMatch ? adjMatch.german : applyGermanCasing(rawAdj, 'adjective');
+    }
+
+    renderCustomTables(noun, adjStem);
+  });
 }
 
 /* ---- Practice quiz ---- */

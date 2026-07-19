@@ -302,10 +302,25 @@ code { background: var(--bg-2); padding: 1px 6px; border-radius: 5px; font-size:
 .ref-card th, .ref-card td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
 .ref-card th { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; }
 .ref-card .section-title { color: var(--cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin: 18px 0 6px; }
+.table-scroll { overflow-x: auto; }
 .stem-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
 .stem-chip { background: var(--bg-2); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font-size: 0.82rem; }
 .stem-chip strong { color: var(--cyan); }
-.ending { font-weight: 800; color: var(--amber); }
+.ending { font-weight: 800; }
+.ending-nom { color: var(--green); }
+.ending-akk { color: var(--cyan); }
+.ending-dat { color: var(--amber); }
+.ending-gen { color: var(--coral); }
+.case-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 10px 0 16px; font-size: 0.8rem; }
+.case-legend span { font-weight: 800; }
+
+.custom-word-form { display: grid; gap: 12px; margin-top: 12px; }
+.custom-word-form input, .custom-word-form select {
+  background: var(--bg-2); border: 1px solid var(--border); color: var(--text);
+  padding: 10px 12px; border-radius: 10px; font-size: 0.9rem;
+}
+.custom-word-form label { display: flex; flex-direction: column; gap: 6px; font-size: 0.8rem; color: var(--text-dim); }
+#customTablesOutput h4 { margin-bottom: 4px; }
 
 .quiz-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; }
 .quiz-question { font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
