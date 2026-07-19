@@ -8,16 +8,18 @@ let currentCard = null;
 let cardShowsAnswer = false;
 let pushTimer = null;
 
-// This app's own public repo. Reading a public repo's contents needs no
-// token, so any brand-new device (e.g. a phone) can auto-pull the latest
-// words with zero setup. A token is only required to push changes — add one
-// in Settings only on devices you'll actually add/edit words from.
+// This app's own public repo — fixed, not user-editable. Reading a public
+// repo's contents needs no token, so any brand-new device (e.g. a phone) auto
+// -pulls the latest words with zero setup. A token (Settings) is only needed
+// to push changes from a given device.
 const DEFAULT_GH = { ghOwner: 'IgnaLeiva', ghRepo: 'german_vocabulary', ghBranch: 'main', ghPath: 'data.json' };
 
 /* ---------------- Init ---------------- */
 
 async function init() {
-  SETTINGS = { ...DEFAULT_GH, ...loadSettings() };
+  // Owner/repo/branch/path always come from DEFAULT_GH — only ghToken, aiApiKey,
+  // and aiModel are user-editable/persisted.
+  SETTINGS = { ...loadSettings(), ...DEFAULT_GH };
   hydrateSettingsForm();
 
   const local = loadLocalWords();
@@ -731,10 +733,6 @@ function hydrateSettingsForm() {
   document.getElementById('aiApiKey').value = SETTINGS.aiApiKey || '';
   document.getElementById('aiModel').value = SETTINGS.aiModel || 'claude-haiku-4-5-20251001';
   document.getElementById('ghToken').value = SETTINGS.ghToken || '';
-  document.getElementById('ghOwner').value = SETTINGS.ghOwner || '';
-  document.getElementById('ghRepo').value = SETTINGS.ghRepo || '';
-  document.getElementById('ghBranch').value = SETTINGS.ghBranch || 'main';
-  document.getElementById('ghPath').value = SETTINGS.ghPath || 'data.json';
   setSyncStatus(githubReadConfigured(SETTINGS) ? 'pending' : 'none');
 }
 
@@ -744,10 +742,7 @@ function wireSettings() {
       aiApiKey: document.getElementById('aiApiKey').value.trim(),
       aiModel: document.getElementById('aiModel').value,
       ghToken: document.getElementById('ghToken').value.trim(),
-      ghOwner: document.getElementById('ghOwner').value.trim(),
-      ghRepo: document.getElementById('ghRepo').value.trim(),
-      ghBranch: document.getElementById('ghBranch').value.trim() || 'main',
-      ghPath: document.getElementById('ghPath').value.trim() || 'data.json',
+      ...DEFAULT_GH,
     };
     saveSettings(SETTINGS);
     ghSha = null;
@@ -756,37 +751,6 @@ function wireSettings() {
     msg.className = 'ai-status ok';
     setSyncStatus(githubReadConfigured(SETTINGS) ? 'pending' : 'none');
     setTimeout(() => { msg.textContent = ''; }, 2500);
-  });
-
-  document.getElementById('ghPullBtn').addEventListener('click', async () => {
-    const status = document.getElementById('ghStatus');
-    if (!githubReadConfigured(SETTINGS)) { status.textContent = 'Fill in owner + repo and save settings first.'; status.className = 'ai-status err'; return; }
-    status.textContent = 'Pulling…'; status.className = 'ai-status';
-    try {
-      const { words, sha } = await githubGetWords(SETTINGS);
-      ghSha = sha;
-      if (words) { WORDS = words; saveLocalWords(WORDS); renderAll(); }
-      status.textContent = words ? 'Pulled latest ✓' : 'No data.json in repo yet — push to create it.';
-      status.className = 'ai-status ok';
-      setSyncStatus('ok');
-    } catch (e) {
-      status.textContent = `Pull failed: ${e.message}`; status.className = 'ai-status err';
-      setSyncStatus('err', e.message);
-    }
-  });
-
-  document.getElementById('ghPushBtn').addEventListener('click', async () => {
-    const status = document.getElementById('ghStatus');
-    if (!githubConfigured(SETTINGS)) { status.textContent = 'Fill in GitHub fields and save settings first.'; status.className = 'ai-status err'; return; }
-    status.textContent = 'Pushing…'; status.className = 'ai-status';
-    try {
-      ghSha = await githubPutWords(SETTINGS, WORDS, ghSha);
-      status.textContent = 'Pushed ✓'; status.className = 'ai-status ok';
-      setSyncStatus('ok');
-    } catch (e) {
-      status.textContent = `Push failed: ${e.message}`; status.className = 'ai-status err';
-      setSyncStatus('err', e.message);
-    }
   });
 
   document.getElementById('exportBtn').addEventListener('click', () => {

@@ -144,27 +144,10 @@
 
         <div class="settings-card">
           <h2>GitHub sync</h2>
-          <p class="muted">Owner/repo below already point at this app's own repo, so <strong>any device automatically reads the latest words with no setup</strong> (public repos need no token to read). Add a personal access token only on devices you want to <strong>add/edit words from</strong> — fine-grained, scoped to just this repo, Contents: read &amp; write.</p>
-          <label>Personal access token <span class="muted">(only needed to push changes from this device)</span>
+          <p class="muted">This device always reads the latest words automatically — no setup needed for that. Add a personal access token here only if you want to <strong>add or edit words from this device</strong> too (fine-grained, scoped to just this repo, Contents: read &amp; write). Once saved, every add/edit/delete syncs out on its own — nothing else to do.</p>
+          <label>Personal access token <span class="muted">(leave blank if this device is view/study only)</span>
             <input type="password" id="ghToken" placeholder="github_pat_...">
           </label>
-          <label>Owner / username
-            <input type="text" id="ghOwner" placeholder="e.g. ignaleiva">
-          </label>
-          <label>Repository
-            <input type="text" id="ghRepo" placeholder="e.g. german_vocabulary">
-          </label>
-          <label>Branch
-            <input type="text" id="ghBranch" placeholder="main" value="main">
-          </label>
-          <label>File path
-            <input type="text" id="ghPath" placeholder="data.json" value="data.json">
-          </label>
-          <div class="settings-actions">
-            <button class="btn" id="ghPullBtn">⬇ Pull now</button>
-            <button class="btn" id="ghPushBtn">⬆ Push now</button>
-          </div>
-          <div class="ai-status" id="ghStatus"></div>
         </div>
 
         <div class="settings-card">

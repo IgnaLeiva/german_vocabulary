@@ -67,25 +67,28 @@ No API key, no extra billing — just your normal claude.ai usage.
 
 ## GitHub sync (so your phone and computer share the same data)
 
-The app ships with its owner/repo defaulted to this repo (`js/app.js` → `DEFAULT_GH`).
-Since it's a **public** repo, reading `data.json` needs no authentication at all — so
-**any device automatically pulls the latest words on load, with zero setup.** A token is
-only needed on a device you actually want to *add or edit words from*:
+The repo (owner/name/branch/path) is hardcoded in `js/app.js` → `DEFAULT_GH` — it's not
+a Settings field, there's nothing to configure for it. Since it's a **public** repo,
+reading `data.json` needs no authentication at all, so **every device automatically pulls
+the latest words on load with zero setup.**
+
+The only thing Settings has is a token field, and it's optional — only fill it in on a
+device you want to be able to *add or edit words from*:
 
 1. Create a **fine-grained personal access token**: GitHub → Settings → Developer
    settings → Personal access tokens → Fine-grained tokens → Generate new token.
    - Repository access: only this repo.
    - Permissions: **Contents → Read and write**.
 2. On that device: Settings tab in the app → paste the token → Save settings.
-3. From then on, changes on that device auto-push (debounced ~1.5s after each change).
-   Use "Pull now" / "Push now" any time to force a sync.
+3. That's the whole setup. From then on, every add/edit/delete on that device pushes to
+   the repo automatically (immediately for adds/deletes, debounced ~1.5s for rapid-fire
+   study-session grading) — no buttons to click, no manual sync step ever.
 4. The token is stored only in that browser's localStorage — never committed, never sent
    anywhere but api.github.com. Scope it to just this one repo so a leak has minimal
    blast radius, and only add it on devices you trust (e.g. skip it on a borrowed phone).
 
-If you fork this app for a different repo, update `DEFAULT_GH` in `js/app.js` (or just
-fill in the Owner/Repository/Branch/Path fields in Settings — those override the
-defaults and persist per-device).
+If you fork this app for a different repo, change the four values in `DEFAULT_GH` at the
+top of `js/app.js`.
 
 **Data flow**: your word list + review progress live in `data.json` inside the repo. The
 first push (from any device with a token) creates the file if it doesn't exist yet.
