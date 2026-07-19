@@ -405,6 +405,12 @@ function renderDupWarning(rawWord, excludeId) {
 
 function wireAdd() {
   document.getElementById('aiLookupBtn').addEventListener('click', doAiLookup);
+  document.getElementById('copyPromptBtn').addEventListener('click', doCopyPrompt);
+  document.getElementById('parsePasteBtn').addEventListener('click', doParsePaste);
+  document.getElementById('cancelPasteBtn').addEventListener('click', () => {
+    document.getElementById('pastePanel').hidden = true;
+    document.getElementById('pasteResponse').value = '';
+  });
   document.getElementById('manualEntryBtn').addEventListener('click', () => {
     const word = document.getElementById('addWordInput').value.trim();
     const typeHint = document.getElementById('addTypeHint').value === 'auto' ? 'verb' : document.getElementById('addTypeHint').value;
@@ -417,6 +423,45 @@ function wireAdd() {
     const val = e.target.value;
     dupCheckTimer = setTimeout(() => renderDupWarning(val), 250);
   });
+}
+
+async function doCopyPrompt() {
+  const word = document.getElementById('addWordInput').value.trim();
+  const statusEl = document.getElementById('aiStatus');
+  if (!word) { statusEl.textContent = 'Type a word first.'; statusEl.className = 'ai-status err'; return; }
+
+  const prompt = buildCopyPastePrompt(word);
+  document.getElementById('promptOutput').value = prompt;
+  document.getElementById('pastePanel').hidden = false;
+  document.getElementById('pasteResponse').focus();
+
+  try {
+    await navigator.clipboard.writeText(prompt);
+    statusEl.textContent = 'Prompt copied — paste it into a claude.ai chat, then paste the reply below.';
+    statusEl.className = 'ai-status ok';
+  } catch (e) {
+    statusEl.textContent = 'Could not auto-copy (clipboard permission) — select the text below and copy it manually.';
+    statusEl.className = 'ai-status err';
+  }
+}
+
+function doParsePaste() {
+  const raw = document.getElementById('pasteResponse').value;
+  const statusEl = document.getElementById('aiStatus');
+  if (!raw.trim()) { statusEl.textContent = 'Paste claude.ai\'s reply first.'; statusEl.className = 'ai-status err'; return; }
+  try {
+    const data = extractJson(raw);
+    pendingWordData = normalizeAiData(data);
+    statusEl.textContent = 'Got it — review and save below.';
+    statusEl.className = 'ai-status ok';
+    renderWordForm(pendingWordData);
+    renderDupWarning(pendingWordData.german);
+    document.getElementById('pastePanel').hidden = true;
+    document.getElementById('pasteResponse').value = '';
+  } catch (e) {
+    statusEl.textContent = `Couldn't parse that as JSON: ${e.message}`;
+    statusEl.className = 'ai-status err';
+  }
 }
 
 function blankWordData(german, type) {

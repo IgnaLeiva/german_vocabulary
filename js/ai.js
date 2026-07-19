@@ -1,6 +1,11 @@
-// Calls the Anthropic Messages API directly from the browser to auto-fill
-// grammar data for a word. Requires the user's own API key (kept only in
-// localStorage on their device — never sent anywhere but api.anthropic.com).
+// Two ways to auto-fill grammar data for a word:
+//  1. Direct API call (lookupWordWithAI) — requires a paid Anthropic API key,
+//     billed separately from a claude.ai subscription.
+//  2. Copy-paste (buildCopyPastePrompt) — no key needed. There's no supported
+//     way for a website to call claude.ai using a Pro/Max subscription
+//     programmatically (it's a separate product from the API, with no public
+//     endpoint), so this generates a prompt you paste into claude.ai
+//     yourself, then paste the reply back into the app.
 
 const AI_SYSTEM_PROMPT = `You are a precise German grammar reference. Given a single German or English word, respond with ONLY a JSON object (no prose, no markdown fences) describing it for a flashcard app. Follow this exact schema:
 
@@ -39,6 +44,12 @@ const AI_SYSTEM_PROMPT = `You are a precise German grammar reference. Given a si
 }
 
 Use standard High German. For "er" conjugation rows use the er/sie/es form. Be accurate about irregular/strong verb stem changes and umlauts. Respond with nothing but the JSON object.`;
+
+// Same instructions as AI_SYSTEM_PROMPT, but as one self-contained prompt for
+// pasting into claude.ai chat (no API key needed — uses your subscription).
+function buildCopyPastePrompt(word) {
+  return `${AI_SYSTEM_PROMPT}\n\nWord: ${word}`;
+}
 
 function extractJson(text) {
   const trimmed = text.trim();

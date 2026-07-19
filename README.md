@@ -36,16 +36,34 @@ python3 -m http.server 8080
 - **Settings** — Claude API key + model, GitHub sync fields, manual JSON export/import
   backup.
 
-## Setting up AI lookup
+## AI lookup: two ways to fill in a word
 
-1. Get an API key from the [Anthropic Console](https://console.anthropic.com/).
+**Note:** a claude.ai Pro/Max subscription and the Anthropic API are separate products —
+there's no supported way for a website to call claude.ai using your subscription's quota
+directly (no public endpoint for that). So there are two independent options:
+
+### Option A — copy/paste into claude.ai (uses your subscription, no extra cost)
+
+1. Add tab → type a word → **"📋 Copy prompt for claude.ai"**. This copies a ready-made
+   prompt to your clipboard and opens a paste panel.
+2. Open a new chat at [claude.ai](https://claude.ai), paste the prompt, send it.
+3. Copy Claude's reply, paste it into the "paste claude.ai's reply here" box in the app,
+   click **"Parse & fill form"**. Review the auto-filled fields and save.
+
+No API key, no extra billing — just your normal claude.ai usage.
+
+### Option B — direct API call (fully automatic, pay-per-lookup)
+
+1. Get an API key from the [Anthropic Console](https://console.anthropic.com/) — this is
+   billed separately from claude.ai.
 2. Settings tab → paste it into "Anthropic API key" → Save settings.
 3. The key is stored only in your browser's `localStorage` and sent directly to
    `api.anthropic.com` — this app has no backend of its own, so nothing passes through a
    third-party server. Anyone with access to that browser profile could read the key back
    out of localStorage, so don't use this on a shared/public computer.
-4. Each lookup costs a small amount against your Anthropic account (Haiku 4.5 is the
-   default — fast and inexpensive).
+4. Add tab → "✨ Look up with API key" does the whole round-trip for you. Each lookup
+   costs a small amount against your Anthropic account (Haiku 4.5 is the default — fast
+   and inexpensive).
 
 ## Setting up GitHub sync (so your phone and computer share the same data)
 

@@ -215,6 +215,13 @@ button, input, select { font-family: inherit; }
 }
 .dup-warning button { margin-left: auto; }
 
+.paste-panel { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 10px 0; }
+.paste-panel label { display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem; color: var(--text-dim); }
+.paste-panel textarea {
+  background: var(--bg-2); border: 1px solid var(--border); color: var(--text);
+  padding: 10px 12px; border-radius: 10px; font-family: ui-monospace, monospace; font-size: 0.85rem; resize: vertical;
+}
+
 .word-form { display: grid; gap: 14px; margin-top: 18px; }
 .word-form label { display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem; color: var(--text-dim); }
 .word-form input, .word-form select, .word-form textarea {

@@ -88,7 +88,7 @@
     <section id="view-add" class="view">
       <div class="add-panel">
         <h2>Add a word</h2>
-        <p class="muted">Type a German or English word. If you've added your Claude API key in Settings, click "Look up with AI" to auto-fill translation, conjugation, gender, and declension — then review and save.</p>
+        <p class="muted">Type a German or English word, then either copy a ready-made prompt into claude.ai (uses your subscription, no extra cost) and paste the reply back — or, if you've added an API key in Settings, look it up automatically.</p>
 
         <div class="add-lookup-row">
           <input type="text" id="addWordInput" placeholder="e.g. sprechen, der Hund, langsam…">
@@ -98,11 +98,27 @@
             <option value="noun">Noun</option>
             <option value="adjective">Adjective</option>
           </select>
-          <button class="btn primary" id="aiLookupBtn">✨ Look up with AI</button>
+        </div>
+        <div class="add-lookup-row">
+          <button class="btn primary" id="copyPromptBtn">📋 Copy prompt for claude.ai</button>
+          <button class="btn ghost" id="aiLookupBtn">✨ Look up with API key</button>
           <button class="btn ghost" id="manualEntryBtn">Enter manually</button>
         </div>
         <div class="dup-warning" id="dupWarning" hidden></div>
         <div class="ai-status" id="aiStatus"></div>
+
+        <div class="paste-panel" id="pastePanel" hidden>
+          <label>Prompt (copied to your clipboard — paste it into a new claude.ai chat)
+            <textarea id="promptOutput" rows="3" readonly></textarea>
+          </label>
+          <label>Then paste claude.ai's reply here
+            <textarea id="pasteResponse" rows="4" placeholder="Paste the JSON claude.ai gave you…"></textarea>
+          </label>
+          <div class="settings-actions">
+            <button type="button" class="btn primary" id="parsePasteBtn">Parse &amp; fill form</button>
+            <button type="button" class="btn ghost" id="cancelPasteBtn">Cancel</button>
+          </div>
+        </div>
 
         <form id="wordForm" class="word-form" hidden></form>
       </div>
