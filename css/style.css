@@ -298,6 +298,9 @@ code { background: var(--bg-2); padding: 1px 6px; border-radius: 5px; font-size:
 /* ---------- Grammar reference + quiz ---------- */
 .ref-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
 .ref-card h3 { margin-top: 0; }
+details.ref-card summary { font-weight: 700; font-size: 1.05rem; cursor: pointer; }
+details.ref-card summary::marker { color: var(--cyan); }
+details.ref-card[open] summary { margin-bottom: 12px; }
 .ref-card table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 0.9rem; }
 .ref-card th, .ref-card td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
 .ref-card th { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; }

@@ -123,6 +123,57 @@ const EXAMPLE_NOUNS = {
 };
 const EXAMPLE_ADJECTIVE = 'klein'; // regular, no stem change, keeps the ending pattern unambiguous
 
+// Prepositions grouped by which case they always govern, plus the two-way
+// ("Wechselpräpositionen") set whose case depends on location vs. direction.
+const FIXED_CASE_PREPOSITIONS = {
+  akk: {
+    label: 'Always Accusative — durch, für, gegen, ohne, um',
+    caseKey: 'akk',
+    items: [
+      { prep: 'durch', meaning: 'through', noun: { german: 'Park', gender: 'der' } },
+      { prep: 'für', meaning: 'for', noun: { german: 'Mann', gender: 'der' } },
+      { prep: 'gegen', meaning: 'against', noun: { german: 'Wand', gender: 'die' } },
+      { prep: 'ohne', meaning: 'without', noun: { german: 'Regenschirm', gender: 'der' } },
+      { prep: 'um', meaning: 'around / at (time)', noun: { german: 'Tisch', gender: 'der' } },
+    ],
+  },
+  dat: {
+    label: 'Always Dative — aus, bei, mit, nach, seit, von, zu',
+    caseKey: 'dat',
+    items: [
+      { prep: 'aus', meaning: 'from / out of', noun: { german: 'Haus', gender: 'das' } },
+      { prep: 'bei', meaning: 'at / near', noun: { german: 'Arbeit', gender: 'die' } },
+      { prep: 'mit', meaning: 'with', noun: { german: 'Auto', gender: 'das' } },
+      { prep: 'nach', meaning: 'after / to', noun: { german: 'Schule', gender: 'die' } },
+      { prep: 'seit', meaning: 'since', noun: { german: 'Jahr', gender: 'das' } },
+      { prep: 'von', meaning: 'from / of', noun: { german: 'Frau', gender: 'die' } },
+      { prep: 'zu', meaning: 'to', noun: { german: 'Bahnhof', gender: 'der' } },
+    ],
+  },
+  gen: {
+    label: 'Always Genitive — trotz, während, wegen, statt',
+    caseKey: 'gen',
+    items: [
+      { prep: 'trotz', meaning: 'despite', noun: { german: 'Wetter', gender: 'das' } },
+      { prep: 'während', meaning: 'during', noun: { german: 'Nacht', gender: 'die' } },
+      { prep: 'wegen', meaning: 'because of', noun: { german: 'Regen', gender: 'der' } },
+      { prep: 'statt', meaning: 'instead of', noun: { german: 'Auto', gender: 'das' } },
+    ],
+  },
+};
+
+const TWO_WAY_PREPOSITIONS = [
+  { prep: 'an', meaning: 'at / on (vertical surface)', noun: { german: 'Wand', gender: 'die' } },
+  { prep: 'auf', meaning: 'on (horizontal surface)', noun: { german: 'Tisch', gender: 'der' } },
+  { prep: 'hinter', meaning: 'behind', noun: { german: 'Baum', gender: 'der' } },
+  { prep: 'in', meaning: 'in / into', noun: { german: 'Haus', gender: 'das' } },
+  { prep: 'neben', meaning: 'next to', noun: { german: 'Tür', gender: 'die' } },
+  { prep: 'über', meaning: 'over / above', noun: { german: 'Bett', gender: 'das' } },
+  { prep: 'unter', meaning: 'under', noun: { german: 'Stuhl', gender: 'der' } },
+  { prep: 'vor', meaning: 'in front of', noun: { german: 'Fernseher', gender: 'der' } },
+  { prep: 'zwischen', meaning: 'between', noun: { german: 'Schrank', gender: 'der' } },
+];
+
 function buildNounDeclension(noun, word) {
   const g = noun.gender;
   const genitiveS = noun.genitiveSingular || `${word}s`;

@@ -496,6 +496,7 @@ function escapeHtml(str) {
 /* ================= GRAMMAR (reference + practice) ================= */
 
 let grammarQuizStarted = false;
+let grammarReferenceRendered = false;
 
 function wireGrammar() {
   wireCustomWordTool();
@@ -503,12 +504,24 @@ function wireGrammar() {
 }
 
 function renderGrammarView() {
-  renderGrammarReference();
+  // Reference tables are static — build once so <details> open/closed state
+  // (users folding/unfolding sections) survives switching tabs and back.
+  if (!grammarReferenceRendered) {
+    grammarReferenceRendered = true;
+    renderGrammarReference();
+  }
   populateCustomDatalists();
   if (!grammarQuizStarted) {
     grammarQuizStarted = true;
     nextQuizQuestion();
   }
+}
+
+// Wraps a table/section as a native collapsible <details> — the exact "fold"
+// behaviour: closed by default so the page isn't one long scroll, tap the
+// title to expand just the section you need.
+function refCard(title, bodyHtml, open) {
+  return `<details class="ref-card"${open ? ' open' : ''}><summary>${title}</summary><div class="ref-card-body">${bodyHtml}</div></details>`;
 }
 
 const CASE_COLOR_CLASS = { nom: 'ending-nom', akk: 'ending-akk', dat: 'ending-dat', gen: 'ending-gen' };
@@ -623,36 +636,69 @@ function adjectiveEndingsReferenceTables() {
   }).join('');
 }
 
+function prepositionExamplePhrase(prep, noun, caseKey) {
+  const article = highlightDefiniteArticle(DEF_ARTICLES[noun.gender][caseKey], caseKey);
+  return `${escapeHtml(prep)} ${article} ${highlightNounWord(noun, noun.gender, caseKey)}`;
+}
+
+function fixedCasePrepositionTable(group) {
+  const rows = group.items.map((item) => `<tr>
+    <td><strong>${escapeHtml(item.prep)}</strong></td>
+    <td>${escapeHtml(item.meaning)}</td>
+    <td>${prepositionExamplePhrase(item.prep, item.noun, group.caseKey)}</td>
+  </tr>`).join('');
+  return `
+    <div class="section-title">${escapeHtml(group.label)}</div>
+    ${wrapTable(`<table><tr><th>Preposition</th><th>Meaning</th><th>Example</th></tr>${rows}</table>`)}
+  `;
+}
+
+function twoWayPrepositionTable() {
+  const rows = TWO_WAY_PREPOSITIONS.map((item) => `<tr>
+    <td><strong>${escapeHtml(item.prep)}</strong></td>
+    <td>${escapeHtml(item.meaning)}</td>
+    <td>${prepositionExamplePhrase(item.prep, item.noun, 'dat')}<br><span class="muted">location — wo?</span></td>
+    <td>${prepositionExamplePhrase(item.prep, item.noun, 'akk')}<br><span class="muted">direction — wohin?</span></td>
+  </tr>`).join('');
+  return `
+    <div class="section-title">Two-way (dative = location, accusative = direction)</div>
+    ${wrapTable(`<table><tr><th>Preposition</th><th>Meaning</th><th>Dative</th><th>Accusative</th></tr>${rows}</table>`)}
+  `;
+}
+
 function renderGrammarReference() {
-  document.getElementById('grammarReference').innerHTML = `
-    <div class="ref-card">
-      <h3>Case color key</h3>
+  const cards = [
+    refCard('Case color key', `
       <p class="muted">Every highlighted ending below is colored by which case it marks, consistently across all tables.</p>
       ${CASE_LEGEND_HTML}
-    </div>
-    <div class="ref-card">
-      <h3>1) Definite articles — der / die / das</h3>
+    `),
+    refCard('1) Definite articles — der / die / das', `
       <p class="muted">Worked with example nouns: der Mann, die Frau, das Kind (plural: die Männer).</p>
       ${articleReferenceTable(DEF_ARTICLES, highlightDefiniteArticle)}
-    </div>
-    <div class="ref-card">
-      <h3>2) Indefinite articles — ein / eine / einen…</h3>
+    `),
+    refCard('2) Indefinite articles — ein / eine / einen…', `
       <p class="muted">"ein" has no plural (you'd just drop the article). Shown instead: <strong>kein</strong> (not a/no) in the plural column, since it follows the identical pattern and does have one.</p>
       ${articleReferenceTable(INDEF_ARTICLES, highlightIndefiniteArticle)}
-    </div>
-    <div class="ref-card">
-      <h3>3) Possessives — mein, dein, sein…</h3>
+    `),
+    refCard('3) Possessives — mein, dein, sein…', `
       <p class="muted">Every possessive declines exactly like "ein" (same endings) — just swap the stem. Worked example below uses <strong>mein</strong> (my):</p>
       <div class="stem-list">${Object.entries(POSSESSIVE_STEMS).map(([stem, meaning]) => `<div class="stem-chip"><strong>${escapeHtml(stem)}</strong> — ${escapeHtml(meaning)}</div>`).join('')}</div>
       ${possessiveReferenceTable('mein')}
       <p class="muted">Irregular: <strong>euer</strong> contracts to <em>eur-</em> before any ending (euer → eure Frau, euren Mann, eurem Kind…), never "euere".</p>
-    </div>
-    <div class="ref-card">
-      <h3>4) Adjective endings after an article</h3>
+    `),
+    refCard('4) Adjective endings after an article', `
       <p class="muted">Which set of endings an adjective takes depends on what (if anything) precedes it — a der-word, an ein-word, or nothing. Worked with the regular adjective <strong>klein</strong> (small) so the ending pattern stays clear — a few adjectives (hoch, gut…) also shift their stem; check the word's own detail page for those.</p>
       ${adjectiveEndingsReferenceTables()}
-    </div>
-  `;
+    `),
+    refCard('5) Prepositions — which case, and when', `
+      <p class="muted">Some prepositions always take one case; the "two-way" set switches between dative (location — <em>wo?</em>) and accusative (direction — <em>wohin?</em>), e.g. "mit dem Auto" (always dative) vs. "in dem Haus" / "in das Haus" (two-way).</p>
+      ${fixedCasePrepositionTable(FIXED_CASE_PREPOSITIONS.akk)}
+      ${fixedCasePrepositionTable(FIXED_CASE_PREPOSITIONS.dat)}
+      ${fixedCasePrepositionTable(FIXED_CASE_PREPOSITIONS.gen)}
+      ${twoWayPrepositionTable()}
+    `),
+  ];
+  document.getElementById('grammarReference').innerHTML = cards.join('');
 }
 
 /* ---- Try your own word ---- */
