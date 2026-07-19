@@ -484,10 +484,10 @@
     "createdAt": "2026-07-19T09:52:54.771Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-19T09:52:54.771Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-20T10:09:39.642Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -510,6 +510,7 @@
       "reps": 0,
       "due": "2026-07-19T09:57:32.323Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   }
 ]
