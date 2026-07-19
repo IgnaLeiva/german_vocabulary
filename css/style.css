@@ -323,6 +323,25 @@ details.ref-card[open] {
   box-shadow: 0 0 0 1px rgba(139, 124, 246, 0.25), 0 8px 24px rgba(139, 124, 246, 0.08);
 }
 .ref-card-body { animation: refCardIn 0.22s ease; }
+
+.tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.grammar-tile {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px 12px; cursor: pointer; text-align: center;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.grammar-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--violet);
+  box-shadow: 0 8px 20px rgba(139, 124, 246, 0.18);
+}
+.grammar-tile:active { transform: translateY(0); }
+.tile-icon {
+  font-weight: 800; font-size: 0.95rem; letter-spacing: 0.3px;
+  background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tile-label { font-size: 0.78rem; color: var(--text-dim); }
 @keyframes refCardIn {
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }

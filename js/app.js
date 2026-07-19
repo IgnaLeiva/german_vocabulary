@@ -504,8 +504,8 @@ function wireGrammar() {
 }
 
 function renderGrammarView() {
-  // Reference tables are static — build once so <details> open/closed state
-  // (users folding/unfolding sections) survives switching tabs and back.
+  // Reference tiles are static — build once so the tile grid isn't torn down
+  // and rebuilt (and any open modal state lost) on every tab switch.
   if (!grammarReferenceRendered) {
     grammarReferenceRendered = true;
     renderGrammarReference();
@@ -515,13 +515,6 @@ function renderGrammarView() {
     grammarQuizStarted = true;
     nextQuizQuestion();
   }
-}
-
-// Wraps a table/section as a native collapsible <details> — the exact "fold"
-// behaviour: closed by default so the page isn't one long scroll, tap the
-// title to expand just the section you need.
-function refCard(title, bodyHtml, open) {
-  return `<details class="ref-card"${open ? ' open' : ''}><summary>${title}</summary><div class="ref-card-body">${bodyHtml}</div></details>`;
 }
 
 const CASE_COLOR_CLASS = { nom: 'ending-nom', akk: 'ending-akk', dat: 'ending-dat', gen: 'ending-gen' };
@@ -666,39 +659,85 @@ function twoWayPrepositionTable() {
   `;
 }
 
-function renderGrammarReference() {
-  const cards = [
-    refCard('Case color key', `
-      <p class="muted">Every highlighted ending below is colored by which case it marks, consistently across all tables.</p>
-      ${CASE_LEGEND_HTML}
-    `),
-    refCard('1) Definite articles — der / die / das', `
+// Reference tables open as a popup (reusing the same modal used for word
+// detail elsewhere in the app) instead of stacking inline — tap a tile,
+// look at the table, close it. No scrolling past content you don't need.
+const GRAMMAR_TILES = [
+  {
+    icon: 'der·die·das', label: 'Definite articles',
+    build: () => `
       <p class="muted">Worked with example nouns: der Mann, die Frau, das Kind (plural: die Männer).</p>
       ${articleReferenceTable(DEF_ARTICLES, highlightDefiniteArticle)}
-    `),
-    refCard('2) Indefinite articles — ein / eine / einen…', `
+    `,
+  },
+  {
+    icon: 'ein·eine', label: 'Indefinite articles',
+    build: () => `
       <p class="muted">"ein" has no plural (you'd just drop the article). Shown instead: <strong>kein</strong> (not a/no) in the plural column, since it follows the identical pattern and does have one.</p>
       ${articleReferenceTable(INDEF_ARTICLES, highlightIndefiniteArticle)}
-    `),
-    refCard('3) Possessives — mein, dein, sein…', `
+    `,
+  },
+  {
+    icon: 'mein·dein', label: 'Possessives',
+    build: () => `
       <p class="muted">Every possessive declines exactly like "ein" (same endings) — just swap the stem. Worked example below uses <strong>mein</strong> (my):</p>
       <div class="stem-list">${Object.entries(POSSESSIVE_STEMS).map(([stem, meaning]) => `<div class="stem-chip"><strong>${escapeHtml(stem)}</strong> — ${escapeHtml(meaning)}</div>`).join('')}</div>
       ${possessiveReferenceTable('mein')}
       <p class="muted">Irregular: <strong>euer</strong> contracts to <em>eur-</em> before any ending (euer → eure Frau, euren Mann, eurem Kind…), never "euere".</p>
-    `),
-    refCard('4) Adjective endings after an article', `
+    `,
+  },
+  {
+    icon: '-e·-en·-es', label: 'Adjective endings',
+    build: () => `
       <p class="muted">Which set of endings an adjective takes depends on what (if anything) precedes it — a der-word, an ein-word, or nothing. Worked with the regular adjective <strong>klein</strong> (small) so the ending pattern stays clear — a few adjectives (hoch, gut…) also shift their stem; check the word's own detail page for those.</p>
       ${adjectiveEndingsReferenceTables()}
-    `),
-    refCard('5) Prepositions — which case, and when', `
+    `,
+  },
+  {
+    icon: 'mit·für·in', label: 'Prepositions & cases',
+    build: () => `
       <p class="muted">Some prepositions always take one case; the "two-way" set switches between dative (location — <em>wo?</em>) and accusative (direction — <em>wohin?</em>), e.g. "mit dem Auto" (always dative) vs. "in dem Haus" / "in das Haus" (two-way).</p>
       ${fixedCasePrepositionTable(FIXED_CASE_PREPOSITIONS.akk)}
       ${fixedCasePrepositionTable(FIXED_CASE_PREPOSITIONS.dat)}
       ${fixedCasePrepositionTable(FIXED_CASE_PREPOSITIONS.gen)}
       ${twoWayPrepositionTable()}
-    `),
-  ];
-  document.getElementById('grammarReference').innerHTML = cards.join('');
+    `,
+  },
+];
+
+function openInfoModal(titleHtml, bodyHtml) {
+  document.getElementById('wordModal').innerHTML = `
+    <h2>${titleHtml}</h2>
+    ${bodyHtml}
+    <div class="modal-close-row">
+      <button class="btn primary" id="modalCloseBtn">Close</button>
+    </div>
+  `;
+  document.getElementById('modalBackdrop').hidden = false;
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+}
+
+function renderGrammarReference() {
+  document.getElementById('grammarReference').innerHTML = `
+    <div class="ref-card">
+      <h3>Case color key</h3>
+      <p class="muted">Every highlighted ending in the tables below is colored by which case it marks, consistently everywhere. Tap a tile to open its table.</p>
+      ${CASE_LEGEND_HTML}
+    </div>
+    <div class="tile-grid" id="grammarTileGrid"></div>
+  `;
+  document.getElementById('grammarTileGrid').innerHTML = GRAMMAR_TILES.map((t, i) => `
+    <button type="button" class="grammar-tile" data-tile="${i}">
+      <span class="tile-icon">${escapeHtml(t.icon)}</span>
+      <span class="tile-label">${escapeHtml(t.label)}</span>
+    </button>
+  `).join('');
+  document.querySelectorAll('.grammar-tile').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tile = GRAMMAR_TILES[Number(btn.dataset.tile)];
+      openInfoModal(escapeHtml(tile.label), tile.build());
+    });
+  });
 }
 
 /* ---- Try your own word ---- */
