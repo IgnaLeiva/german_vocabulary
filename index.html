@@ -92,39 +92,43 @@
 
       <details class="ref-card" open>
         <summary>🔤 Try it with your own word</summary>
-        <p class="muted">Pick a noun from your list (or type a new one) and optionally an adjective, to see the exact declension tables for that word.</p>
-        <div class="custom-word-form">
-          <div class="form-row">
-            <label>Noun
-              <input type="text" id="customNounInput" list="customNounList" placeholder="e.g. Baum, Katze…" autocomplete="off">
-            </label>
-            <datalist id="customNounList"></datalist>
-            <label>Gender (if a new noun)
-              <select id="customNounGender">
-                <option value="der">der</option>
-                <option value="die">die</option>
-                <option value="das">das</option>
-              </select>
-            </label>
-            <label>Plural (if new, optional)
-              <input type="text" id="customNounPlural" placeholder="e.g. Bäume">
-            </label>
+        <div class="ref-card-body">
+          <p class="muted">Pick a noun from your list (or type a new one) and optionally an adjective, to see the exact declension tables for that word.</p>
+          <div class="custom-word-form">
+            <div class="form-row">
+              <label>Noun
+                <input type="text" id="customNounInput" list="customNounList" placeholder="e.g. Baum, Katze…" autocomplete="off">
+              </label>
+              <datalist id="customNounList"></datalist>
+              <label>Gender (if a new noun)
+                <select id="customNounGender">
+                  <option value="der">der</option>
+                  <option value="die">die</option>
+                  <option value="das">das</option>
+                </select>
+              </label>
+              <label>Plural (if new, optional)
+                <input type="text" id="customNounPlural" placeholder="e.g. Bäume">
+              </label>
+            </div>
+            <div class="form-row">
+              <label>Adjective (optional)
+                <input type="text" id="customAdjInput" list="customAdjList" placeholder="e.g. groß, schön…" autocomplete="off">
+              </label>
+              <datalist id="customAdjList"></datalist>
+            </div>
+            <button type="button" class="btn primary" id="generateCustomBtn">Generate tables</button>
           </div>
-          <div class="form-row">
-            <label>Adjective (optional)
-              <input type="text" id="customAdjInput" list="customAdjList" placeholder="e.g. groß, schön…" autocomplete="off">
-            </label>
-            <datalist id="customAdjList"></datalist>
-          </div>
-          <button type="button" class="btn primary" id="generateCustomBtn">Generate tables</button>
+          <div id="customTablesOutput"></div>
         </div>
-        <div id="customTablesOutput"></div>
       </details>
 
       <details class="ref-card" open>
         <summary>🎮 Practice: Article &amp; Ending Drill</summary>
-        <p class="muted">Multiple-choice practice pulling from your own noun/adjective list (falls back to a few common nouns if you don't have enough yet).</p>
-        <div id="grammarQuiz"></div>
+        <div class="ref-card-body">
+          <p class="muted">Multiple-choice practice pulling from your own noun/adjective list (falls back to a few common nouns if you don't have enough yet).</p>
+          <div id="grammarQuiz"></div>
+        </div>
       </details>
     </section>
 
