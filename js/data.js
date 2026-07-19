@@ -123,11 +123,6 @@ const EXAMPLE_NOUNS = {
 };
 const EXAMPLE_ADJECTIVE = 'klein'; // regular, no stem change, keeps the ending pattern unambiguous
 
-function exampleNounWord(noun, genderKey, caseKey) {
-  if (genderKey === 'plural') return caseKey === 'dat' ? noun.pluralDative : noun.plural;
-  return caseKey === 'gen' ? noun.genitiveSingular : noun.german;
-}
-
 function buildNounDeclension(noun, word) {
   const g = noun.gender;
   const genitiveS = noun.genitiveSingular || `${word}s`;

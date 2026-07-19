@@ -509,9 +509,39 @@ function renderGrammarView() {
   }
 }
 
-function articleReferenceTable(articleMap) {
+// Bolds+colors whatever part of `fullWord` comes after `stem`, so learners
+// can see at a glance which letters actually change/get added between cases
+// (e.g. "d" + "en", "mein" + "en", "klein" + "en", "Mann" + "es").
+// Falls back to the plain (escaped) word when fullWord isn't stem+suffix.
+function highlightSuffix(fullWord, stem) {
+  if (!fullWord.startsWith(stem)) return escapeHtml(fullWord);
+  const suffix = fullWord.slice(stem.length);
+  if (!suffix) return escapeHtml(fullWord);
+  return `${escapeHtml(stem)}<span class="ending">${escapeHtml(suffix)}</span>`;
+}
+
+function highlightDefiniteArticle(word) {
+  return highlightSuffix(word, 'd'); // der/die/das/den/dem/des are all "d" + a 2-letter marker
+}
+
+function highlightIndefiniteArticle(word) {
+  return highlightSuffix(word, word.startsWith('kein') ? 'kein' : 'ein');
+}
+
+function highlightPossessive(word, stem) {
+  return highlightSuffix(word, stem === 'euer' ? 'eur' : stem);
+}
+
+function highlightNounWord(noun, genderKey, caseKey) {
+  if (genderKey === 'plural') {
+    return caseKey === 'dat' ? highlightSuffix(noun.pluralDative, noun.plural) : escapeHtml(noun.plural);
+  }
+  return caseKey === 'gen' ? highlightSuffix(noun.genitiveSingular, noun.german) : escapeHtml(noun.german);
+}
+
+function articleReferenceTable(articleMap, highlightArticleFn) {
   const { der, die, das } = EXAMPLE_NOUNS;
-  const phrase = (genderKey, c, noun) => `${articleMap[genderKey][c]} ${exampleNounWord(noun, genderKey, c)}`;
+  const phrase = (genderKey, c, noun) => `${highlightArticleFn(articleMap[genderKey][c])} ${highlightNounWord(noun, genderKey, c)}`;
   return `
     <table>
       <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
@@ -529,7 +559,7 @@ function articleReferenceTable(articleMap) {
 function possessiveReferenceTable(stem) {
   const decl = possessiveDeclension(stem);
   const { der, die, das } = EXAMPLE_NOUNS;
-  const phrase = (colKey, genderKey, c, noun) => `${decl[c][colKey]} ${exampleNounWord(noun, genderKey, c)}`;
+  const phrase = (colKey, genderKey, c, noun) => `${highlightPossessive(decl[c][colKey], stem)} ${highlightNounWord(noun, genderKey, c)}`;
   return `
     <table>
       <tr><th>Case</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr>
@@ -549,14 +579,14 @@ function adjectiveEndingsReferenceTables() {
   return Object.keys(ADJ_ENDINGS).map((k) => {
     const t = ADJ_ENDINGS[k];
     const articleWord = (genderKey, c) => {
-      if (k === 'weak') return DEF_ARTICLES[genderKey][c];
-      if (k === 'mixed') return INDEF_ARTICLES[genderKey][c];
+      if (k === 'weak') return highlightDefiniteArticle(DEF_ARTICLES[genderKey][c]);
+      if (k === 'mixed') return highlightIndefiniteArticle(INDEF_ARTICLES[genderKey][c]);
       return '';
     };
     const phrase = (genderKey, colKey, c, noun) => {
       const art = articleWord(genderKey, c);
-      const adj = `${EXAMPLE_ADJECTIVE}${t[c][colKey]}`;
-      const word = exampleNounWord(noun, genderKey, c);
+      const adj = highlightSuffix(`${EXAMPLE_ADJECTIVE}${t[c][colKey]}`, EXAMPLE_ADJECTIVE);
+      const word = highlightNounWord(noun, genderKey, c);
       return `${art ? `${art} ` : ''}${adj} ${word}`;
     };
     return `
@@ -580,12 +610,12 @@ function renderGrammarReference() {
     <div class="ref-card">
       <h3>1) Definite articles — der / die / das</h3>
       <p class="muted">Worked with example nouns: der Mann, die Frau, das Kind (plural: die Männer).</p>
-      ${articleReferenceTable(DEF_ARTICLES)}
+      ${articleReferenceTable(DEF_ARTICLES, highlightDefiniteArticle)}
     </div>
     <div class="ref-card">
       <h3>2) Indefinite articles — ein / eine / einen…</h3>
       <p class="muted">"ein" has no plural (you'd just drop the article). Shown instead: <strong>kein</strong> (not a/no) in the plural column, since it follows the identical pattern and does have one.</p>
-      ${articleReferenceTable(INDEF_ARTICLES)}
+      ${articleReferenceTable(INDEF_ARTICLES, highlightIndefiniteArticle)}
     </div>
     <div class="ref-card">
       <h3>3) Possessives — mein, dein, sein…</h3>
@@ -702,13 +732,13 @@ function nextQuizQuestion() {
 
 function renderQuizQuestion() {
   const q = quizCurrent;
-  const displayOpt = (opt) => (q.isEnding ? `${q.adjStem}${opt}` : opt);
+  const displayOpt = (opt) => (q.isEnding ? highlightSuffix(`${q.adjStem}${opt}`, q.adjStem) : escapeHtml(opt));
   document.getElementById('grammarQuiz').innerHTML = `
     <div class="quiz-card">
       <div class="quiz-question">${escapeHtml(q.prompt)}</div>
       <div class="quiz-context">${escapeHtml(q.context)}</div>
       <div class="quiz-options">
-        ${q.options.map((opt) => `<button type="button" class="quiz-option" data-opt="${escapeHtml(opt)}">${escapeHtml(displayOpt(opt))}</button>`).join('')}
+        ${q.options.map((opt) => `<button type="button" class="quiz-option" data-opt="${escapeHtml(opt)}">${displayOpt(opt)}</button>`).join('')}
       </div>
       <div class="quiz-feedback" id="quizFeedback"></div>
       <div class="quiz-scoreboard" id="quizScoreboard"><span>Score: <strong>${quizScore.correct}/${quizScore.total}</strong></span></div>
