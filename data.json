@@ -532,6 +532,27 @@
       "reps": 0,
       "due": "2026-07-19T11:12:15.150Z",
       "lastResult": null
+    },
+    "_dir": "de-en"
+  },
+  {
+    "type": "adjective",
+    "german": "verschieden",
+    "english": "different / various",
+    "notes": "Can mean 'different from each other' (sie sind verschieden) or 'various/several' when used attributively in the plural.",
+    "adjective": {
+      "comparative": "verschiedener",
+      "superlative": "verschiedensten",
+      "predicateOnly": false
+    },
+    "id": "w_mrrp6esm7yov7u",
+    "createdAt": "2026-07-19T11:13:29.446Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-19T11:13:29.446Z",
+      "lastResult": null
     }
   }
 ]
