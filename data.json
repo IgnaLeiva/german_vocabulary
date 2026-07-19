@@ -476,5 +476,26 @@
       "due": "2026-07-19T09:52:54.771Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Stäbchen",
+    "english": "chopstick; small rod/stick",
+    "notes": "",
+    "noun": {
+      "gender": "das",
+      "plural": "Stäbchen",
+      "genitiveSingular": "Stäbchens",
+      "pluralDative": "Stäbchen"
+    },
+    "id": "w_mrrmgqhvwt1bss",
+    "createdAt": "2026-07-19T09:57:32.323Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-19T09:57:32.323Z",
+      "lastResult": null
+    }
   }
 ]
