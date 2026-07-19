@@ -360,14 +360,62 @@ function escapeHtml(str) {
 /* ================= ADD ================= */
 
 let pendingWordData = null;
+let dupCheckTimer = null;
+
+const GERMAN_ARTICLES = ['der', 'die', 'das', 'den', 'dem', 'des', 'ein', 'eine', 'einen', 'einem', 'einer', 'eines'];
+
+// Users often type/paste words with an article ("der Hund") — strip it so the
+// stored dictionary form matches what's actually looked up/compared.
+function stripLeadingArticle(word) {
+  const trimmed = (word || '').trim();
+  const parts = trimmed.split(/\s+/);
+  if (parts.length > 1 && GERMAN_ARTICLES.includes(parts[0].toLowerCase())) {
+    return parts.slice(1).join(' ');
+  }
+  return trimmed;
+}
+
+// German nouns are always capitalized; verbs/adjectives are always lowercase.
+// Applied automatically so users don't have to think about it.
+function applyGermanCasing(word, type) {
+  const stripped = stripLeadingArticle(word);
+  if (!stripped) return stripped;
+  const lower = stripped.toLowerCase();
+  return type === 'noun' ? lower.charAt(0).toUpperCase() + lower.slice(1) : lower;
+}
+
+function findExistingWord(german, excludeId) {
+  const target = stripLeadingArticle(german).toLowerCase();
+  if (!target) return null;
+  return WORDS.find((w) => w.id !== excludeId && w.german.trim().toLowerCase() === target) || null;
+}
+
+function renderDupWarning(rawWord, excludeId) {
+  const el = document.getElementById('dupWarning');
+  const existing = findExistingWord(rawWord, excludeId);
+  if (!existing) { el.hidden = true; el.innerHTML = ''; return; }
+  el.hidden = false;
+  el.innerHTML = `⚠️ "${escapeHtml(existing.german)}" (${escapeHtml(existing.type)}) is already in your list.
+    <button type="button" class="btn ghost" id="dupViewBtn">View it</button>`;
+  el.querySelector('#dupViewBtn').addEventListener('click', () => {
+    switchView('words');
+    openWordModal(existing.id);
+  });
+}
 
 function wireAdd() {
   document.getElementById('aiLookupBtn').addEventListener('click', doAiLookup);
   document.getElementById('manualEntryBtn').addEventListener('click', () => {
     const word = document.getElementById('addWordInput').value.trim();
-    const typeHint = document.getElementById('addTypeHint').value;
-    pendingWordData = blankWordData(word, typeHint === 'auto' ? 'verb' : typeHint);
+    const typeHint = document.getElementById('addTypeHint').value === 'auto' ? 'verb' : document.getElementById('addTypeHint').value;
+    pendingWordData = blankWordData(applyGermanCasing(word, typeHint), typeHint);
     renderWordForm(pendingWordData);
+    renderDupWarning(pendingWordData.german);
+  });
+  document.getElementById('addWordInput').addEventListener('input', (e) => {
+    clearTimeout(dupCheckTimer);
+    const val = e.target.value;
+    dupCheckTimer = setTimeout(() => renderDupWarning(val), 250);
   });
 }
 
@@ -397,6 +445,7 @@ async function doAiLookup() {
     statusEl.textContent = 'Got it — review and save below.';
     statusEl.className = 'ai-status ok';
     renderWordForm(pendingWordData);
+    renderDupWarning(pendingWordData.german);
   } catch (e) {
     console.error(e);
     statusEl.textContent = `Lookup failed: ${e.message}`;
@@ -408,7 +457,7 @@ async function doAiLookup() {
 
 function normalizeAiData(data) {
   const type = ['verb', 'noun', 'adjective'].includes(data.type) ? data.type : 'verb';
-  const merged = blankWordData(data.german || '', type);
+  const merged = blankWordData(applyGermanCasing(data.german || '', type), type);
   merged.english = data.english || '';
   merged.notes = data.notes || '';
   if (type === 'verb' && data.verb) Object.assign(merged.verb, data.verb);
@@ -453,10 +502,22 @@ function renderWordForm(data) {
   `;
 
   form.querySelector('[data-field="type"]').addEventListener('change', (e) => {
-    pendingWordData = blankWordData(readField(form, 'german') || data.german, e.target.value);
+    const newType = e.target.value;
+    const carriedGerman = applyGermanCasing(readField(form, 'german') || data.german, newType);
+    pendingWordData = blankWordData(carriedGerman, newType);
     renderWordForm(pendingWordData);
+    renderDupWarning(carriedGerman);
   });
-  form.querySelector('#cancelFormBtn').addEventListener('click', () => { form.hidden = true; form.innerHTML = ''; pendingWordData = null; });
+  const germanInput = form.querySelector('[data-field="german"]');
+  germanInput.addEventListener('blur', () => {
+    const type = readField(form, 'type');
+    germanInput.value = applyGermanCasing(germanInput.value, type);
+    renderDupWarning(germanInput.value);
+  });
+  form.querySelector('#cancelFormBtn').addEventListener('click', () => {
+    form.hidden = true; form.innerHTML = ''; pendingWordData = null;
+    document.getElementById('dupWarning').hidden = true;
+  });
   form.onsubmit = (e) => { e.preventDefault(); saveWordForm(form); };
 }
 
@@ -541,7 +602,8 @@ function adjectiveFormFields(a) {
 
 function saveWordForm(form) {
   const type = readField(form, 'type');
-  const word = { type, german: readField(form, 'german').trim(), english: readField(form, 'english').trim(), notes: readField(form, 'notes').trim() };
+  const german = applyGermanCasing(readField(form, 'german'), type);
+  const word = { type, german, english: readField(form, 'english').trim(), notes: readField(form, 'notes').trim() };
 
   if (type === 'verb') {
     const persons = (prefix) => PERSONS.reduce((acc, p) => {
@@ -577,6 +639,11 @@ function saveWordForm(form) {
 
   if (!word.german || !word.english) { alert('German and English are required.'); return; }
 
+  const existing = findExistingWord(word.german);
+  if (existing && !confirm(`"${existing.german}" (${existing.type}) is already in your list. Save "${word.german}" as a duplicate anyway?`)) {
+    return;
+  }
+
   word.id = uid();
   word.createdAt = new Date().toISOString();
   word.srs = freshSrs();
@@ -589,6 +656,7 @@ function saveWordForm(form) {
   form.innerHTML = '';
   pendingWordData = null;
   document.getElementById('addWordInput').value = '';
+  document.getElementById('dupWarning').hidden = true;
   document.getElementById('aiStatus').textContent = `Saved "${word.german}" ✓`;
   document.getElementById('aiStatus').className = 'ai-status ok';
 }
