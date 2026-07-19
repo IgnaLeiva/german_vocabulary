@@ -237,8 +237,8 @@ function renderWordList() {
   }
 
   list.innerHTML = filtered.map((w) => `
-    <div class="word-row" data-id="${w.id}">
-      <span class="word-badge badge-${w.type}">${w.type}</span>
+    <div class="word-row" data-id="${escapeHtml(w.id)}">
+      <span class="word-badge ${TYPE_BADGE_CLASS[w.type] || 'badge-verb'}">${escapeHtml(w.type)}</span>
       <span class="german">${escapeHtml(w.german)}</span>
       <span class="english">${escapeHtml(w.english)}</span>
       <span class="due-pill">${isDue(w.srs) ? 'due now' : `due ${new Date(w.srs.due).toLocaleDateString()}`}</span>
@@ -249,6 +249,8 @@ function renderWordList() {
     row.addEventListener('click', () => openWordModal(row.dataset.id));
   });
 }
+
+const TYPE_BADGE_CLASS = { verb: 'badge-verb', noun: 'badge-noun', adjective: 'badge-adjective' };
 
 function openWordModal(id) {
   const w = WORDS.find((x) => x.id === id);
@@ -295,7 +297,7 @@ function buildWordDetailHtml(w) {
 function verbDetailHtml(w) {
   const v = w.verb;
   const tenses = buildVerbTenses(v, w.german);
-  const traits = `${v.regular ? 'Regular (weak)' : 'Irregular (strong/mixed)'}${v.separable ? ' · Separable (trennbar)' + (v.prefix ? `, prefix "${v.prefix}"` : '') : ''} · Auxiliary: ${v.auxiliary} · Partizip II: ${v.partizipII}`;
+  const traits = `${v.regular ? 'Regular (weak)' : 'Irregular (strong/mixed)'}${v.separable ? ' · Separable (trennbar)' + (v.prefix ? `, prefix "${escapeHtml(v.prefix)}"` : '') : ''} · Auxiliary: ${escapeHtml(v.auxiliary)} · Partizip II: ${escapeHtml(v.partizipII)}`;
 
   const tenseOrder = ['praesens', 'praeteritum', 'perfekt', 'plusquamperfekt', 'futur1', 'futur2', 'konjunktiv2', 'konjunktiv2Perfekt'];
   const tables = tenseOrder.map((t) => `
@@ -312,7 +314,7 @@ function verbDetailHtml(w) {
 function nounDetailHtml(w) {
   const n = w.noun;
   const decl = buildNounDeclension(n, w.german);
-  const genderClass = { der: 'gender-der', die: 'gender-die', das: 'gender-das' }[n.gender];
+  const genderClass = { der: 'gender-der', die: 'gender-die', das: 'gender-das' }[n.gender] || 'gender-der';
   const rows = (obj, label) => `
     <div class="section-title">${label}</div>
     <table>
@@ -321,7 +323,7 @@ function nounDetailHtml(w) {
     </table>
   `;
   return `
-    <p><span class="gender-tag ${genderClass}">${n.gender}</span> ${escapeHtml(w.german)} &nbsp; plural: <strong>${escapeHtml(n.plural)}</strong></p>
+    <p><span class="gender-tag ${genderClass}">${escapeHtml(n.gender)}</span> ${escapeHtml(w.german)} &nbsp; plural: <strong>${escapeHtml(n.plural)}</strong></p>
     ${rows(decl.singular, 'Singular declension')}
     ${rows(decl.plural, 'Plural declension')}
   `;
