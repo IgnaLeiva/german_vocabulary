@@ -418,10 +418,10 @@
     "createdAt": "2026-07-19T09:26:26.420Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-19T09:26:26.420Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-20T10:09:07.498Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -444,7 +444,8 @@
       "reps": 0,
       "due": "2026-07-19T09:27:30.592Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "noun",
