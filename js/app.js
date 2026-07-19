@@ -8,10 +8,16 @@ let currentCard = null;
 let cardShowsAnswer = false;
 let pushTimer = null;
 
+// This app's own public repo. Reading a public repo's contents needs no
+// token, so any brand-new device (e.g. a phone) can auto-pull the latest
+// words with zero setup. A token is only required to push changes — add one
+// in Settings only on devices you'll actually add/edit words from.
+const DEFAULT_GH = { ghOwner: 'IgnaLeiva', ghRepo: 'german_vocabulary', ghBranch: 'main', ghPath: 'data.json' };
+
 /* ---------------- Init ---------------- */
 
 async function init() {
-  SETTINGS = loadSettings();
+  SETTINGS = { ...DEFAULT_GH, ...loadSettings() };
   hydrateSettingsForm();
 
   const local = loadLocalWords();
@@ -24,7 +30,7 @@ async function init() {
   wireAdd();
   wireSettings();
 
-  if (githubConfigured(SETTINGS)) {
+  if (githubReadConfigured(SETTINGS)) {
     setSyncStatus('pending');
     try {
       const { words, sha } = await githubGetWords(SETTINGS);
@@ -32,8 +38,8 @@ async function init() {
       if (words) {
         WORDS = words;
         saveLocalWords(WORDS);
-      } else if (WORDS.length) {
-        // repo file doesn't exist yet — seed it with what we have locally
+      } else if (WORDS.length && githubConfigured(SETTINGS)) {
+        // repo file doesn't exist yet — seed it with what we have locally (needs a token)
         ghSha = await githubPutWords(SETTINGS, WORDS, null);
       }
       setSyncStatus('ok');
@@ -716,7 +722,7 @@ function hydrateSettingsForm() {
   document.getElementById('ghRepo').value = SETTINGS.ghRepo || '';
   document.getElementById('ghBranch').value = SETTINGS.ghBranch || 'main';
   document.getElementById('ghPath').value = SETTINGS.ghPath || 'data.json';
-  setSyncStatus(githubConfigured(SETTINGS) ? 'pending' : 'none');
+  setSyncStatus(githubReadConfigured(SETTINGS) ? 'pending' : 'none');
 }
 
 function wireSettings() {
@@ -735,13 +741,13 @@ function wireSettings() {
     const msg = document.getElementById('settingsSavedMsg');
     msg.textContent = 'Saved ✓';
     msg.className = 'ai-status ok';
-    setSyncStatus(githubConfigured(SETTINGS) ? 'pending' : 'none');
+    setSyncStatus(githubReadConfigured(SETTINGS) ? 'pending' : 'none');
     setTimeout(() => { msg.textContent = ''; }, 2500);
   });
 
   document.getElementById('ghPullBtn').addEventListener('click', async () => {
     const status = document.getElementById('ghStatus');
-    if (!githubConfigured(SETTINGS)) { status.textContent = 'Fill in GitHub fields and save settings first.'; status.className = 'ai-status err'; return; }
+    if (!githubReadConfigured(SETTINGS)) { status.textContent = 'Fill in owner + repo and save settings first.'; status.className = 'ai-status err'; return; }
     status.textContent = 'Pulling…'; status.className = 'ai-status';
     try {
       const { words, sha } = await githubGetWords(SETTINGS);

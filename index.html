@@ -144,8 +144,8 @@
 
         <div class="settings-card">
           <h2>GitHub sync</h2>
-          <p class="muted">Reads/writes a <code>data.json</code> file in your repo so this page shows the same words &amp; progress on every device. Use a fine-grained token scoped to just this repo (Contents: read &amp; write).</p>
-          <label>Personal access token
+          <p class="muted">Owner/repo below already point at this app's own repo, so <strong>any device automatically reads the latest words with no setup</strong> (public repos need no token to read). Add a personal access token only on devices you want to <strong>add/edit words from</strong> — fine-grained, scoped to just this repo, Contents: read &amp; write.</p>
+          <label>Personal access token <span class="muted">(only needed to push changes from this device)</span>
             <input type="password" id="ghToken" placeholder="github_pat_...">
           </label>
           <label>Owner / username

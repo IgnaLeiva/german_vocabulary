@@ -41,16 +41,24 @@ function b64DecodeUnicode(str) {
   );
 }
 
+// Pushing requires a token (write access). Reading a *public* repo's
+// contents needs no auth at all, so pulling only needs owner+repo — this is
+// what lets a brand-new device (e.g. a phone) see the latest words with zero
+// setup, as long as it defaults to the same public repo.
 function githubConfigured(settings) {
   return !!(settings.ghToken && settings.ghOwner && settings.ghRepo);
+}
+
+function githubReadConfigured(settings) {
+  return !!(settings.ghOwner && settings.ghRepo);
 }
 
 async function githubGetWords(settings) {
   const { ghOwner, ghRepo, ghBranch = 'main', ghPath = 'data.json', ghToken } = settings;
   const url = `https://api.github.com/repos/${ghOwner}/${ghRepo}/contents/${ghPath}?ref=${encodeURIComponent(ghBranch)}`;
-  const res = await fetch(url, {
-    headers: { Authorization: `Bearer ${ghToken}`, Accept: 'application/vnd.github+json' },
-  });
+  const headers = { Accept: 'application/vnd.github+json' };
+  if (ghToken) headers.Authorization = `Bearer ${ghToken}`;
+  const res = await fetch(url, { headers });
   if (res.status === 404) return { words: null, sha: null };
   if (!res.ok) throw new Error(`GitHub read failed: ${res.status} ${await res.text()}`);
   const json = await res.json();
