@@ -455,5 +455,26 @@
       "due": "2026-07-19T09:43:45.532Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Besteck",
+    "english": "cutlery",
+    "notes": "Collective noun referring to the set of eating utensils (knife, fork, spoon); rarely used in plural.",
+    "noun": {
+      "gender": "das",
+      "plural": "Bestecke",
+      "genitiveSingular": "Bestecks",
+      "pluralDative": "Bestecken"
+    },
+    "id": "w_mrrmasc38s109h",
+    "createdAt": "2026-07-19T09:52:54.771Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-19T09:52:54.771Z",
+      "lastResult": null
+    }
   }
 ]
