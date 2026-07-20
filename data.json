@@ -640,5 +640,25 @@
       "lastResult": 2
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "adjective",
+    "german": "bekannt",
+    "english": "known / famous / familiar",
+    "notes": "Can mean 'well-known' (eine bekannte Marke) or 'familiar to someone' (mir bekannt); derived from the past participle of 'bekennen/bekanntmachen'.",
+    "adjective": {
+      "comparative": "bekannter",
+      "superlative": "bekanntesten",
+      "predicateOnly": false
+    },
+    "id": "w_mrtcij8bz80fbj",
+    "createdAt": "2026-07-20T14:54:32.411Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T14:54:32.411Z",
+      "lastResult": null
+    }
   }
 ]
