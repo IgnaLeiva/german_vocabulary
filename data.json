@@ -659,6 +659,27 @@
       "reps": 0,
       "due": "2026-07-20T14:54:32.411Z",
       "lastResult": null
+    },
+    "_dir": "de-en"
+  },
+  {
+    "type": "adjective",
+    "german": "jeder",
+    "english": "every / each",
+    "notes": "'jedem' is the dative singular masculine/neuter form of the indefinite pronoun/determiner 'jeder'; listed here in its base dictionary form.",
+    "adjective": {
+      "comparative": "—",
+      "superlative": "—",
+      "predicateOnly": false
+    },
+    "id": "w_mrtcj7m41fa047",
+    "createdAt": "2026-07-20T14:55:04.012Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T14:55:04.012Z",
+      "lastResult": null
     }
   }
 ]
