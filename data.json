@@ -616,6 +616,28 @@
       "reps": 0,
       "due": "2026-07-20T14:52:15.307Z",
       "lastResult": null
+    },
+    "_dir": "de-en"
+  },
+  {
+    "type": "noun",
+    "german": "Süßigkeit",
+    "english": "sweet / candy",
+    "notes": "Almost exclusively used in the plural (Süßigkeiten) to mean sweets or candy in general.",
+    "noun": {
+      "gender": "die",
+      "plural": "Süßigkeiten",
+      "genitiveSingular": "Süßigkeit",
+      "pluralDative": "Süßigkeiten"
+    },
+    "id": "w_mrtcgibqeqpi23",
+    "createdAt": "2026-07-20T14:52:57.926Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T14:52:57.926Z",
+      "lastResult": null
     }
   }
 ]
