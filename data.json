@@ -830,10 +830,10 @@
     "createdAt": "2026-07-20T15:05:22.105Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T15:05:22.105Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T17:00:13.968Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -855,7 +855,8 @@
       "reps": 0,
       "due": "2026-07-20T15:06:34.671Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "noun",
