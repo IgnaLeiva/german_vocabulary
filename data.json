@@ -879,5 +879,25 @@
       "lastResult": 2
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "adjective",
+    "german": "seitdem",
+    "english": "since then / ever since",
+    "notes": "Functions as a temporal adverb or subordinating conjunction; as a conjunction it introduces a subordinate clause with verb-final word order.",
+    "adjective": {
+      "comparative": "",
+      "superlative": "",
+      "predicateOnly": true
+    },
+    "id": "w_mrtj6c3dk4az0d",
+    "createdAt": "2026-07-20T18:01:00.601Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T18:01:00.601Z",
+      "lastResult": null
+    }
   }
 ]
