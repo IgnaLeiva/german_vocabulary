@@ -1084,5 +1084,26 @@
       "due": "2026-07-20T18:04:34.609Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Vorstellungskraft",
+    "english": "imagination / power of imagination",
+    "notes": "A compound noun combining 'Vorstellung' (idea/imagination) and 'Kraft' (power/force); always used in the singular.",
+    "noun": {
+      "gender": "die",
+      "plural": "—",
+      "genitiveSingular": "Vorstellungskraft",
+      "pluralDative": "—"
+    },
+    "id": "w_mrtjbvdm98ep3p",
+    "createdAt": "2026-07-20T18:05:18.874Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T18:05:18.874Z",
+      "lastResult": null
+    }
   }
 ]
