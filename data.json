@@ -549,10 +549,10 @@
     "createdAt": "2026-07-19T11:13:29.446Z",
     "srs": {
       "ef": 2.35,
-      "interval": 1,
-      "reps": 1,
-      "due": "2026-07-20T11:17:58.886Z",
-      "lastResult": 1
+      "interval": 6,
+      "reps": 2,
+      "due": "2026-07-26T14:48:57.491Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   }
