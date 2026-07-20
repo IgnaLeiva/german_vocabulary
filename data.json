@@ -851,10 +851,10 @@
     "createdAt": "2026-07-20T15:06:34.671Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T15:06:34.671Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T17:00:16.510Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -877,6 +877,7 @@
       "reps": 0,
       "due": "2026-07-20T16:59:30.855Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   }
 ]
