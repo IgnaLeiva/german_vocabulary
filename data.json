@@ -576,5 +576,25 @@
       "lastResult": 1
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "adjective",
+    "german": "beliebt",
+    "english": "popular / well-liked",
+    "notes": "Derived from the past participle of 'belieben'; used attributively and predicatively.",
+    "adjective": {
+      "comparative": "beliebter",
+      "superlative": "beliebtesten",
+      "predicateOnly": false
+    },
+    "id": "w_mrtcee6l186yvl",
+    "createdAt": "2026-07-20T14:51:19.245Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T14:51:19.245Z",
+      "lastResult": null
+    }
   }
 ]
