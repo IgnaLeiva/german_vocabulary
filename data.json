@@ -506,9 +506,9 @@
     "createdAt": "2026-07-19T09:57:32.323Z",
     "srs": {
       "ef": 2.5,
-      "interval": 1,
-      "reps": 1,
-      "due": "2026-07-20T10:09:53.715Z",
+      "interval": 6,
+      "reps": 2,
+      "due": "2026-07-26T14:48:22.172Z",
       "lastResult": 2
     },
     "_dir": "de-en"
