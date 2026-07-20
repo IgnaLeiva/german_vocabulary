@@ -1038,5 +1038,51 @@
       "due": "2026-07-20T18:03:25.155Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "vorstellen",
+    "english": "to introduce / to imagine / to present",
+    "notes": "Used reflexively as 'sich vorstellen' meaning either 'to introduce oneself' or 'to imagine something'.",
+    "verb": {
+      "regular": true,
+      "separable": true,
+      "prefix": "vor",
+      "auxiliary": "haben",
+      "partizipII": "vorgestellt",
+      "praesens": {
+        "ich": "stelle vor",
+        "du": "stellst vor",
+        "er": "stellt vor",
+        "wir": "stellen vor",
+        "ihr": "stellt vor",
+        "sie": "stellen vor"
+      },
+      "praeteritum": {
+        "ich": "stellte vor",
+        "du": "stelltest vor",
+        "er": "stellte vor",
+        "wir": "stellten vor",
+        "ihr": "stelltet vor",
+        "sie": "stellten vor"
+      },
+      "konjunktiv2": {
+        "ich": "stellte vor",
+        "du": "stelltest vor",
+        "er": "stellte vor",
+        "wir": "stellten vor",
+        "ihr": "stelltet vor",
+        "sie": "stellten vor"
+      }
+    },
+    "id": "w_mrtjax81rfzlyf",
+    "createdAt": "2026-07-20T18:04:34.609Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T18:04:34.609Z",
+      "lastResult": null
+    }
   }
 ]
