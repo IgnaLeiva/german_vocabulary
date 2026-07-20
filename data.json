@@ -873,10 +873,10 @@
     "createdAt": "2026-07-20T16:59:30.855Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T16:59:30.855Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T18:00:17.371Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   }
