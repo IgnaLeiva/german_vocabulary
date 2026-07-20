@@ -941,10 +941,10 @@
     "createdAt": "2026-07-20T18:01:52.761Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T18:01:52.761Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T18:06:55.971Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -992,7 +992,8 @@
       "reps": 0,
       "due": "2026-07-20T18:02:29.619Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "verb",
