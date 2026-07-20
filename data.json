@@ -771,5 +771,26 @@
       "due": "2026-07-20T15:00:26.933Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Backware",
+    "english": "baked good",
+    "notes": "Almost exclusively used in the plural (Backwaren) to refer collectively to baked goods such as bread, rolls, and pastries.",
+    "noun": {
+      "gender": "die",
+      "plural": "Backwaren",
+      "genitiveSingular": "Backware",
+      "pluralDative": "Backwaren"
+    },
+    "id": "w_mrtcqu2b0eekka",
+    "createdAt": "2026-07-20T15:00:59.699Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T15:00:59.699Z",
+      "lastResult": null
+    }
   }
 ]
