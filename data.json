@@ -809,10 +809,10 @@
     "createdAt": "2026-07-20T15:02:00.452Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T15:02:00.452Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T17:00:08.618Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -834,7 +834,8 @@
       "reps": 0,
       "due": "2026-07-20T15:05:22.105Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "adjective",
