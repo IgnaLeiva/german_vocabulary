@@ -555,5 +555,25 @@
       "lastResult": 2
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "adjective",
+    "german": "häufig",
+    "english": "frequent / common",
+    "notes": "",
+    "adjective": {
+      "comparative": "häufiger",
+      "superlative": "häufigsten",
+      "predicateOnly": false
+    },
+    "id": "w_mrtcd1m2ccufj7",
+    "createdAt": "2026-07-20T14:50:16.298Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T14:50:16.298Z",
+      "lastResult": null
+    }
   }
 ]
