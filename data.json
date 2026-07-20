@@ -528,9 +528,9 @@
     "createdAt": "2026-07-19T11:12:15.150Z",
     "srs": {
       "ef": 2.5,
-      "interval": 1,
-      "reps": 1,
-      "due": "2026-07-20T11:17:37.972Z",
+      "interval": 6,
+      "reps": 2,
+      "due": "2026-07-26T14:48:37.828Z",
       "lastResult": 2
     },
     "_dir": "de-en"
