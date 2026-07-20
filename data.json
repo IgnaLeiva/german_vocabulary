@@ -1198,10 +1198,10 @@
     "createdAt": "2026-07-20T18:06:26.332Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T18:06:26.332Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T18:07:43.169Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   }
