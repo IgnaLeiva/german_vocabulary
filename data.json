@@ -681,5 +681,51 @@
       "due": "2026-07-20T14:55:04.012Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "enthalten",
+    "english": "to contain / to include",
+    "notes": "Also used reflexively as 'sich enthalten' meaning 'to abstain'.",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "enthalten",
+      "praesens": {
+        "ich": "enthalte",
+        "du": "enthältst",
+        "er": "enthält",
+        "wir": "enthalten",
+        "ihr": "enthaltet",
+        "sie": "enthalten"
+      },
+      "praeteritum": {
+        "ich": "enthielt",
+        "du": "enthieltest",
+        "er": "enthielt",
+        "wir": "enthielten",
+        "ihr": "enthieltet",
+        "sie": "enthielten"
+      },
+      "konjunktiv2": {
+        "ich": "enthielte",
+        "du": "enthieltest",
+        "er": "enthielte",
+        "wir": "enthielten",
+        "ihr": "enthieltet",
+        "sie": "enthielten"
+      }
+    },
+    "id": "w_mrtck0tfq94ru2",
+    "createdAt": "2026-07-20T14:55:41.859Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T14:55:41.859Z",
+      "lastResult": null
+    }
   }
 ]
