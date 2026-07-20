@@ -992,5 +992,51 @@
       "due": "2026-07-20T18:02:29.619Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "berühren",
+    "english": "to touch / to move (emotionally)",
+    "notes": "Can mean physical touching or being emotionally moved; 'das hat mich sehr berührt' means 'that moved me deeply'.",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "berührt",
+      "praesens": {
+        "ich": "berühre",
+        "du": "berührst",
+        "er": "berührt",
+        "wir": "berühren",
+        "ihr": "berührt",
+        "sie": "berühren"
+      },
+      "praeteritum": {
+        "ich": "berührte",
+        "du": "berührtest",
+        "er": "berührte",
+        "wir": "berührten",
+        "ihr": "berührtet",
+        "sie": "berührten"
+      },
+      "konjunktiv2": {
+        "ich": "berührte",
+        "du": "berührtest",
+        "er": "berührte",
+        "wir": "berührten",
+        "ihr": "berührtet",
+        "sie": "berührten"
+      }
+    },
+    "id": "w_mrtj9fmrnrpxee",
+    "createdAt": "2026-07-20T18:03:25.155Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T18:03:25.155Z",
+      "lastResult": null
+    }
   }
 ]
