@@ -597,5 +597,25 @@
       "lastResult": 2
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "adjective",
+    "german": "wichtig",
+    "english": "important",
+    "notes": "",
+    "adjective": {
+      "comparative": "wichtiger",
+      "superlative": "wichtigsten",
+      "predicateOnly": false
+    },
+    "id": "w_mrtcflfuas3byo",
+    "createdAt": "2026-07-20T14:52:15.307Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T14:52:15.307Z",
+      "lastResult": null
+    }
   }
 ]
