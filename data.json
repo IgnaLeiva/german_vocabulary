@@ -988,10 +988,10 @@
     "createdAt": "2026-07-20T18:02:29.619Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T18:02:29.619Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T18:07:01.003Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -1039,7 +1039,8 @@
       "reps": 0,
       "due": "2026-07-20T18:03:25.155Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "verb",
