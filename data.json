@@ -898,6 +898,53 @@
       "reps": 0,
       "due": "2026-07-20T18:01:00.601Z",
       "lastResult": null
+    },
+    "_dir": "de-en"
+  },
+  {
+    "type": "verb",
+    "german": "wissen",
+    "english": "to know (a fact)",
+    "notes": "Modal-like irregular verb; distinguishable from 'kennen' (to know a person/place); present tense conjugation resembles modal verbs.",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "gewusst",
+      "praesens": {
+        "ich": "weiß",
+        "du": "weißt",
+        "er": "weiß",
+        "wir": "wissen",
+        "ihr": "wisst",
+        "sie": "wissen"
+      },
+      "praeteritum": {
+        "ich": "wusste",
+        "du": "wusstest",
+        "er": "wusste",
+        "wir": "wussten",
+        "ihr": "wusstet",
+        "sie": "wussten"
+      },
+      "konjunktiv2": {
+        "ich": "wüsste",
+        "du": "wüsstest",
+        "er": "wüsste",
+        "wir": "wüssten",
+        "ihr": "wüsstet",
+        "sie": "wüssten"
+      }
+    },
+    "id": "w_mrtj7gc96ptkkh",
+    "createdAt": "2026-07-20T18:01:52.761Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T18:01:52.761Z",
+      "lastResult": null
     }
   }
 ]
