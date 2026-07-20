@@ -832,5 +832,25 @@
       "due": "2026-07-20T15:05:22.105Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "meist",
+    "english": "most / mostly",
+    "notes": "Used as an adjective meaning 'most' (die meisten Menschen) or as an adverb 'mostly/usually' (meist bleibt er zu Hause).",
+    "adjective": {
+      "comparative": "mehr",
+      "superlative": "meisten",
+      "predicateOnly": false
+    },
+    "id": "w_mrtcy0j3ojjdmu",
+    "createdAt": "2026-07-20T15:06:34.671Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T15:06:34.671Z",
+      "lastResult": null
+    }
   }
 ]
