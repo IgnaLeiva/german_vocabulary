@@ -792,5 +792,25 @@
       "due": "2026-07-20T15:00:59.699Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "vornehmlich",
+    "english": "primarily / chiefly",
+    "notes": "Used as an adverb in practice, meaning 'above all' or 'mainly'; rarely used as an attributive adjective.",
+    "adjective": {
+      "comparative": "",
+      "superlative": "",
+      "predicateOnly": true
+    },
+    "id": "w_mrtcs4xwun554f",
+    "createdAt": "2026-07-20T15:02:00.452Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T15:02:00.452Z",
+      "lastResult": null
+    }
   }
 ]
