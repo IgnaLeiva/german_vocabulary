@@ -729,5 +729,26 @@
       "lastResult": 2
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "noun",
+    "german": "Regel",
+    "english": "rule / regulation",
+    "notes": "Also used in the phrase 'in der Regel' meaning 'as a rule / usually'.",
+    "noun": {
+      "gender": "die",
+      "plural": "Regeln",
+      "genitiveSingular": "Regel",
+      "pluralDative": "Regeln"
+    },
+    "id": "w_mrtcnwcxvk55w1",
+    "createdAt": "2026-07-20T14:58:42.705Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T14:58:42.705Z",
+      "lastResult": null
+    }
   }
 ]
