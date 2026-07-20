@@ -749,6 +749,27 @@
       "reps": 0,
       "due": "2026-07-20T14:58:42.705Z",
       "lastResult": null
+    },
+    "_dir": "de-en"
+  },
+  {
+    "type": "adjective",
+    "german": "sowie",
+    "english": "as well as / and also",
+    "notes": "'Sowie' is a coordinating conjunction connecting nouns or clauses, similar to 'sowohl … als auch' but simpler.",
+    "adjective": {
+      "comparative": "",
+      "superlative": "",
+      "predicateOnly": true
+    },
+    "id": "w_mrtcq4s5uyjg0p",
+    "createdAt": "2026-07-20T15:00:26.933Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T15:00:26.933Z",
+      "lastResult": null
     }
   }
 ]
