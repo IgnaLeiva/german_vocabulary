@@ -374,11 +374,11 @@
     "id": "w_mrrkiyfpt04sty",
     "createdAt": "2026-07-19T09:03:16.693Z",
     "srs": {
-      "ef": 2.5,
-      "interval": 1,
-      "reps": 1,
-      "due": "2026-07-20T10:08:47.161Z",
-      "lastResult": 2
+      "ef": 2.65,
+      "interval": 8,
+      "reps": 2,
+      "due": "2026-07-28T14:47:45.556Z",
+      "lastResult": 3
     },
     "_dir": "de-en"
   },
