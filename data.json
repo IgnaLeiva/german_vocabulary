@@ -634,10 +634,10 @@
     "createdAt": "2026-07-20T14:52:57.926Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T14:52:57.926Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T14:53:47.905Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   }
