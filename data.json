@@ -946,5 +946,51 @@
       "due": "2026-07-20T18:01:52.761Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "kennen",
+    "english": "to know (a person or place)",
+    "notes": "Distinguishable from 'wissen' (to know a fact); 'kenne' is the ich-form of the present tense.",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "gekannt",
+      "praesens": {
+        "ich": "kenne",
+        "du": "kennst",
+        "er": "kennt",
+        "wir": "kennen",
+        "ihr": "kennt",
+        "sie": "kennen"
+      },
+      "praeteritum": {
+        "ich": "kannte",
+        "du": "kanntest",
+        "er": "kannte",
+        "wir": "kannten",
+        "ihr": "kanntet",
+        "sie": "kannten"
+      },
+      "konjunktiv2": {
+        "ich": "kennte",
+        "du": "kenntest",
+        "er": "kennte",
+        "wir": "kennten",
+        "ihr": "kenntet",
+        "sie": "kennten"
+      }
+    },
+    "id": "w_mrtj88s39am0zk",
+    "createdAt": "2026-07-20T18:02:29.619Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T18:02:29.619Z",
+      "lastResult": null
+    }
   }
 ]
