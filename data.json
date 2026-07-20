@@ -1104,10 +1104,10 @@
     "createdAt": "2026-07-20T18:05:18.874Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T18:05:18.874Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T18:07:35.623Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -1155,7 +1155,8 @@
       "reps": 0,
       "due": "2026-07-20T18:05:59.688Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "verb",
