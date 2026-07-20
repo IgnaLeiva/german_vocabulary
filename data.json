@@ -1151,5 +1151,51 @@
       "due": "2026-07-20T18:05:59.688Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "glauben",
+    "english": "to believe / to think",
+    "notes": "'Glauben an' means 'to believe in'; also used informally to express opinion, similar to 'denken'.",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "geglaubt",
+      "praesens": {
+        "ich": "glaube",
+        "du": "glaubst",
+        "er": "glaubt",
+        "wir": "glauben",
+        "ihr": "glaubt",
+        "sie": "glauben"
+      },
+      "praeteritum": {
+        "ich": "glaubte",
+        "du": "glaubtest",
+        "er": "glaubte",
+        "wir": "glaubten",
+        "ihr": "glaubtet",
+        "sie": "glaubten"
+      },
+      "konjunktiv2": {
+        "ich": "glaubte",
+        "du": "glaubtest",
+        "er": "glaubte",
+        "wir": "glaubten",
+        "ihr": "glaubtet",
+        "sie": "glaubten"
+      }
+    },
+    "id": "w_mrtjdbfgemysyg",
+    "createdAt": "2026-07-20T18:06:26.332Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T18:06:26.332Z",
+      "lastResult": null
+    }
   }
 ]
