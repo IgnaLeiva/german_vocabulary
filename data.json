@@ -723,10 +723,10 @@
     "createdAt": "2026-07-20T14:55:41.859Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-20T14:55:41.859Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-21T14:56:18.830Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   }
