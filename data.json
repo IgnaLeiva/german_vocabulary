@@ -812,5 +812,25 @@
       "due": "2026-07-20T15:02:00.452Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "leicht",
+    "english": "light / easy",
+    "notes": "Can mean physically light in weight or easy/simple in difficulty; also used as an adverb meaning 'slightly'.",
+    "adjective": {
+      "comparative": "leichter",
+      "superlative": "leichtesten",
+      "predicateOnly": false
+    },
+    "id": "w_mrtcwgjde4g8sg",
+    "createdAt": "2026-07-20T15:05:22.105Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T15:05:22.105Z",
+      "lastResult": null
+    }
   }
 ]
