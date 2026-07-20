@@ -1105,5 +1105,51 @@
       "due": "2026-07-20T18:05:18.874Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "denken",
+    "english": "to think",
+    "notes": "'Denke' is the ich-form of the present tense; 'denken an' means 'to think of/about something'.",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "gedacht",
+      "praesens": {
+        "ich": "denke",
+        "du": "denkst",
+        "er": "denkt",
+        "wir": "denken",
+        "ihr": "denkt",
+        "sie": "denken"
+      },
+      "praeteritum": {
+        "ich": "dachte",
+        "du": "dachtest",
+        "er": "dachte",
+        "wir": "dachten",
+        "ihr": "dachtet",
+        "sie": "dachten"
+      },
+      "konjunktiv2": {
+        "ich": "dächte",
+        "du": "dächtest",
+        "er": "dächte",
+        "wir": "dächten",
+        "ihr": "dächtet",
+        "sie": "dächten"
+      }
+    },
+    "id": "w_mrtjcqvclq79c2",
+    "createdAt": "2026-07-20T18:05:59.688Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-20T18:05:59.688Z",
+      "lastResult": null
+    }
   }
 ]
