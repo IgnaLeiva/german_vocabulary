@@ -1715,7 +1715,10 @@
       "reps": 0,
       "due": "2026-07-26T14:42:22.102Z",
       "lastResult": null
-    }
+    },
+    "confusables": [
+      "w_ms1ws6yfj6h8ii"
+    ]
   },
   {
     "type": "adjective",
@@ -1735,6 +1738,9 @@
       "reps": 0,
       "due": "2026-07-26T14:44:04.792Z",
       "lastResult": null
-    }
+    },
+    "confusables": [
+      "w_ms1wpzpyq6iin1"
+    ]
   }
 ]
