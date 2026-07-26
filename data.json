@@ -1705,10 +1705,10 @@
     "createdAt": "2026-07-26T14:41:35.775Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-26T14:41:35.775Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-27T14:49:42.549Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -1733,7 +1733,8 @@
     },
     "confusables": [
       "w_ms1ws6yfj6h8ii"
-    ]
+    ],
+    "_dir": "de-en"
   },
   {
     "type": "adjective",
