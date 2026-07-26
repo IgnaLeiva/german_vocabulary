@@ -1795,11 +1795,11 @@
     "id": "w_ms1wuopodhc75u",
     "createdAt": "2026-07-26T14:46:01.116Z",
     "srs": {
-      "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-26T14:46:01.116Z",
-      "lastResult": null
+      "ef": 2.35,
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-27T14:50:04.811Z",
+      "lastResult": 1
     },
     "_dir": "de-en"
   },
@@ -1821,6 +1821,7 @@
       "reps": 0,
       "due": "2026-07-26T14:46:50.358Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   }
 ]
