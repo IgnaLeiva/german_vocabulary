@@ -1473,5 +1473,51 @@
       "due": "2026-07-26T14:34:52.758Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "aufmachen",
+    "english": "to open",
+    "notes": "Colloquial synonym for öffnen.",
+    "verb": {
+      "regular": true,
+      "separable": true,
+      "prefix": "auf",
+      "auxiliary": "haben",
+      "partizipII": "aufgemacht",
+      "praesens": {
+        "ich": "mache auf",
+        "du": "machst auf",
+        "er": "macht auf",
+        "wir": "machen auf",
+        "ihr": "macht auf",
+        "sie": "machen auf"
+      },
+      "praeteritum": {
+        "ich": "machte auf",
+        "du": "machtest auf",
+        "er": "machte auf",
+        "wir": "machten auf",
+        "ihr": "machtet auf",
+        "sie": "machten auf"
+      },
+      "konjunktiv2": {
+        "ich": "machte auf",
+        "du": "machtest auf",
+        "er": "machte auf",
+        "wir": "machten auf",
+        "ihr": "machtet auf",
+        "sie": "machten auf"
+      }
+    },
+    "id": "w_ms1wgzm40szcks",
+    "createdAt": "2026-07-26T14:35:22.060Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:35:22.060Z",
+      "lastResult": null
+    }
   }
 ]
