@@ -1381,5 +1381,51 @@
       "due": "2026-07-26T14:33:39.244Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "anmachen",
+    "english": "to turn on (a light/appliance); to hit on someone",
+    "notes": "Colloquial in the 'hit on someone' or 'provoke' sense.",
+    "verb": {
+      "regular": true,
+      "separable": true,
+      "prefix": "an",
+      "auxiliary": "haben",
+      "partizipII": "angemacht",
+      "praesens": {
+        "ich": "mache an",
+        "du": "machst an",
+        "er": "macht an",
+        "wir": "machen an",
+        "ihr": "macht an",
+        "sie": "machen an"
+      },
+      "praeteritum": {
+        "ich": "machte an",
+        "du": "machtest an",
+        "er": "machte an",
+        "wir": "machten an",
+        "ihr": "machtet an",
+        "sie": "machten an"
+      },
+      "konjunktiv2": {
+        "ich": "machte an",
+        "du": "machtest an",
+        "er": "machte an",
+        "wir": "machten an",
+        "ihr": "machtet an",
+        "sie": "machten an"
+      }
+    },
+    "id": "w_ms1wfqzqw9u1pj",
+    "createdAt": "2026-07-26T14:34:24.230Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:34:24.230Z",
+      "lastResult": null
+    }
   }
 ]
