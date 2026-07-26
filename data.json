@@ -1634,5 +1634,26 @@
       "due": "2026-07-26T14:39:07.460Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Buche",
+    "english": "beech tree",
+    "notes": "",
+    "noun": {
+      "gender": "die",
+      "plural": "Buchen",
+      "genitiveSingular": "Buche",
+      "pluralDative": "Buchen"
+    },
+    "id": "w_ms1wnfu5y00oji",
+    "createdAt": "2026-07-26T14:40:23.021Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:40:23.021Z",
+      "lastResult": null
+    }
   }
 ]
