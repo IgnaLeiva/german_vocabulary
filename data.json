@@ -1245,10 +1245,10 @@
     "createdAt": "2026-07-26T14:29:38.613Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-26T14:29:38.615Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-27T14:47:45.775Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -1271,7 +1271,8 @@
       "reps": 0,
       "due": "2026-07-26T14:31:44.531Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "noun",
