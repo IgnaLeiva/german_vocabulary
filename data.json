@@ -1750,10 +1750,10 @@
     "createdAt": "2026-07-26T14:44:04.791Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-26T14:44:04.792Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-27T14:49:51.763Z",
+      "lastResult": 2
     },
     "confusables": [
       "w_ms1wpzpyq6iin1"
@@ -1779,7 +1779,8 @@
       "reps": 0,
       "due": "2026-07-26T14:44:54.348Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "adjective",
