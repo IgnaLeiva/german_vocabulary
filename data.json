@@ -1655,5 +1655,26 @@
       "due": "2026-07-26T14:40:23.021Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Buch",
+    "english": "book",
+    "notes": "",
+    "noun": {
+      "gender": "das",
+      "plural": "Bücher",
+      "genitiveSingular": "Buches",
+      "pluralDative": "Büchern"
+    },
+    "id": "w_ms1wo0mkqb20xk",
+    "createdAt": "2026-07-26T14:40:49.964Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:40:49.964Z",
+      "lastResult": null
+    }
   }
 ]
