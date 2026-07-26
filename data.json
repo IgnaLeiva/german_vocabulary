@@ -1293,5 +1293,26 @@
       "due": "2026-07-26T14:32:16.831Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Esel",
+    "english": "donkey",
+    "notes": "",
+    "noun": {
+      "gender": "der",
+      "plural": "Esel",
+      "genitiveSingular": "Esels",
+      "pluralDative": "Eseln"
+    },
+    "id": "w_ms1wdf1zp5hbeb",
+    "createdAt": "2026-07-26T14:32:35.447Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:32:35.447Z",
+      "lastResult": null
+    }
   }
 ]
