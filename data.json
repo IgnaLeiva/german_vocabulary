@@ -1816,11 +1816,11 @@
     "id": "w_ms1wvqpig4wjbn",
     "createdAt": "2026-07-26T14:46:50.358Z",
     "srs": {
-      "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-26T14:46:50.358Z",
-      "lastResult": null
+      "ef": 2.35,
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-27T14:50:06.723Z",
+      "lastResult": 1
     },
     "_dir": "de-en"
   }
