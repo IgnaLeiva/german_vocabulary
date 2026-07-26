@@ -1571,5 +1571,26 @@
       "due": "2026-07-26T14:36:23.372Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Ergebnis",
+    "english": "result, outcome",
+    "notes": "",
+    "noun": {
+      "gender": "das",
+      "plural": "Ergebnisse",
+      "genitiveSingular": "Ergebnisses",
+      "pluralDative": "Ergebnissen"
+    },
+    "id": "w_ms1wjnx7399jz4",
+    "createdAt": "2026-07-26T14:37:26.875Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:37:26.875Z",
+      "lastResult": null
+    }
   }
 ]
