@@ -1524,10 +1524,10 @@
     "createdAt": "2026-07-26T14:35:22.060Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-26T14:35:22.060Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-27T14:49:08.170Z",
+      "lastResult": 2
     },
     "confusables": [
       "w_ms1wgd060xnq6t"
@@ -1578,7 +1578,8 @@
       "reps": 0,
       "due": "2026-07-26T14:36:23.372Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "noun",
