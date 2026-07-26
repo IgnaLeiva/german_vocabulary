@@ -1249,6 +1249,28 @@
       "reps": 0,
       "due": "2026-07-26T14:29:38.615Z",
       "lastResult": null
+    },
+    "_dir": "de-en"
+  },
+  {
+    "type": "noun",
+    "german": "Fenster",
+    "english": "window",
+    "notes": "",
+    "noun": {
+      "gender": "das",
+      "plural": "Fenster",
+      "genitiveSingular": "Fensters",
+      "pluralDative": "Fenstern"
+    },
+    "id": "w_ms1wcbrmd89fgx",
+    "createdAt": "2026-07-26T14:31:44.530Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:31:44.531Z",
+      "lastResult": null
     }
   }
 ]
