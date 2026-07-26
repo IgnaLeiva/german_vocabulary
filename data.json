@@ -417,11 +417,11 @@
     "id": "w_mrrlcqr86pkmpn",
     "createdAt": "2026-07-19T09:26:26.420Z",
     "srs": {
-      "ef": 2.5,
-      "interval": 6,
-      "reps": 2,
-      "due": "2026-07-26T14:47:53.557Z",
-      "lastResult": 2
+      "ef": 2.35,
+      "interval": 7,
+      "reps": 3,
+      "due": "2026-08-02T14:50:15.306Z",
+      "lastResult": 1
     },
     "_dir": "de-en"
   },
