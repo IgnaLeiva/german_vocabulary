@@ -1592,5 +1592,26 @@
       "due": "2026-07-26T14:37:26.875Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Kraft",
+    "english": "strength, power, force",
+    "notes": "",
+    "noun": {
+      "gender": "die",
+      "plural": "Kräfte",
+      "genitiveSingular": "Kraft",
+      "pluralDative": "Kräften"
+    },
+    "id": "w_ms1wkr25aq5hqw",
+    "createdAt": "2026-07-26T14:38:17.597Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:38:17.597Z",
+      "lastResult": null
+    }
   }
 ]
