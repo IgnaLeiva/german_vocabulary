@@ -1662,10 +1662,10 @@
     "createdAt": "2026-07-26T14:40:23.021Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-26T14:40:23.021Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-27T14:49:38.700Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -1688,7 +1688,8 @@
       "reps": 0,
       "due": "2026-07-26T14:40:49.964Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "adjective",
