@@ -1783,5 +1783,25 @@
       "due": "2026-07-26T14:46:01.116Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "lustig",
+    "english": "funny",
+    "notes": "",
+    "adjective": {
+      "comparative": "lustiger",
+      "superlative": "lustigsten",
+      "predicateOnly": false
+    },
+    "id": "w_ms1wvqpig4wjbn",
+    "createdAt": "2026-07-26T14:46:50.358Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:46:50.358Z",
+      "lastResult": null
+    }
   }
 ]
