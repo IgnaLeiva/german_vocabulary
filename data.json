@@ -1696,5 +1696,25 @@
       "due": "2026-07-26T14:41:35.775Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "richtig",
+    "english": "correct, right",
+    "notes": "",
+    "adjective": {
+      "comparative": "richtiger",
+      "superlative": "richtigsten",
+      "predicateOnly": false
+    },
+    "id": "w_ms1wpzpyq6iin1",
+    "createdAt": "2026-07-26T14:42:22.102Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:42:22.102Z",
+      "lastResult": null
+    }
   }
 ]
