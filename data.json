@@ -1204,5 +1204,51 @@
       "lastResult": 2
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "verb",
+    "german": "gewöhnen",
+    "english": "to accustom, to get used to",
+    "notes": "Often used reflexively as 'sich gewöhnen an' (to get used to something).",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "gewöhnt",
+      "praesens": {
+        "ich": "gewöhne",
+        "du": "gewöhnst",
+        "er": "gewöhnt",
+        "wir": "gewöhnen",
+        "ihr": "gewöhnt",
+        "sie": "gewöhnen"
+      },
+      "praeteritum": {
+        "ich": "gewöhnte",
+        "du": "gewöhntest",
+        "er": "gewöhnte",
+        "wir": "gewöhnten",
+        "ihr": "gewöhntet",
+        "sie": "gewöhnten"
+      },
+      "konjunktiv2": {
+        "ich": "gewöhnte",
+        "du": "gewöhntest",
+        "er": "gewöhnte",
+        "wir": "gewöhnten",
+        "ihr": "gewöhntet",
+        "sie": "gewöhnten"
+      }
+    },
+    "id": "w_ms1w9mlxfsjqzn",
+    "createdAt": "2026-07-26T14:29:38.613Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:29:38.615Z",
+      "lastResult": null
+    }
   }
 ]
