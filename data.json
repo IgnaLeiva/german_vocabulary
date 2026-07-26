@@ -1314,5 +1314,26 @@
       "due": "2026-07-26T14:32:35.447Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Brücke",
+    "english": "bridge",
+    "notes": "",
+    "noun": {
+      "gender": "die",
+      "plural": "Brücken",
+      "genitiveSingular": "Brücke",
+      "pluralDative": "Brücken"
+    },
+    "id": "w_ms1we3rkc4lzhc",
+    "createdAt": "2026-07-26T14:33:07.472Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:33:07.473Z",
+      "lastResult": null
+    }
   }
 ]
