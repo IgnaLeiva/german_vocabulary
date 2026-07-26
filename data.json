@@ -1613,5 +1613,26 @@
       "due": "2026-07-26T14:38:17.597Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Klavier",
+    "english": "piano",
+    "notes": "",
+    "noun": {
+      "gender": "das",
+      "plural": "Klaviere",
+      "genitiveSingular": "Klaviers",
+      "pluralDative": "Klavieren"
+    },
+    "id": "w_ms1wltj8sdf9ra",
+    "createdAt": "2026-07-26T14:39:07.460Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:39:07.460Z",
+      "lastResult": null
+    }
   }
 ]
