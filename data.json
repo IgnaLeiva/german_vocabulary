@@ -1676,5 +1676,25 @@
       "due": "2026-07-26T14:40:49.964Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "krank",
+    "english": "sick, ill",
+    "notes": "",
+    "adjective": {
+      "comparative": "kränker",
+      "superlative": "kränksten",
+      "predicateOnly": false
+    },
+    "id": "w_ms1wozz3hggvvt",
+    "createdAt": "2026-07-26T14:41:35.775Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:41:35.775Z",
+      "lastResult": null
+    }
   }
 ]
