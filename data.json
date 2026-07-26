@@ -1474,10 +1474,10 @@
     "createdAt": "2026-07-26T14:34:52.758Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-26T14:34:52.758Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-07-27T14:48:35.205Z",
+      "lastResult": 2
     },
     "confusables": [
       "w_ms1wgzm40szcks"
@@ -1531,7 +1531,8 @@
     },
     "confusables": [
       "w_ms1wgd060xnq6t"
-    ]
+    ],
+    "_dir": "de-en"
   },
   {
     "type": "verb",
