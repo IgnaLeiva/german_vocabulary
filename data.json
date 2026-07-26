@@ -1525,5 +1525,51 @@
     "confusables": [
       "w_ms1wgd060xnq6t"
     ]
+  },
+  {
+    "type": "verb",
+    "german": "zumachen",
+    "english": "to close, to shut",
+    "notes": "Colloquial synonym for schließen.",
+    "verb": {
+      "regular": true,
+      "separable": true,
+      "prefix": "zu",
+      "auxiliary": "haben",
+      "partizipII": "zugemacht",
+      "praesens": {
+        "ich": "mache zu",
+        "du": "machst zu",
+        "er": "macht zu",
+        "wir": "machen zu",
+        "ihr": "macht zu",
+        "sie": "machen zu"
+      },
+      "praeteritum": {
+        "ich": "machte zu",
+        "du": "machtest zu",
+        "er": "machte zu",
+        "wir": "machten zu",
+        "ihr": "machtet zu",
+        "sie": "machten zu"
+      },
+      "konjunktiv2": {
+        "ich": "machte zu",
+        "du": "machtest zu",
+        "er": "machte zu",
+        "wir": "machten zu",
+        "ihr": "machtet zu",
+        "sie": "machten zu"
+      }
+    },
+    "id": "w_ms1wiax81wjefn",
+    "createdAt": "2026-07-26T14:36:23.372Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:36:23.372Z",
+      "lastResult": null
+    }
   }
 ]
