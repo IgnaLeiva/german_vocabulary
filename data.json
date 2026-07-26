@@ -1427,5 +1427,51 @@
       "due": "2026-07-26T14:34:24.230Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "ausmachen",
+    "english": "to turn off; to matter; to arrange/agree on",
+    "notes": "Also used idiomatically: 'das macht nichts aus' (that doesn't matter).",
+    "verb": {
+      "regular": true,
+      "separable": true,
+      "prefix": "aus",
+      "auxiliary": "haben",
+      "partizipII": "ausgemacht",
+      "praesens": {
+        "ich": "mache aus",
+        "du": "machst aus",
+        "er": "macht aus",
+        "wir": "machen aus",
+        "ihr": "macht aus",
+        "sie": "machen aus"
+      },
+      "praeteritum": {
+        "ich": "machte aus",
+        "du": "machtest aus",
+        "er": "machte aus",
+        "wir": "machten aus",
+        "ihr": "machtet aus",
+        "sie": "machten aus"
+      },
+      "konjunktiv2": {
+        "ich": "machte aus",
+        "du": "machtest aus",
+        "er": "machte aus",
+        "wir": "machten aus",
+        "ihr": "machtet aus",
+        "sie": "machten aus"
+      }
+    },
+    "id": "w_ms1wgd060xnq6t",
+    "createdAt": "2026-07-26T14:34:52.758Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:34:52.758Z",
+      "lastResult": null
+    }
   }
 ]
