@@ -1272,5 +1272,26 @@
       "due": "2026-07-26T14:31:44.531Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Eselsbrücke",
+    "english": "mnemonic device",
+    "notes": "Literally 'donkey's bridge'; used for a memory aid or trick.",
+    "noun": {
+      "gender": "die",
+      "plural": "Eselsbrücken",
+      "genitiveSingular": "Eselsbrücke",
+      "pluralDative": "Eselsbrücken"
+    },
+    "id": "w_ms1wd0ovkoyj5v",
+    "createdAt": "2026-07-26T14:32:16.831Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-26T14:32:16.831Z",
+      "lastResult": null
+    }
   }
 ]
