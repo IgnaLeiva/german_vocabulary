@@ -1823,5 +1823,30 @@
       "lastResult": 2
     },
     "_dir": "de-en"
+  },
+  {
+    "type": "verb",
+    "german": "gegen",
+    "english": "against; toward; around (time); compared to",
+    "notes": "Takes the accusative case; used to express opposition (gegen den Wind), approximation (gegen 3 Uhr), or comparison (gegen früher).",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "",
+      "praesens": {},
+      "praeteritum": {},
+      "konjunktiv2": null
+    },
+    "id": "w_ms3gjec86iczy7",
+    "createdAt": "2026-07-27T16:44:52.952Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-27T16:44:52.952Z",
+      "lastResult": null
+    }
   }
 ]
