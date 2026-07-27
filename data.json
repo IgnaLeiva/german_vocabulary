@@ -1379,11 +1379,11 @@
     "id": "w_ms1wesa4lzgite",
     "createdAt": "2026-07-26T14:33:39.244Z",
     "srs": {
-      "ef": 2.5,
+      "ef": 2.35,
       "interval": 1,
-      "reps": 1,
-      "due": "2026-07-27T14:48:15.538Z",
-      "lastResult": 2
+      "reps": 2,
+      "due": "2026-07-28T16:38:10.342Z",
+      "lastResult": 1
     },
     "_dir": "de-en"
   },
