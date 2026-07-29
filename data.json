@@ -1847,6 +1847,53 @@
       "reps": 0,
       "due": "2026-07-27T16:44:52.952Z",
       "lastResult": null
+    },
+    "_dir": "de-en"
+  },
+  {
+    "type": "verb",
+    "german": "tragen",
+    "english": "to carry; to wear",
+    "notes": "Strong verb with vowel change a→ä in 2nd/3rd person singular present; can mean both physically carrying and wearing clothing.",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "getragen",
+      "praesens": {
+        "ich": "trage",
+        "du": "trägst",
+        "er": "trägt",
+        "wir": "tragen",
+        "ihr": "tragt",
+        "sie": "tragen"
+      },
+      "praeteritum": {
+        "ich": "trug",
+        "du": "trugst",
+        "er": "trug",
+        "wir": "trugen",
+        "ihr": "trugt",
+        "sie": "trugen"
+      },
+      "konjunktiv2": {
+        "ich": "trüge",
+        "du": "trügest",
+        "er": "trüge",
+        "wir": "trügen",
+        "ihr": "trüget",
+        "sie": "trügen"
+      }
+    },
+    "id": "w_ms6gkq807tkurj",
+    "createdAt": "2026-07-29T19:09:13.536Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-29T19:09:13.536Z",
+      "lastResult": null
     }
   }
 ]
