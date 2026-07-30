@@ -2174,5 +2174,26 @@
       "due": "2026-07-30T18:03:54.946Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Warteschlange",
+    "english": "queue; waiting line",
+    "notes": "Compound of 'warten' (to wait) and 'Schlange' (snake/line); also used in computing to mean a queue or buffer.",
+    "noun": {
+      "gender": "die",
+      "plural": "Warteschlangen",
+      "genitiveSingular": "Warteschlange",
+      "pluralDative": "Warteschlangen"
+    },
+    "id": "w_ms7trfa142ezfm",
+    "createdAt": "2026-07-30T18:06:07.129Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T18:06:07.129Z",
+      "lastResult": null
+    }
   }
 ]
