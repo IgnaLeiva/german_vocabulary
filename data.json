@@ -1895,5 +1895,25 @@
       "due": "2026-07-29T19:09:13.536Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "anstrengend",
+    "english": "exhausting; strenuous",
+    "notes": "Present participle of 'sich anstrengen' used as an adjective; describes activities that are physically or mentally demanding.",
+    "adjective": {
+      "comparative": "anstrengender",
+      "superlative": "anstrengendsten",
+      "predicateOnly": false
+    },
+    "id": "w_ms7t1o1jtqjc0z",
+    "createdAt": "2026-07-30T17:46:05.431Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T17:46:05.431Z",
+      "lastResult": null
+    }
   }
 ]
