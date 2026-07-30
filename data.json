@@ -2128,5 +2128,51 @@
       "due": "2026-07-30T17:57:55.188Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "stehen",
+    "english": "to stand",
+    "notes": "Strong verb; used with 'sein' in some regional dialects but standard High German takes 'haben' as auxiliary in perfect tenses.",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "gestanden",
+      "praesens": {
+        "ich": "stehe",
+        "du": "stehst",
+        "er": "steht",
+        "wir": "stehen",
+        "ihr": "steht",
+        "sie": "stehen"
+      },
+      "praeteritum": {
+        "ich": "stand",
+        "du": "standst",
+        "er": "stand",
+        "wir": "standen",
+        "ihr": "standet",
+        "sie": "standen"
+      },
+      "konjunktiv2": {
+        "ich": "stände",
+        "du": "ständest",
+        "er": "stände",
+        "wir": "ständen",
+        "ihr": "ständet",
+        "sie": "ständen"
+      }
+    },
+    "id": "w_ms7tolaad8y9nh",
+    "createdAt": "2026-07-30T18:03:54.946Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T18:03:54.946Z",
+      "lastResult": null
+    }
   }
 ]
