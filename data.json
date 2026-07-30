@@ -2047,5 +2047,25 @@
       "due": "2026-07-30T17:50:37.741Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "schlecht",
+    "english": "bad; poor; ill",
+    "notes": "Also used predicatively to mean feeling sick, as in 'mir ist schlecht' (I feel sick/nauseous).",
+    "adjective": {
+      "comparative": "schlechter",
+      "superlative": "schlechtesten",
+      "predicateOnly": false
+    },
+    "id": "w_ms7t8yoh3ih7kp",
+    "createdAt": "2026-07-30T17:51:45.809Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T17:51:45.809Z",
+      "lastResult": null
+    }
   }
 ]
