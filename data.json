@@ -2107,5 +2107,26 @@
       "due": "2026-07-30T17:55:25.841Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Haus",
+    "english": "house; home",
+    "notes": "Also used in compounds like 'Krankenhaus' (hospital) and 'Rathaus' (town hall); 'nach Hause' means 'homeward' and 'zu Hause' means 'at home'.",
+    "noun": {
+      "gender": "das",
+      "plural": "Häuser",
+      "genitiveSingular": "Hauses",
+      "pluralDative": "Häusern"
+    },
+    "id": "w_ms7tgvp0pohp2a",
+    "createdAt": "2026-07-30T17:57:55.188Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T17:57:55.188Z",
+      "lastResult": null
+    }
   }
 ]
