@@ -1955,5 +1955,51 @@
       "due": "2026-07-30T17:48:32.247Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "verstehen",
+    "english": "to understand",
+    "notes": "Strong verb; can be used reflexively as 'sich verstehen' meaning to get along with someone.",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "verstanden",
+      "praesens": {
+        "ich": "verstehe",
+        "du": "verstehst",
+        "er": "versteht",
+        "wir": "verstehen",
+        "ihr": "versteht",
+        "sie": "verstehen"
+      },
+      "praeteritum": {
+        "ich": "verstand",
+        "du": "verstandst",
+        "er": "verstand",
+        "wir": "verstanden",
+        "ihr": "verstandet",
+        "sie": "verstanden"
+      },
+      "konjunktiv2": {
+        "ich": "verstände",
+        "du": "ständest",
+        "er": "verstände",
+        "wir": "verstänten",
+        "ihr": "verstäntet",
+        "sie": "verstänten"
+      }
+    },
+    "id": "w_ms7t6652ropxxo",
+    "createdAt": "2026-07-30T17:49:35.510Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T17:49:35.510Z",
+      "lastResult": null
+    }
   }
 ]
