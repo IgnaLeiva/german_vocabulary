@@ -2001,5 +2001,51 @@
       "due": "2026-07-30T17:49:35.510Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "schmecken",
+    "english": "to taste; to taste good",
+    "notes": "Regular weak verb; commonly used impersonally as 'es schmeckt mir' (I like the taste of it).",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "geschmeckt",
+      "praesens": {
+        "ich": "schmecke",
+        "du": "schmeckst",
+        "er": "schmeckt",
+        "wir": "schmecken",
+        "ihr": "schmeckt",
+        "sie": "schmecken"
+      },
+      "praeteritum": {
+        "ich": "schmeckte",
+        "du": "schmecktest",
+        "er": "schmeckte",
+        "wir": "schmeckten",
+        "ihr": "schmecktet",
+        "sie": "schmeckten"
+      },
+      "konjunktiv2": {
+        "ich": "schmeckte",
+        "du": "schmecktest",
+        "er": "schmeckte",
+        "wir": "schmeckten",
+        "ihr": "schmecktet",
+        "sie": "schmeckten"
+      }
+    },
+    "id": "w_ms7t7i5puqagus",
+    "createdAt": "2026-07-30T17:50:37.741Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T17:50:37.741Z",
+      "lastResult": null
+    }
   }
 ]
