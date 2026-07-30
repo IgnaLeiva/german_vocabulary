@@ -2067,5 +2067,25 @@
       "due": "2026-07-30T17:51:45.809Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "wenig",
+    "english": "little; few",
+    "notes": "Has irregular comparative 'weniger' and a suppletive superlative; used for uncountable quantities in singular and countable in plural.",
+    "adjective": {
+      "comparative": "weniger",
+      "superlative": "wenigsten",
+      "predicateOnly": false
+    },
+    "id": "w_ms7tch4fg8u6u6",
+    "createdAt": "2026-07-30T17:54:29.680Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T17:54:29.680Z",
+      "lastResult": null
+    }
   }
 ]
