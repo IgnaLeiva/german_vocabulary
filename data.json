@@ -2087,5 +2087,25 @@
       "due": "2026-07-30T17:54:29.680Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "genauso",
+    "english": "just as; exactly the same",
+    "notes": "Used in equality comparisons with 'wie', e.g. 'genauso gut wie' (just as good as); functions as an adverb and does not inflect or take comparative/superlative forms.",
+    "adjective": {
+      "comparative": "—",
+      "superlative": "—",
+      "predicateOnly": true
+    },
+    "id": "w_ms7tdoghujodxf",
+    "createdAt": "2026-07-30T17:55:25.841Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T17:55:25.841Z",
+      "lastResult": null
+    }
   }
 ]
