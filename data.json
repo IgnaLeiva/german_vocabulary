@@ -1915,5 +1915,25 @@
       "due": "2026-07-30T17:46:05.431Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "adjective",
+    "german": "beschäftigt",
+    "english": "busy; occupied",
+    "notes": "Past participle of 'beschäftigen' used as an adjective; can also mean 'employed' in a professional context.",
+    "adjective": {
+      "comparative": "beschäftigter",
+      "superlative": "beschäftigtsten",
+      "predicateOnly": false
+    },
+    "id": "w_ms7t3aifefhzv8",
+    "createdAt": "2026-07-30T17:47:21.207Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-30T17:47:21.208Z",
+      "lastResult": null
+    }
   }
 ]
