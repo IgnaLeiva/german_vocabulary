@@ -2385,5 +2385,51 @@
       "due": "2026-07-31T08:07:44.288Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "ausgehen",
+    "english": "to go out; to run out",
+    "notes": "Separable strong verb; means 'to go out socially' or 'to run out of something' (e.g. 'Das Licht geht aus' = the light goes out; 'Mir geht das Geld aus' = I'm running out of money).",
+    "verb": {
+      "regular": false,
+      "separable": true,
+      "prefix": "aus",
+      "auxiliary": "sein",
+      "partizipII": "ausgegangen",
+      "praesens": {
+        "ich": "gehe aus",
+        "du": "gehst aus",
+        "er": "geht aus",
+        "wir": "gehen aus",
+        "ihr": "geht aus",
+        "sie": "gehen aus"
+      },
+      "praeteritum": {
+        "ich": "ging aus",
+        "du": "gingst aus",
+        "er": "ging aus",
+        "wir": "gingen aus",
+        "ihr": "gingt aus",
+        "sie": "gingen aus"
+      },
+      "konjunktiv2": {
+        "ich": "ginge aus",
+        "du": "gingest aus",
+        "er": "ginge aus",
+        "wir": "gingen aus",
+        "ihr": "ginget aus",
+        "sie": "gingen aus"
+      }
+    },
+    "id": "w_ms8nuzacrpvgox",
+    "createdAt": "2026-07-31T08:08:41.508Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-31T08:08:41.508Z",
+      "lastResult": null
+    }
   }
 ]
