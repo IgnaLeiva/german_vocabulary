@@ -2241,5 +2241,51 @@
       "due": "2026-07-31T07:57:13.077Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "stellen",
+    "english": "to place; to put (upright)",
+    "notes": "Regular weak verb; distinct from 'legen' (to lay flat) and 'setzen' (to set/seat); also used reflexively as 'sich stellen' meaning to pretend or to present oneself.",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "gestellt",
+      "praesens": {
+        "ich": "stelle",
+        "du": "stellst",
+        "er": "stellt",
+        "wir": "stellen",
+        "ihr": "stellt",
+        "sie": "stellen"
+      },
+      "praeteritum": {
+        "ich": "stellte",
+        "du": "stelltest",
+        "er": "stellte",
+        "wir": "stellten",
+        "ihr": "stelltet",
+        "sie": "stellten"
+      },
+      "konjunktiv2": {
+        "ich": "stellte",
+        "du": "stelltest",
+        "er": "stellte",
+        "wir": "stellten",
+        "ihr": "stelltet",
+        "sie": "stellten"
+      }
+    },
+    "id": "w_ms8ngn71p4neau",
+    "createdAt": "2026-07-31T07:57:32.653Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-31T07:57:32.653Z",
+      "lastResult": null
+    }
   }
 ]
