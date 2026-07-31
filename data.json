@@ -2287,5 +2287,51 @@
       "due": "2026-07-31T07:57:32.653Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "legen",
+    "english": "to lay; to put (flat)",
+    "notes": "Regular weak verb; distinct from 'stellen' (to place upright) and 'setzen' (to set/seat); used reflexively as 'sich legen' meaning to lie down or to subside.",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "gelegt",
+      "praesens": {
+        "ich": "lege",
+        "du": "legst",
+        "er": "legt",
+        "wir": "legen",
+        "ihr": "legt",
+        "sie": "legen"
+      },
+      "praeteritum": {
+        "ich": "legte",
+        "du": "legtest",
+        "er": "legte",
+        "wir": "legten",
+        "ihr": "legtet",
+        "sie": "legten"
+      },
+      "konjunktiv2": {
+        "ich": "legte",
+        "du": "legtest",
+        "er": "legte",
+        "wir": "legten",
+        "ihr": "legtet",
+        "sie": "legten"
+      }
+    },
+    "id": "w_ms8njnjysi29d8",
+    "createdAt": "2026-07-31T07:59:53.086Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-31T07:59:53.086Z",
+      "lastResult": null
+    }
   }
 ]
