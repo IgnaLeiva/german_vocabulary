@@ -2339,5 +2339,51 @@
     "confusables": [
       "w_ms8ng839mjrltb"
     ]
+  },
+  {
+    "type": "verb",
+    "german": "rausgehen",
+    "english": "to go out; to exit",
+    "notes": "Colloquial separable verb, informal variant of 'hinausgehen'; the prefix 'raus' separates in main clauses, e.g. 'Ich gehe raus'.",
+    "verb": {
+      "regular": false,
+      "separable": true,
+      "prefix": "raus",
+      "auxiliary": "sein",
+      "partizipII": "rausgegangen",
+      "praesens": {
+        "ich": "gehe raus",
+        "du": "gehst raus",
+        "er": "geht raus",
+        "wir": "gehen raus",
+        "ihr": "geht raus",
+        "sie": "gehen raus"
+      },
+      "praeteritum": {
+        "ich": "ging raus",
+        "du": "gingst raus",
+        "er": "ging raus",
+        "wir": "gingen raus",
+        "ihr": "gingt raus",
+        "sie": "gingen raus"
+      },
+      "konjunktiv2": {
+        "ich": "ginge raus",
+        "du": "gingest raus",
+        "er": "ginge raus",
+        "wir": "gingen raus",
+        "ihr": "ginget raus",
+        "sie": "gingen raus"
+      }
+    },
+    "id": "w_ms8ntr4wu37n52",
+    "createdAt": "2026-07-31T08:07:44.288Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-31T08:07:44.288Z",
+      "lastResult": null
+    }
   }
 ]
