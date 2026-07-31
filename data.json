@@ -2240,7 +2240,10 @@
       "reps": 0,
       "due": "2026-07-31T07:57:13.077Z",
       "lastResult": null
-    }
+    },
+    "confusables": [
+      "w_ms8njnjysi29d8"
+    ]
   },
   {
     "type": "verb",
@@ -2332,6 +2335,9 @@
       "reps": 0,
       "due": "2026-07-31T07:59:53.086Z",
       "lastResult": null
-    }
+    },
+    "confusables": [
+      "w_ms8ng839mjrltb"
+    ]
   }
 ]
