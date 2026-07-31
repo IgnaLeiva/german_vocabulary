@@ -2195,5 +2195,51 @@
       "due": "2026-07-30T18:06:07.129Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "liegen",
+    "english": "to lie; to be situated",
+    "notes": "Strong verb; used for the position of objects and places, e.g. 'Das Buch liegt auf dem Tisch' or 'München liegt in Bayern'; takes 'haben' in northern Germany but 'sein' in southern Germany and Austria.",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "gelegen",
+      "praesens": {
+        "ich": "liege",
+        "du": "liegst",
+        "er": "liegt",
+        "wir": "liegen",
+        "ihr": "liegt",
+        "sie": "liegen"
+      },
+      "praeteritum": {
+        "ich": "lag",
+        "du": "lagst",
+        "er": "lag",
+        "wir": "lagen",
+        "ihr": "lagt",
+        "sie": "lagen"
+      },
+      "konjunktiv2": {
+        "ich": "läge",
+        "du": "lägest",
+        "er": "läge",
+        "wir": "lägen",
+        "ihr": "läget",
+        "sie": "lägen"
+      }
+    },
+    "id": "w_ms8ng839mjrltb",
+    "createdAt": "2026-07-31T07:57:13.077Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-07-31T07:57:13.077Z",
+      "lastResult": null
+    }
   }
 ]
