@@ -2551,5 +2551,30 @@
       "due": "2026-08-02T09:49:07.591Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "nochmal",
+    "english": "once more, again",
+    "notes": "Colloquial contraction of 'noch einmal'; used in informal speech and writing, with 'noch einmal' preferred in formal contexts.",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "",
+      "praesens": {},
+      "praeteritum": {},
+      "konjunktiv2": null
+    },
+    "id": "w_msbmcorghkqqr9",
+    "createdAt": "2026-08-02T09:49:46.972Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:49:46.972Z",
+      "lastResult": null
+    }
   }
 ]
