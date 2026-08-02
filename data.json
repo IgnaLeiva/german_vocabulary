@@ -2478,6 +2478,32 @@
       "reps": 0,
       "due": "2026-08-02T09:45:43.149Z",
       "lastResult": null
+    },
+    "_dir": "de-en"
+  },
+  {
+    "type": "verb",
+    "german": "außerdem",
+    "english": "furthermore, besides, moreover",
+    "notes": "Conjunctive adverb used to add information; equivalent to 'in addition to that'.",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "",
+      "praesens": {},
+      "praeteritum": {},
+      "konjunktiv2": null
+    },
+    "id": "w_msbm8pdifq1ieu",
+    "createdAt": "2026-08-02T09:46:41.142Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:46:41.142Z",
+      "lastResult": null
     }
   }
 ]
