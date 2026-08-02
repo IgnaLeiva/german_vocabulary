@@ -2505,5 +2505,30 @@
       "due": "2026-08-02T09:46:41.142Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "diesmal",
+    "english": "this time",
+    "notes": "Temporal adverb formed from 'dies' and 'Mal'; invariable and used to refer to the current or present instance of something.",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "",
+      "praesens": {},
+      "praeteritum": {},
+      "konjunktiv2": null
+    },
+    "id": "w_msbma2glx3rmv0",
+    "createdAt": "2026-08-02T09:47:44.757Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:47:44.757Z",
+      "lastResult": null
+    }
   }
 ]
