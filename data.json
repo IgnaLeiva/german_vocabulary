@@ -2576,5 +2576,51 @@
       "due": "2026-08-02T09:49:46.972Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "werden",
+    "english": "to become; (auxiliary) would",
+    "notes": "'Würden' is the Konjunktiv II form of 'werden', commonly used to form the conditional (e.g. 'ich würde gehen' = 'I would go').",
+    "verb": {
+      "regular": false,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "sein",
+      "partizipII": "geworden",
+      "praesens": {
+        "ich": "werde",
+        "du": "wirst",
+        "er": "wird",
+        "wir": "werden",
+        "ihr": "werdet",
+        "sie": "werden"
+      },
+      "praeteritum": {
+        "ich": "wurde",
+        "du": "wurdest",
+        "er": "wurde",
+        "wir": "wurden",
+        "ihr": "wurdet",
+        "sie": "wurden"
+      },
+      "konjunktiv2": {
+        "ich": "würde",
+        "du": "würdest",
+        "er": "würde",
+        "wir": "würden",
+        "ihr": "würdet",
+        "sie": "würden"
+      }
+    },
+    "id": "w_msbme43e1zn1od",
+    "createdAt": "2026-08-02T09:50:53.498Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:50:53.498Z",
+      "lastResult": null
+    }
   }
 ]
