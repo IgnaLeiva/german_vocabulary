@@ -1911,10 +1911,10 @@
     "createdAt": "2026-07-30T17:46:05.431Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-30T17:46:05.431Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-03T09:31:05.053Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -1936,7 +1936,8 @@
       "reps": 0,
       "due": "2026-07-30T17:47:21.208Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "adjective",
