@@ -440,10 +440,10 @@
     "createdAt": "2026-07-19T09:27:30.592Z",
     "srs": {
       "ef": 2.65,
-      "interval": 8,
-      "reps": 2,
-      "due": "2026-07-28T14:47:55.919Z",
-      "lastResult": 3
+      "interval": 21,
+      "reps": 3,
+      "due": "2026-08-23T09:24:47.019Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
