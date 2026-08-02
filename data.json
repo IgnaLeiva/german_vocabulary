@@ -2445,10 +2445,10 @@
     "createdAt": "2026-07-31T08:08:41.508Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-31T08:08:41.508Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-03T09:38:01.440Z",
+      "lastResult": 2
     },
     "confusables": [
       "w_ms8ntr4wu37n52"
