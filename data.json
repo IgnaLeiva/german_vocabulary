@@ -2454,5 +2454,30 @@
       "w_ms8ntr4wu37n52"
     ],
     "_dir": "de-en"
+  },
+  {
+    "type": "verb",
+    "german": "außer",
+    "english": "except, apart from, out of",
+    "notes": "",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "",
+      "praesens": {},
+      "praeteritum": {},
+      "konjunktiv2": null
+    },
+    "id": "w_msbm7gmkkad30b",
+    "createdAt": "2026-08-02T09:45:43.149Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:45:43.149Z",
+      "lastResult": null
+    }
   }
 ]
