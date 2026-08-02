@@ -354,9 +354,9 @@
     "createdAt": "2026-07-19T09:03:16.693Z",
     "srs": {
       "ef": 2.65,
-      "interval": 6,
-      "reps": 2,
-      "due": "2026-07-29T14:11:03.997Z",
+      "interval": 16,
+      "reps": 3,
+      "due": "2026-08-18T09:30:33.654Z",
       "lastResult": 2
     },
     "_dir": "de-en"
@@ -1894,7 +1894,8 @@
       "reps": 0,
       "due": "2026-07-29T19:09:13.536Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "adjective",
