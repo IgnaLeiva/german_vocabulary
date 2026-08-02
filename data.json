@@ -2132,10 +2132,10 @@
     "createdAt": "2026-07-30T17:57:55.188Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-30T17:57:55.188Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-03T09:32:47.906Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -2183,7 +2183,8 @@
       "reps": 0,
       "due": "2026-07-30T18:03:54.946Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "noun",
