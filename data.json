@@ -2530,5 +2530,26 @@
       "due": "2026-08-02T09:47:44.757Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Mal",
+    "english": "time, occasion",
+    "notes": "'Ein anderes Mal' means 'another time'; 'Mal' as a neuter noun refers to an instance or occurrence, distinct from 'Mal' as a suffix in words like 'diesmal'.",
+    "noun": {
+      "gender": "das",
+      "plural": "Male",
+      "genitiveSingular": "Males",
+      "pluralDative": "Malen"
+    },
+    "id": "w_msbmbudjjf8qh3",
+    "createdAt": "2026-08-02T09:49:07.591Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:49:07.591Z",
+      "lastResult": null
+    }
   }
 ]
