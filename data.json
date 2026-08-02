@@ -2248,10 +2248,10 @@
     "createdAt": "2026-07-31T07:57:13.077Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-31T07:57:13.077Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-03T09:33:54.523Z",
+      "lastResult": 2
     },
     "confusables": [
       "w_ms8njnjysi29d8"
@@ -2302,7 +2302,8 @@
       "reps": 0,
       "due": "2026-07-31T07:57:32.653Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "verb",
