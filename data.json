@@ -1843,10 +1843,10 @@
     "createdAt": "2026-07-27T16:44:52.952Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-27T16:44:52.952Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-03T09:24:30.778Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
