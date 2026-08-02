@@ -2781,5 +2781,51 @@
       "due": "2026-08-02T09:53:56.641Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "teilnehmen",
+    "english": "to participate, to take part",
+    "notes": "Separable verb; separates in main clauses (e.g. 'Ich nehme an dem Kurs teil') and takes 'an + dative' for the activity.",
+    "verb": {
+      "regular": false,
+      "separable": true,
+      "prefix": "teil",
+      "auxiliary": "haben",
+      "partizipII": "teilgenommen",
+      "praesens": {
+        "ich": "nehme teil",
+        "du": "nimmst teil",
+        "er": "nimmt teil",
+        "wir": "nehmen teil",
+        "ihr": "nehmt teil",
+        "sie": "nehmen teil"
+      },
+      "praeteritum": {
+        "ich": "nahm teil",
+        "du": "nahmst teil",
+        "er": "nahm teil",
+        "wir": "nahmen teil",
+        "ihr": "nahmt teil",
+        "sie": "nahmen teil"
+      },
+      "konjunktiv2": {
+        "ich": "nähme teil",
+        "du": "nähmest teil",
+        "er": "nähme teil",
+        "wir": "nähmen teil",
+        "ihr": "nähmet teil",
+        "sie": "nähmen teil"
+      }
+    },
+    "id": "w_msbmj197gq4q9b",
+    "createdAt": "2026-08-02T09:54:43.099Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:54:43.100Z",
+      "lastResult": null
+    }
   }
 ]
