@@ -2622,5 +2622,51 @@
       "due": "2026-08-02T09:50:53.498Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "bestellen",
+    "english": "to order, to reserve",
+    "notes": "Used for ordering goods or food, booking appointments, or passing on a message (e.g. 'Kann ich etwas bestellen?' or 'Soll ich etwas bestellen?').",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "bestellt",
+      "praesens": {
+        "ich": "bestelle",
+        "du": "bestellst",
+        "er": "bestellt",
+        "wir": "bestellen",
+        "ihr": "bestellt",
+        "sie": "bestellen"
+      },
+      "praeteritum": {
+        "ich": "bestellte",
+        "du": "bestelltest",
+        "er": "bestellte",
+        "wir": "bestellten",
+        "ihr": "bestelltet",
+        "sie": "bestellten"
+      },
+      "konjunktiv2": {
+        "ich": "bestellte",
+        "du": "bestelltest",
+        "er": "bestellte",
+        "wir": "bestellten",
+        "ihr": "bestelltet",
+        "sie": "bestellten"
+      }
+    },
+    "id": "w_msbmfb89v3il7y",
+    "createdAt": "2026-08-02T09:51:49.401Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:51:49.401Z",
+      "lastResult": null
+    }
   }
 ]
