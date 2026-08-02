@@ -2668,5 +2668,51 @@
       "due": "2026-08-02T09:51:49.401Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "versuchen",
+    "english": "to try, to attempt",
+    "notes": "Takes an infinitive clause with 'zu' (e.g. 'Ich versuche, es zu machen') or a direct object.",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "versucht",
+      "praesens": {
+        "ich": "versuche",
+        "du": "versuchst",
+        "er": "versucht",
+        "wir": "versuchen",
+        "ihr": "versucht",
+        "sie": "versuchen"
+      },
+      "praeteritum": {
+        "ich": "versuchte",
+        "du": "versuchtest",
+        "er": "versuchte",
+        "wir": "versuchten",
+        "ihr": "versuchtet",
+        "sie": "versuchten"
+      },
+      "konjunktiv2": {
+        "ich": "versuchte",
+        "du": "versuchtest",
+        "er": "versuchte",
+        "wir": "versuchten",
+        "ihr": "versuchtet",
+        "sie": "versuchten"
+      }
+    },
+    "id": "w_msbmga3co6rckv",
+    "createdAt": "2026-08-02T09:52:34.584Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:52:34.584Z",
+      "lastResult": null
+    }
   }
 ]
