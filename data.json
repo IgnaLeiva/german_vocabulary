@@ -2714,5 +2714,51 @@
       "due": "2026-08-02T09:52:34.584Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "verb",
+    "german": "probieren",
+    "english": "to try, to taste, to sample",
+    "notes": "More colloquial than 'versuchen'; often implies tasting food or trying something out hands-on (e.g. 'Probier mal!' = 'Give it a try!').",
+    "verb": {
+      "regular": true,
+      "separable": false,
+      "prefix": null,
+      "auxiliary": "haben",
+      "partizipII": "probiert",
+      "praesens": {
+        "ich": "probiere",
+        "du": "probierst",
+        "er": "probiert",
+        "wir": "probieren",
+        "ihr": "probiert",
+        "sie": "probieren"
+      },
+      "praeteritum": {
+        "ich": "probierte",
+        "du": "probiertest",
+        "er": "probierte",
+        "wir": "probierten",
+        "ihr": "probiertet",
+        "sie": "probierten"
+      },
+      "konjunktiv2": {
+        "ich": "probierte",
+        "du": "probiertest",
+        "er": "probierte",
+        "wir": "probierten",
+        "ihr": "probiertet",
+        "sie": "probierten"
+      }
+    },
+    "id": "w_msbmh4dyzpv3sh",
+    "createdAt": "2026-08-02T09:53:13.846Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:53:13.846Z",
+      "lastResult": null
+    }
   }
 ]
