@@ -311,9 +311,9 @@
     "createdAt": "2026-07-19T09:03:16.693Z",
     "srs": {
       "ef": 2.65,
-      "interval": 6,
-      "reps": 2,
-      "due": "2026-07-29T14:10:54.926Z",
+      "interval": 16,
+      "reps": 3,
+      "due": "2026-08-18T09:30:20.690Z",
       "lastResult": 2
     },
     "_dir": "de-en"
