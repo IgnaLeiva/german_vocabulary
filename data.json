@@ -2760,5 +2760,26 @@
       "due": "2026-08-02T09:53:13.846Z",
       "lastResult": null
     }
+  },
+  {
+    "type": "noun",
+    "german": "Unterricht",
+    "english": "lesson, instruction, class",
+    "notes": "Used as an uncountable/mass noun in most contexts (e.g. 'Unterricht haben' = 'to have class'); the plural 'Unterrichte' is rare and used only for distinct types of instruction.",
+    "noun": {
+      "gender": "der",
+      "plural": "Unterrichte",
+      "genitiveSingular": "Unterrichts",
+      "pluralDative": "Unterrichten"
+    },
+    "id": "w_msbmi1ephqfvo9",
+    "createdAt": "2026-08-02T09:53:56.641Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-08-02T09:53:56.641Z",
+      "lastResult": null
+    }
   }
 ]
