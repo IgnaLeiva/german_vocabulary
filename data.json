@@ -2395,10 +2395,10 @@
     "createdAt": "2026-07-31T08:07:44.288Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-07-31T08:07:44.288Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-03T09:37:46.536Z",
+      "lastResult": 2
     },
     "confusables": [
       "w_ms8nuzacrpvgox"
@@ -2452,6 +2452,7 @@
     },
     "confusables": [
       "w_ms8ntr4wu37n52"
-    ]
+    ],
+    "_dir": "de-en"
   }
 ]
