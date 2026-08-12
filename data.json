@@ -126,10 +126,10 @@
     "createdAt": "2026-07-19T09:03:16.693Z",
     "srs": {
       "ef": 2.35,
-      "interval": 7,
-      "reps": 3,
-      "due": "2026-08-02T14:50:12.149Z",
-      "lastResult": 1
+      "interval": 16,
+      "reps": 4,
+      "due": "2026-08-28T12:26:50.157Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
