@@ -2526,10 +2526,10 @@
     "createdAt": "2026-08-02T09:47:44.757Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-08-02T09:47:44.757Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-13T12:25:13.564Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -2552,7 +2552,8 @@
       "reps": 0,
       "due": "2026-08-02T09:49:07.591Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "verb",
