@@ -462,9 +462,9 @@
     "createdAt": "2026-07-19T09:43:45.532Z",
     "srs": {
       "ef": 2.5,
-      "interval": 15,
-      "reps": 3,
-      "due": "2026-08-10T14:50:20.741Z",
+      "interval": 38,
+      "reps": 4,
+      "due": "2026-09-19T12:37:44.518Z",
       "lastResult": 2
     },
     "_dir": "de-en"
