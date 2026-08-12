@@ -1952,11 +1952,11 @@
     "id": "w_ms7t4tbro1jjjd",
     "createdAt": "2026-07-30T17:48:32.247Z",
     "srs": {
-      "ef": 2.5,
+      "ef": 2.35,
       "interval": 1,
-      "reps": 1,
-      "due": "2026-08-03T09:31:40.214Z",
-      "lastResult": 2
+      "reps": 2,
+      "due": "2026-08-13T12:32:20.220Z",
+      "lastResult": 1
     },
     "_dir": "de-en"
   },
