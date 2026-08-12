@@ -2499,11 +2499,11 @@
     "id": "w_msbm8pdifq1ieu",
     "createdAt": "2026-08-02T09:46:41.142Z",
     "srs": {
-      "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-08-02T09:46:41.142Z",
-      "lastResult": null
+      "ef": 2.35,
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-13T12:25:06.501Z",
+      "lastResult": 1
     },
     "_dir": "de-en"
   },
@@ -2530,7 +2530,8 @@
       "reps": 0,
       "due": "2026-08-02T09:47:44.757Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "noun",
