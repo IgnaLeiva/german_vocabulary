@@ -2620,11 +2620,11 @@
     "id": "w_msbme43e1zn1od",
     "createdAt": "2026-08-02T09:50:53.498Z",
     "srs": {
-      "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-08-02T09:50:53.498Z",
-      "lastResult": null
+      "ef": 2.35,
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-13T12:25:55.197Z",
+      "lastResult": 1
     },
     "_dir": "de-en"
   },
@@ -2672,7 +2672,8 @@
       "reps": 0,
       "due": "2026-08-02T09:51:49.401Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   },
   {
     "type": "verb",
