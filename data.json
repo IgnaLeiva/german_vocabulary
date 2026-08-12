@@ -2784,10 +2784,10 @@
     "createdAt": "2026-08-02T09:53:56.641Z",
     "srs": {
       "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-08-02T09:53:56.641Z",
-      "lastResult": null
+      "interval": 1,
+      "reps": 1,
+      "due": "2026-08-13T12:26:26.679Z",
+      "lastResult": 2
     },
     "_dir": "de-en"
   },
@@ -2835,6 +2835,7 @@
       "reps": 0,
       "due": "2026-08-02T09:54:43.100Z",
       "lastResult": null
-    }
+    },
+    "_dir": "de-en"
   }
 ]
