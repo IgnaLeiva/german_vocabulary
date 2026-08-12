@@ -2248,9 +2248,9 @@
     "createdAt": "2026-07-31T07:57:13.077Z",
     "srs": {
       "ef": 2.5,
-      "interval": 1,
-      "reps": 1,
-      "due": "2026-08-03T09:33:54.523Z",
+      "interval": 6,
+      "reps": 2,
+      "due": "2026-08-18T12:34:50.941Z",
       "lastResult": 2
     },
     "confusables": [
