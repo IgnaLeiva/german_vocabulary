@@ -1574,9 +1574,9 @@
     "createdAt": "2026-07-26T14:36:23.372Z",
     "srs": {
       "ef": 2.5,
-      "interval": 6,
-      "reps": 2,
-      "due": "2026-08-02T16:38:37.536Z",
+      "interval": 15,
+      "reps": 3,
+      "due": "2026-08-27T12:28:29.982Z",
       "lastResult": 2
     },
     "_dir": "de-en"
