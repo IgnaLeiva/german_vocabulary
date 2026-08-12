@@ -2132,9 +2132,9 @@
     "createdAt": "2026-07-30T17:57:55.188Z",
     "srs": {
       "ef": 2.5,
-      "interval": 1,
-      "reps": 1,
-      "due": "2026-08-03T09:32:47.906Z",
+      "interval": 6,
+      "reps": 2,
+      "due": "2026-08-18T12:33:28.269Z",
       "lastResult": 2
     },
     "_dir": "de-en"
