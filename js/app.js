@@ -220,6 +220,7 @@ function renderConfusableWarning(w) {
 function grammarHint(w) {
   if (w.type === 'verb' && w.verb) {
     const bits = [`${w.verb.regular ? 'regular' : 'irregular'}${w.verb.separable ? ', separable' : ''}`, `aux: ${w.verb.auxiliary}`, `Partizip II: ${w.verb.partizipII}`];
+    if (w.verb.preposition) bits.push(`prep: ${w.verb.preposition}`);
     return bits.join(' · ');
   }
   if (w.type === 'noun' && w.noun) {
@@ -433,7 +434,7 @@ function confusablesSectionHtml(w) {
 function verbDetailHtml(w) {
   const v = w.verb;
   const tenses = buildVerbTenses(v, w.german);
-  const traits = `${v.regular ? 'Regular (weak)' : 'Irregular (strong/mixed)'}${v.separable ? ' · Separable (trennbar)' + (v.prefix ? `, prefix "${escapeHtml(v.prefix)}"` : '') : ''} · Auxiliary: ${escapeHtml(v.auxiliary)} · Partizip II: ${escapeHtml(v.partizipII)}`;
+  const traits = `${v.regular ? 'Regular (weak)' : 'Irregular (strong/mixed)'}${v.separable ? ' · Separable (trennbar)' + (v.prefix ? `, prefix "${escapeHtml(v.prefix)}"` : '') : ''} · Auxiliary: ${escapeHtml(v.auxiliary)} · Partizip II: ${escapeHtml(v.partizipII)}${v.preposition ? ` · Preposition: ${escapeHtml(v.preposition)}` : ''}`;
 
   const tenseOrder = ['praesens', 'praeteritum', 'perfekt', 'plusquamperfekt', 'futur1', 'futur2', 'konjunktiv2', 'konjunktiv2Perfekt'];
   const tables = tenseOrder.map((t) => `
@@ -1113,7 +1114,7 @@ function doParsePaste() {
 
 function blankWordData(german, type) {
   const base = { type, german: german || '', english: '', notes: '' };
-  if (type === 'verb') base.verb = { regular: true, separable: false, prefix: '', auxiliary: 'haben', partizipII: '', praesens: {}, praeteritum: {}, konjunktiv2: {} };
+  if (type === 'verb') base.verb = { regular: true, separable: false, prefix: '', auxiliary: 'haben', partizipII: '', preposition: '', praesens: {}, praeteritum: {}, konjunktiv2: {} };
   if (type === 'noun') base.noun = { gender: 'der', plural: '', genitiveSingular: '', pluralDative: '' };
   if (type === 'adjective') base.adjective = { comparative: '', superlative: '', predicateOnly: false };
   return base;
@@ -1243,6 +1244,9 @@ function verbFormFields(v) {
       <label>Partizip II
         <input type="text" data-field="verb.partizipII" value="${escapeHtml(v.partizipII || '')}">
       </label>
+      <label>Preposition (if any)
+        <input type="text" data-field="verb.preposition" value="${escapeHtml(v.preposition || '')}" placeholder="e.g. auf +Akk">
+      </label>
     </div>
     <div class="form-section-title">Präsens</div>
     ${personGrid('verb.praesens', v.praesens)}
@@ -1310,6 +1314,7 @@ function saveWordForm(form) {
       prefix: readField(form, 'verb.prefix').trim() || null,
       auxiliary: readField(form, 'verb.auxiliary'),
       partizipII: readField(form, 'verb.partizipII').trim(),
+      preposition: readField(form, 'verb.preposition').trim(),
       praesens: persons('verb.praesens'),
       praeteritum: persons('verb.praeteritum'),
       konjunktiv2: Object.keys(k2).length ? k2 : null,

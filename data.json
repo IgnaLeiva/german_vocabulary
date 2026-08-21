@@ -10,6 +10,7 @@
       "prefix": null,
       "auxiliary": "sein",
       "partizipII": "gegangen",
+      "preposition": "",
       "praesens": {
         "ich": "gehe",
         "du": "gehst",
@@ -57,6 +58,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gearbeitet",
+      "preposition": "an +Dat",
       "praesens": {
         "ich": "arbeite",
         "du": "arbeitest",
@@ -97,6 +99,7 @@
       "prefix": "auf",
       "auxiliary": "sein",
       "partizipII": "aufgestanden",
+      "preposition": "",
       "praesens": {
         "ich": "stehe auf",
         "du": "stehst auf",
@@ -144,6 +147,7 @@
       "prefix": null,
       "auxiliary": "sein",
       "partizipII": "gewesen",
+      "preposition": "",
       "praesens": {
         "ich": "bin",
         "du": "bist",
@@ -191,6 +195,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gehabt",
+      "preposition": "",
       "praesens": {
         "ich": "habe",
         "du": "hast",
@@ -238,6 +243,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "getrunken",
+      "preposition": "",
       "praesens": {
         "ich": "trinke",
         "du": "trinkst",
@@ -694,6 +700,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "enthalten",
+      "preposition": "",
       "praesens": {
         "ich": "enthalte",
         "du": "enthältst",
@@ -912,6 +919,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gewusst",
+      "preposition": "",
       "praesens": {
         "ich": "weiß",
         "du": "weißt",
@@ -959,6 +967,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gekannt",
+      "preposition": "",
       "praesens": {
         "ich": "kenne",
         "du": "kennst",
@@ -1006,6 +1015,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "berührt",
+      "preposition": "",
       "praesens": {
         "ich": "berühre",
         "du": "berührst",
@@ -1053,6 +1063,7 @@
       "prefix": "vor",
       "auxiliary": "haben",
       "partizipII": "vorgestellt",
+      "preposition": "",
       "praesens": {
         "ich": "stelle vor",
         "du": "stellst vor",
@@ -1122,6 +1133,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gedacht",
+      "preposition": "an +Akk",
       "praesens": {
         "ich": "denke",
         "du": "denkst",
@@ -1169,6 +1181,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "geglaubt",
+      "preposition": "an +Akk",
       "praesens": {
         "ich": "glaube",
         "du": "glaubst",
@@ -1216,6 +1229,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gewöhnt",
+      "preposition": "an +Akk",
       "praesens": {
         "ich": "gewöhne",
         "du": "gewöhnst",
@@ -1351,6 +1365,7 @@
       "prefix": "vor",
       "auxiliary": "haben",
       "partizipII": "vorbereitet",
+      "preposition": "auf +Akk",
       "praesens": {
         "ich": "bereite vor",
         "du": "bereitest vor",
@@ -1398,6 +1413,7 @@
       "prefix": "an",
       "auxiliary": "haben",
       "partizipII": "angemacht",
+      "preposition": "",
       "praesens": {
         "ich": "mache an",
         "du": "machst an",
@@ -1445,6 +1461,7 @@
       "prefix": "aus",
       "auxiliary": "haben",
       "partizipII": "ausgemacht",
+      "preposition": "",
       "praesens": {
         "ich": "mache aus",
         "du": "machst aus",
@@ -1495,6 +1512,7 @@
       "prefix": "auf",
       "auxiliary": "haben",
       "partizipII": "aufgemacht",
+      "preposition": "",
       "praesens": {
         "ich": "mache auf",
         "du": "machst auf",
@@ -1545,6 +1563,7 @@
       "prefix": "zu",
       "auxiliary": "haben",
       "partizipII": "zugemacht",
+      "preposition": "",
       "praesens": {
         "ich": "mache zu",
         "du": "machst zu",
@@ -1835,6 +1854,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "",
+      "preposition": "",
       "praesens": {},
       "praeteritum": {},
       "konjunktiv2": null
@@ -1861,6 +1881,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "getragen",
+      "preposition": "",
       "praesens": {
         "ich": "trage",
         "du": "trägst",
@@ -1971,6 +1992,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "verstanden",
+      "preposition": "",
       "praesens": {
         "ich": "verstehe",
         "du": "verstehst",
@@ -2018,6 +2040,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "geschmeckt",
+      "preposition": "nach +Dat",
       "praesens": {
         "ich": "schmecke",
         "du": "schmeckst",
@@ -2150,6 +2173,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gestanden",
+      "preposition": "",
       "praesens": {
         "ich": "stehe",
         "du": "stehst",
@@ -2219,6 +2243,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gelegen",
+      "preposition": "",
       "praesens": {
         "ich": "liege",
         "du": "liegst",
@@ -2269,6 +2294,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gestellt",
+      "preposition": "",
       "praesens": {
         "ich": "stelle",
         "du": "stellst",
@@ -2316,6 +2342,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "gelegt",
+      "preposition": "",
       "praesens": {
         "ich": "lege",
         "du": "legst",
@@ -2366,6 +2393,7 @@
       "prefix": "raus",
       "auxiliary": "sein",
       "partizipII": "rausgegangen",
+      "preposition": "",
       "praesens": {
         "ich": "gehe raus",
         "du": "gehst raus",
@@ -2416,6 +2444,7 @@
       "prefix": "aus",
       "auxiliary": "sein",
       "partizipII": "ausgegangen",
+      "preposition": "",
       "praesens": {
         "ich": "gehe aus",
         "du": "gehst aus",
@@ -2466,6 +2495,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "",
+      "preposition": "",
       "praesens": {},
       "praeteritum": {},
       "konjunktiv2": null
@@ -2492,6 +2522,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "",
+      "preposition": "",
       "praesens": {},
       "praeteritum": {},
       "konjunktiv2": null
@@ -2518,6 +2549,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "",
+      "preposition": "",
       "praesens": {},
       "praeteritum": {},
       "konjunktiv2": null
@@ -2566,6 +2598,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "",
+      "preposition": "",
       "praesens": {},
       "praeteritum": {},
       "konjunktiv2": null
@@ -2592,6 +2625,7 @@
       "prefix": null,
       "auxiliary": "sein",
       "partizipII": "geworden",
+      "preposition": "",
       "praesens": {
         "ich": "werde",
         "du": "wirst",
@@ -2639,6 +2673,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "bestellt",
+      "preposition": "",
       "praesens": {
         "ich": "bestelle",
         "du": "bestellst",
@@ -2686,6 +2721,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "versucht",
+      "preposition": "",
       "praesens": {
         "ich": "versuche",
         "du": "versuchst",
@@ -2733,6 +2769,7 @@
       "prefix": null,
       "auxiliary": "haben",
       "partizipII": "probiert",
+      "preposition": "",
       "praesens": {
         "ich": "probiere",
         "du": "probierst",
@@ -2802,6 +2839,7 @@
       "prefix": "teil",
       "auxiliary": "haben",
       "partizipII": "teilgenommen",
+      "preposition": "an +Dat",
       "praesens": {
         "ich": "nehme teil",
         "du": "nimmst teil",

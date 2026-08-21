@@ -22,6 +22,7 @@ const AI_SYSTEM_PROMPT = `You are a precise German grammar reference. Given a si
     "prefix": "separable prefix or null",
     "auxiliary": "haben"|"sein",
     "partizipII": "past participle",
+    "preposition": "fixed preposition(s) this verb governs with case, e.g. \\"auf +Akk\\" or \\"an +Dat / an +Akk\\" (use \\"auf +Akk\\" style; \\"—\\" or empty string if the verb takes no fixed preposition)",
     "praesens": {"ich":"","du":"","er":"","wir":"","ihr":"","sie":""},
     "praeteritum": {"ich":"","du":"","er":"","wir":"","ihr":"","sie":""},
     "konjunktiv2": {"ich":"","du":"","er":"","wir":"","ihr":"","sie":""}

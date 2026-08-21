@@ -14,7 +14,7 @@ const SEED_WORDS = [
   {
     type: 'verb', german: 'arbeiten', english: 'to work', notes: 'Regular; extra -e- before endings because stem ends in -t.',
     verb: {
-      regular: true, separable: false, prefix: null, auxiliary: 'haben', partizipII: 'gearbeitet',
+      regular: true, separable: false, prefix: null, auxiliary: 'haben', partizipII: 'gearbeitet', preposition: 'an +Dat',
       praesens: { ich: 'arbeite', du: 'arbeitest', er: 'arbeitet', wir: 'arbeiten', ihr: 'arbeitet', sie: 'arbeiten' },
       praeteritum: { ich: 'arbeitete', du: 'arbeitetest', er: 'arbeitete', wir: 'arbeiteten', ihr: 'arbeitetet', sie: 'arbeiteten' },
       konjunktiv2: null,
