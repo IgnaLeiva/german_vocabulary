@@ -424,3 +424,7 @@ details.ref-card[open] {
 .vp-blank { color: var(--violet); border-bottom: 2px solid var(--violet); padding: 0 6px; }
 .vp-answer { display: grid; gap: 6px; margin-top: 12px; }
 #vpPrepList { display: none; }
+.vp-fill { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--border); }
+.vp-fill h4 { margin: 0 0 6px; }
+.vp-fill textarea, .vp-fill .paste-panel { margin-top: 8px; }
+#vpBulkInput { background: var(--bg-2); border: 1px solid var(--border); color: var(--text); padding: 10px 12px; border-radius: 10px; font-size: 0.9rem; }

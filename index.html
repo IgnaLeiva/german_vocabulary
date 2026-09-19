@@ -175,9 +175,27 @@
               <label>Example sentence (optional, include the preposition) <input type="text" name="example" placeholder="e.g. Ich freue mich auf das Wochenende."></label>
               <button type="submit" class="btn primary">Add pair</button>
             </form>
-            <p class="muted" style="margin-top:18px">Or paste a whole list — one <code>verb preposition</code> per line, case optional (<code>denken an +Akk</code>):</p>
-            <textarea id="vpBulkInput" rows="4" style="width:100%" placeholder="warten auf +Akk&#10;sich interessieren für"></textarea>
-            <div class="settings-actions"><button type="button" class="btn" id="vpBulkBtn">Add list</button></div>
+            <div class="vp-fill">
+              <h4>Add many at once — let Claude fill in the details</h4>
+              <p class="muted">Paste your list as you have it — bullets, headers and “kämpfen für / gegen” are fine. Then copy the prompt into claude.ai (works on phone or PC, no API key), paste its reply back, and every pair gets its case, meaning and an example. Leave the box empty to complete pairs that are still missing details.</p>
+              <textarea id="vpBulkInput" rows="6" style="width:100%" placeholder="warten auf&#10;sich interessieren für&#10;leiden an / unter"></textarea>
+              <div class="settings-actions">
+                <button type="button" class="btn primary" id="vpCopyPromptBtn">📋 Copy prompt for claude.ai</button>
+                <button type="button" class="btn ghost" id="vpAiBtn">✨ Fill with API key</button>
+                <button type="button" class="btn ghost" id="vpBulkBtn">Add without details</button>
+              </div>
+              <div class="paste-panel" id="vpPastePanel" hidden>
+                <label>Prompt (copied to your clipboard — paste it into a new claude.ai chat)
+                  <textarea id="vpPromptOutput" rows="3" readonly></textarea>
+                </label>
+                <label>Then paste claude.ai's reply here
+                  <textarea id="vpPasteResponse" rows="4" placeholder="Paste the JSON list claude.ai gave you…"></textarea>
+                </label>
+                <div class="settings-actions">
+                  <button type="button" class="btn primary" id="vpParsePasteBtn">Parse &amp; add</button>
+                </div>
+              </div>
+            </div>
             <div class="ai-status" id="vpAddStatus"></div>
           </div>
         </details>

@@ -93,3 +93,60 @@ async function lookupWordWithAI(word, settings) {
   if (!text) throw new Error('Empty response from Claude API.');
   return extractJson(text);
 }
+
+/* ---------------- Verb + preposition lookup ---------------- */
+
+const VERBPREP_SYSTEM_PROMPT = `You are a precise German grammar reference. For each verb + preposition pair given, respond with ONLY a JSON array (no prose, no markdown fences), one object per pair, in the same order:
+
+[
+  {
+    "verb": "the verb exactly as given (keep 'sich' for reflexive verbs)",
+    "prep": "the preposition exactly as given",
+    "case": "akk" | "dat"   // the case this preposition takes WITH THIS VERB and this meaning
+    "english": "short English meaning of the whole combination, e.g. \\"to look forward to\\"",
+    "example": "one natural, simple B1-level German sentence using the verb with this exact preposition (the preposition must appear as its own word, not contracted like 'vom' or 'beim')"
+  }
+]
+
+If a pair already has a case, keep it. Use standard High German. Respond with nothing but the JSON array.`;
+
+function buildVerbPrepPrompt(pairs) {
+  const lines = pairs.map((p) => `${p.verb} ${p.prep}${p.case ? ` +${p.case === 'akk' ? 'Akk' : 'Dat'}` : ''}`).join('\n');
+  return `${VERBPREP_SYSTEM_PROMPT}\n\nPairs:\n${lines}`;
+}
+
+function extractJsonArray(text) {
+  const trimmed = text.trim();
+  const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  const candidate = fenced ? fenced[1] : trimmed;
+  const start = candidate.indexOf('[');
+  const end = candidate.lastIndexOf(']');
+  if (start === -1 || end === -1) throw new Error('No JSON list found in the reply');
+  const parsed = JSON.parse(candidate.slice(start, end + 1));
+  if (!Array.isArray(parsed)) throw new Error('Reply was not a list');
+  return parsed;
+}
+
+async function lookupVerbPrepsWithAI(pairs, settings) {
+  if (!settings.aiApiKey) throw new Error('No Claude API key set in Settings — use “Copy prompt” instead.');
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': settings.aiApiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true',
+    },
+    body: JSON.stringify({
+      model: settings.aiModel || 'claude-haiku-4-5-20251001',
+      max_tokens: 8000,
+      system: VERBPREP_SYSTEM_PROMPT,
+      messages: [{ role: 'user', content: `Pairs:\n${pairs.map((p) => `${p.verb} ${p.prep}${p.case ? ` +${p.case === 'akk' ? 'Akk' : 'Dat'}` : ''}`).join('\n')}` }],
+    }),
+  });
+  if (!res.ok) throw new Error(`Claude API error ${res.status}: ${await res.text()}`);
+  const data = await res.json();
+  const text = data.content && data.content[0] && data.content[0].text;
+  if (!text) throw new Error('Empty response from Claude API.');
+  return extractJsonArray(text);
+}

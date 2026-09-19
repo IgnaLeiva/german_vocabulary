@@ -30,6 +30,60 @@ const VERB_PREP_SEED = [
   ['reden', 'über', 'akk', 'to talk about', 'Wir reden über das Wetter.'],
   ['sich freuen', 'über', 'akk', 'to be pleased about', 'Ich freue mich über das Geschenk.'],
   ['sich ärgern', 'über', 'akk', 'to be annoyed about', 'Er ärgert sich über den Lärm.'],
+  ['helfen', 'mit', 'dat', 'to help with', 'Sie hilft mir mit den Hausaufgaben.'],
+  ['rechnen', 'mit', 'dat', 'to expect / reckon with', 'Wir rechnen mit viel Verkehr.'],
+  ['beginnen', 'mit', 'dat', 'to begin with', 'Wir beginnen mit dem Unterricht.'],
+  ['einverstanden sein', 'mit', 'dat', 'to agree with', 'Ich bin mit dem Plan einverstanden.'],
+  ['sprechen', 'mit', 'dat', 'to speak with', 'Ich spreche mit meiner Lehrerin.'],
+  ['anfangen', 'mit', 'dat', 'to start with', 'Er fängt mit der Arbeit an.'],
+  ['aufhören', 'mit', 'dat', 'to stop (doing)', 'Hör mit dem Lärm auf!'],
+  ['ausgeben', 'für', 'akk', 'to spend on', 'Ich gebe viel Geld für Bücher aus.'],
+  ['kämpfen', 'für', 'akk', 'to fight for', 'Sie kämpfen für ihre Rechte.'],
+  ['kämpfen', 'gegen', 'akk', 'to fight against', 'Wir kämpfen gegen den Klimawandel.'],
+  ['sich interessieren', 'für', 'akk', 'to be interested in', 'Ich interessiere mich für Musik.'],
+  ['sich engagieren', 'für', 'akk', 'to be committed to', 'Er engagiert sich für den Umweltschutz.'],
+  ['sich einsetzen', 'für', 'akk', 'to stand up for', 'Sie setzt sich für die Kinder ein.'],
+  ['sich schämen', 'für', 'akk', 'to be ashamed of', 'Ich schäme mich für mein Verhalten.'],
+  ['sich bewerben', 'für', 'akk', 'to apply for (a programme / grant)', 'Er bewirbt sich für das Stipendium.'],
+  ['sich bedanken', 'für', 'akk', 'to thank for', 'Ich bedanke mich für die Einladung.'],
+  ['sich kümmern', 'um', 'akk', 'to take care of', 'Sie kümmert sich um ihre Oma.'],
+  ['sich bewerben', 'um', 'akk', 'to apply for (a job / position)', 'Sie bewirbt sich um die Stelle.'],
+  ['bestehen', 'aus', 'dat', 'to consist of', 'Das Team besteht aus zehn Personen.'],
+  ['erzählen', 'von', 'dat', 'to tell about', 'Er erzählt von seiner Reise.'],
+  ['träumen', 'von', 'dat', 'to dream of', 'Sie träumt von einem Haus am Meer.'],
+  ['hören', 'von', 'dat', 'to hear from / of', 'Ich habe lange nichts von ihm gehört.'],
+  ['abhängen', 'von', 'dat', 'to depend on', 'Das hängt von dem Wetter ab.'],
+  ['sich trennen', 'von', 'dat', 'to separate from', 'Sie hat sich von ihrem Freund getrennt.'],
+  ['sich verabschieden', 'von', 'dat', 'to say goodbye to', 'Wir verabschieden uns von den Gästen.'],
+  ['sich erholen', 'von', 'dat', 'to recover from', 'Er erholt sich von der Krankheit.'],
+  ['ankommen', 'auf', 'akk', 'to depend on', 'Es kommt auf das Wetter an.'],
+  ['antworten', 'auf', 'akk', 'to answer / reply to', 'Ich antworte auf die E-Mail.'],
+  ['aufpassen', 'auf', 'akk', 'to look after / watch out for', 'Ich passe auf das Kind auf.'],
+  ['bestehen', 'auf', 'dat', 'to insist on', 'Er besteht auf seinem Recht.'],
+  ['hoffen', 'auf', 'akk', 'to hope for', 'Wir hoffen auf besseres Wetter.'],
+  ['reagieren', 'auf', 'akk', 'to react to', 'Sie reagiert auf die Kritik.'],
+  ['achten', 'auf', 'akk', 'to pay attention to', 'Achte auf die Grammatik!'],
+  ['warten', 'auf', 'akk', 'to wait for', 'Ich warte auf den Bus.'],
+  ['hören', 'auf', 'akk', 'to listen to (advice)', 'Er hört auf seine Mutter.'],
+  ['sich freuen', 'auf', 'akk', 'to look forward to', 'Ich freue mich auf den Urlaub.'],
+  ['sich konzentrieren', 'auf', 'akk', 'to concentrate on', 'Sie konzentriert sich auf die Prüfung.'],
+  ['sich auswirken', 'auf', 'akk', 'to affect / have an effect on', 'Das wirkt sich auf die Preise aus.'],
+  ['sich verlassen', 'auf', 'akk', 'to rely on', 'Ich verlasse mich auf dich.'],
+  ['sich bewerben', 'auf', 'akk', 'to apply for (a specific advertised post)', 'Er bewirbt sich auf die Stelle.'],
+  ['fliehen', 'vor', 'dat', 'to flee from', 'Sie fliehen vor dem Krieg.'],
+  ['schützen', 'vor', 'dat', 'to protect from', 'Die Creme schützt vor der Sonne.'],
+  ['warnen', 'vor', 'dat', 'to warn about', 'Ich warne dich vor dem Hund.'],
+  ['zittern', 'vor', 'dat', 'to tremble with', 'Er zittert vor Angst.'],
+  ['sich ekeln', 'vor', 'dat', 'to be disgusted by', 'Sie ekelt sich vor Spinnen.'],
+  ['sich fürchten', 'vor', 'dat', 'to be afraid of', 'Das Kind fürchtet sich vor der Dunkelheit.'],
+  ['ankommen', 'bei', 'dat', 'to be well received by', 'Die Idee kommt bei den Kunden gut an.'],
+  ['anrufen', 'bei', 'dat', 'to call (a company / office)', 'Ich rufe bei der Bank an.'],
+  ['helfen', 'bei', 'dat', 'to help with (a task)', 'Er hilft mir bei der Arbeit.'],
+  ['arbeiten', 'bei', 'dat', 'to work at (a company)', 'Sie arbeitet bei einer Bank.'],
+  ['sich bedanken', 'bei', 'dat', 'to thank (a person)', 'Ich bedanke mich bei dir.'],
+  ['sich beschweren', 'bei', 'dat', 'to complain to', 'Er beschwert sich bei dem Chef.'],
+  ['sich anmelden', 'bei', 'dat', 'to register with', 'Ich melde mich bei der Universität an.'],
+  ['sich bewerben', 'bei', 'dat', 'to apply to (a company)', 'Sie bewirbt sich bei einer Firma.'],
 ];
 
 let VERB_PREPS = [];
@@ -353,6 +407,59 @@ function vpShowStatus(text, ok = true) {
   el.className = `ai-status ${ok ? 'ok' : 'err'}`;
 }
 
+// Accepts the list as you'd write it or paste it from notes: bullets/headers are
+// ignored, "(sich)" is normalised, and "leiden an / unter" or "kämpfen für / gegen"
+// expands into one pair per preposition. Case is optional ("denken an +Akk").
+function vpParseList(text) {
+  const out = [];
+  text.split('\n').forEach((raw) => {
+    const line = raw.replace(/^[\s*•·\-–]+/, '').replace(/\(sich\)/gi, 'sich').replace(/\s+/g, ' ').trim();
+    if (!line) return;
+    const [first, ...rest] = line.split('/').map((x) => x.trim());
+    const m = first.match(/^(.+?)\s+([A-Za-zäöüÄÖÜß]+)\s*(?:\+\s*(akk|dat))?$/i);
+    if (!m) return;
+    out.push({ verb: m[1], prep: m[2].toLowerCase(), case: m[3] ? m[3].toLowerCase() : null });
+    rest.forEach((part) => {
+      const pm = part.match(/^([A-Za-zäöüÄÖÜß]+)\s*(?:\+\s*(akk|dat))?$/i);
+      if (pm) out.push({ verb: m[1], prep: pm[1].toLowerCase(), case: pm[2] ? pm[2].toLowerCase() : null });
+    });
+  });
+  return out;
+}
+
+// Pairs to send to Claude: whatever is pasted in the box, otherwise every saved
+// pair that is still missing its case, meaning or example.
+function vpPairsForPrompt() {
+  const typed = vpParseList(document.getElementById('vpBulkInput').value);
+  if (typed.length) return typed;
+  return VERB_PREPS.filter((e) => !e.case || !e.english || !e.example).map((e) => ({ verb: e.verb, prep: e.prep, case: e.case }));
+}
+
+// Merge Claude's answer: new pairs are added, existing ones only get blanks filled in.
+function vpApplyAiResult(items) {
+  let added = 0;
+  let updated = 0;
+  items.forEach((it) => {
+    if (!it || !it.verb || !it.prep) return;
+    const kase = /^akk/i.test(it.case || '') ? 'akk' : /^dat/i.test(it.case || '') ? 'dat' : null;
+    const existing = VERB_PREPS.find((e) => vpKey(e.verb, e.prep) === vpKey(it.verb, it.prep));
+    if (!existing) {
+      VERB_PREPS.push(vpMakeEntry(it.verb, it.prep, kase, it.english, it.example));
+      added += 1;
+      return;
+    }
+    let changed = false;
+    if (!existing.case && kase) { existing.case = kase; changed = true; }
+    if (!existing.english && it.english) { existing.english = String(it.english).trim(); changed = true; }
+    if (!existing.example && it.example) { existing.example = String(it.example).trim(); changed = true; }
+    if (changed) updated += 1;
+  });
+  persistVerbPreps();
+  vpQuiz = null;
+  renderVerbPreps();
+  vpShowStatus(`Done: ${added} added, ${updated} filled in ✓`);
+}
+
 function wireAddVerbPrep() {
   document.getElementById('vpAddForm').addEventListener('submit', (ev) => {
     ev.preventDefault();
@@ -365,18 +472,38 @@ function wireAddVerbPrep() {
     else vpShowStatus(`"${verb} ${prep}" is already in your list.`, false);
   });
 
-  // One pair per line: "denken an +Akk" / "sich freuen auf"; case is optional.
   document.getElementById('vpBulkBtn').addEventListener('click', () => {
-    const area = document.getElementById('vpBulkInput');
-    const entries = [];
-    area.value.split('\n').forEach((line) => {
-      const m = line.trim().match(/^(.+?)\s+([A-Za-zäöüÄÖÜß]+)\s*(?:\+\s*(akk|dat))?$/i);
-      if (m) entries.push(vpMakeEntry(m[1], m[2], m[3] ? m[3].toLowerCase() : null, '', ''));
-    });
-    if (!entries.length) { vpShowStatus('Nothing to add — use one "verb preposition" pair per line.', false); return; }
-    const r = vpAddEntries(entries);
-    area.value = '';
-    vpShowStatus(`Added ${r.added}${r.skipped ? `, skipped ${r.skipped} duplicate(s)` : ''}. Open an entry to add its case, meaning and example.`);
+    const pairs = vpParseList(document.getElementById('vpBulkInput').value);
+    if (!pairs.length) { vpShowStatus('Nothing to add — paste one "verb preposition" pair per line.', false); return; }
+    const r = vpAddEntries(pairs.map((p) => vpMakeEntry(p.verb, p.prep, p.case, '', '')));
+    document.getElementById('vpBulkInput').value = '';
+    vpShowStatus(`Added ${r.added}${r.skipped ? `, skipped ${r.skipped} already in your list` : ''}. Use “Copy prompt” to fill in case, meaning and examples.`);
+  });
+
+  document.getElementById('vpCopyPromptBtn').addEventListener('click', async () => {
+    const pairs = vpPairsForPrompt();
+    if (!pairs.length) { vpShowStatus('Nothing to look up — paste some pairs, or everything already has full details.', false); return; }
+    const prompt = buildVerbPrepPrompt(pairs);
+    document.getElementById('vpPromptOutput').value = prompt;
+    document.getElementById('vpPastePanel').hidden = false;
+    try { await navigator.clipboard.writeText(prompt); vpShowStatus(`Prompt for ${pairs.length} pair(s) copied — paste it into claude.ai, then paste the reply below.`); }
+    catch (e) { vpShowStatus('Could not copy automatically — select the prompt below and copy it.', false); }
+  });
+
+  document.getElementById('vpParsePasteBtn').addEventListener('click', () => {
+    try {
+      vpApplyAiResult(extractJsonArray(document.getElementById('vpPasteResponse').value));
+      document.getElementById('vpPasteResponse').value = '';
+      document.getElementById('vpPastePanel').hidden = true;
+    } catch (e) { vpShowStatus(`Could not read that reply: ${e.message}`, false); }
+  });
+
+  document.getElementById('vpAiBtn').addEventListener('click', async () => {
+    const pairs = vpPairsForPrompt();
+    if (!pairs.length) { vpShowStatus('Nothing to look up — paste some pairs, or everything already has full details.', false); return; }
+    vpShowStatus(`Asking Claude about ${pairs.length} pair(s)…`);
+    try { vpApplyAiResult(await lookupVerbPrepsWithAI(pairs, SETTINGS)); }
+    catch (e) { vpShowStatus(e.message, false); }
   });
 }
 
