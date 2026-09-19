@@ -1,0 +1,1218 @@
+[
+  {
+    "id": "w_mu8qwmkljvs7jm",
+    "verb": "denken",
+    "prep": "an",
+    "case": "akk",
+    "english": "to think of",
+    "example": "Ich denke oft an dich.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl82tff8",
+    "verb": "glauben",
+    "prep": "an",
+    "case": "akk",
+    "english": "to believe in",
+    "example": "Sie glaubt an das Glück.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklvdvomv",
+    "verb": "zweifeln",
+    "prep": "an",
+    "case": "dat",
+    "english": "to doubt",
+    "example": "Er zweifelt an seinem Erfolg.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl92arm4",
+    "verb": "schreiben",
+    "prep": "an",
+    "case": "akk",
+    "english": "to write to (someone)",
+    "example": "Ich schreibe an meinen Chef.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl2pul7q",
+    "verb": "sterben",
+    "prep": "an",
+    "case": "dat",
+    "english": "to die of",
+    "example": "Er ist an einer Krankheit gestorben.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklcz4k8k",
+    "verb": "erkennen",
+    "prep": "an",
+    "case": "dat",
+    "english": "to recognise by",
+    "example": "Ich erkenne ihn an seiner Stimme.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklbuko02",
+    "verb": "leiden",
+    "prep": "an",
+    "case": "dat",
+    "english": "to suffer from (illness)",
+    "example": "Sie leidet an Asthma.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl3gjz7c",
+    "verb": "leiden",
+    "prep": "unter",
+    "case": "dat",
+    "english": "to suffer from (something unpleasant)",
+    "example": "Wir leiden unter der Hitze.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklfsd4dq",
+    "verb": "arbeiten",
+    "prep": "an",
+    "case": "dat",
+    "english": "to work on",
+    "example": "Ich arbeite an meinem Projekt.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkls5khjr",
+    "verb": "sich gewöhnen",
+    "prep": "an",
+    "case": "akk",
+    "english": "to get used to",
+    "example": "Ich gewöhne mich an das Wetter.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkleta4v4",
+    "verb": "sich halten",
+    "prep": "an",
+    "case": "akk",
+    "english": "to stick to / follow",
+    "example": "Bitte halte dich an die Regeln.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklfgq9jd",
+    "verb": "nachdenken",
+    "prep": "über",
+    "case": "akk",
+    "english": "to think about / reflect on",
+    "example": "Ich denke über das Problem nach.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkldsq4ym",
+    "verb": "schreiben",
+    "prep": "über",
+    "case": "akk",
+    "english": "to write about",
+    "example": "Sie schreibt über ihre Reise.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl5m2ux0",
+    "verb": "diskutieren",
+    "prep": "über",
+    "case": "akk",
+    "english": "to discuss",
+    "example": "Wir diskutieren über Politik.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl3eyve3",
+    "verb": "sprechen",
+    "prep": "über",
+    "case": "akk",
+    "english": "to talk about",
+    "example": "Er spricht über seine Arbeit.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklll9q8q",
+    "verb": "lachen",
+    "prep": "über",
+    "case": "akk",
+    "english": "to laugh about",
+    "example": "Alle lachen über den Witz.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklqd9yi1",
+    "verb": "reden",
+    "prep": "über",
+    "case": "akk",
+    "english": "to talk about",
+    "example": "Wir reden über das Wetter.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklkzanvl",
+    "verb": "sich freuen",
+    "prep": "über",
+    "case": "akk",
+    "english": "to be pleased about",
+    "example": "Ich freue mich über das Geschenk.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklzq5oux",
+    "verb": "sich ärgern",
+    "prep": "über",
+    "case": "akk",
+    "english": "to be annoyed about",
+    "example": "Er ärgert sich über den Lärm.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl85h4vc",
+    "verb": "helfen",
+    "prep": "mit",
+    "case": "dat",
+    "english": "to help with",
+    "example": "Sie hilft mir mit den Hausaufgaben.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklij6uwr",
+    "verb": "rechnen",
+    "prep": "mit",
+    "case": "dat",
+    "english": "to expect / reckon with",
+    "example": "Wir rechnen mit viel Verkehr.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklq6c22e",
+    "verb": "beginnen",
+    "prep": "mit",
+    "case": "dat",
+    "english": "to begin with",
+    "example": "Wir beginnen mit dem Unterricht.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkld0ohym",
+    "verb": "einverstanden sein",
+    "prep": "mit",
+    "case": "dat",
+    "english": "to agree with",
+    "example": "Ich bin mit dem Plan einverstanden.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkln9ja1f",
+    "verb": "sprechen",
+    "prep": "mit",
+    "case": "dat",
+    "english": "to speak with",
+    "example": "Ich spreche mit meiner Lehrerin.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklgnx4fb",
+    "verb": "anfangen",
+    "prep": "mit",
+    "case": "dat",
+    "english": "to start with",
+    "example": "Er fängt mit der Arbeit an.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklsyz9jy",
+    "verb": "aufhören",
+    "prep": "mit",
+    "case": "dat",
+    "english": "to stop (doing)",
+    "example": "Hör mit dem Lärm auf!",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl48wpux",
+    "verb": "ausgeben",
+    "prep": "für",
+    "case": "akk",
+    "english": "to spend on",
+    "example": "Ich gebe viel Geld für Bücher aus.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklbojq18",
+    "verb": "kämpfen",
+    "prep": "für",
+    "case": "akk",
+    "english": "to fight for",
+    "example": "Sie kämpfen für ihre Rechte.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklyinkjg",
+    "verb": "kämpfen",
+    "prep": "gegen",
+    "case": "akk",
+    "english": "to fight against",
+    "example": "Wir kämpfen gegen den Klimawandel.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklylagws",
+    "verb": "sich interessieren",
+    "prep": "für",
+    "case": "akk",
+    "english": "to be interested in",
+    "example": "Ich interessiere mich für Musik.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklcxmcgh",
+    "verb": "sich engagieren",
+    "prep": "für",
+    "case": "akk",
+    "english": "to be committed to",
+    "example": "Er engagiert sich für den Umweltschutz.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkljqm55a",
+    "verb": "sich einsetzen",
+    "prep": "für",
+    "case": "akk",
+    "english": "to stand up for",
+    "example": "Sie setzt sich für die Kinder ein.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl1wxxp6",
+    "verb": "sich schämen",
+    "prep": "für",
+    "case": "akk",
+    "english": "to be ashamed of",
+    "example": "Ich schäme mich für mein Verhalten.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklhng87h",
+    "verb": "sich bewerben",
+    "prep": "für",
+    "case": "akk",
+    "english": "to apply for (a programme / grant)",
+    "example": "Er bewirbt sich für das Stipendium.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklt939dx",
+    "verb": "sich bedanken",
+    "prep": "für",
+    "case": "akk",
+    "english": "to thank for",
+    "example": "Ich bedanke mich für die Einladung.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklozaih9",
+    "verb": "sich kümmern",
+    "prep": "um",
+    "case": "akk",
+    "english": "to take care of",
+    "example": "Sie kümmert sich um ihre Oma.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklz3w7m0",
+    "verb": "sich bewerben",
+    "prep": "um",
+    "case": "akk",
+    "english": "to apply for (a job / position)",
+    "example": "Sie bewirbt sich um die Stelle.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklarnorc",
+    "verb": "bestehen",
+    "prep": "aus",
+    "case": "dat",
+    "english": "to consist of",
+    "example": "Das Team besteht aus zehn Personen.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkljd3xq3",
+    "verb": "erzählen",
+    "prep": "von",
+    "case": "dat",
+    "english": "to tell about",
+    "example": "Er erzählt von seiner Reise.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklqyi0lv",
+    "verb": "träumen",
+    "prep": "von",
+    "case": "dat",
+    "english": "to dream of",
+    "example": "Sie träumt von einem Haus am Meer.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklika9jj",
+    "verb": "hören",
+    "prep": "von",
+    "case": "dat",
+    "english": "to hear from / of",
+    "example": "Ich habe lange nichts von ihm gehört.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklrlpifn",
+    "verb": "abhängen",
+    "prep": "von",
+    "case": "dat",
+    "english": "to depend on",
+    "example": "Das hängt von dem Wetter ab.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkltk9xm1",
+    "verb": "sich trennen",
+    "prep": "von",
+    "case": "dat",
+    "english": "to separate from",
+    "example": "Sie hat sich von ihrem Freund getrennt.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklktzziu",
+    "verb": "sich verabschieden",
+    "prep": "von",
+    "case": "dat",
+    "english": "to say goodbye to",
+    "example": "Wir verabschieden uns von den Gästen.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl5xx0ki",
+    "verb": "sich erholen",
+    "prep": "von",
+    "case": "dat",
+    "english": "to recover from",
+    "example": "Er erholt sich von der Krankheit.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl78zfh0",
+    "verb": "ankommen",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to depend on",
+    "example": "Es kommt auf das Wetter an.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklreqe4p",
+    "verb": "antworten",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to answer / reply to",
+    "example": "Ich antworte auf die E-Mail.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkln7tngj",
+    "verb": "aufpassen",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to look after / watch out for",
+    "example": "Ich passe auf das Kind auf.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklo1m7xy",
+    "verb": "bestehen",
+    "prep": "auf",
+    "case": "dat",
+    "english": "to insist on",
+    "example": "Er besteht auf seinem Recht.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkll65rg3",
+    "verb": "hoffen",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to hope for",
+    "example": "Wir hoffen auf besseres Wetter.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl6lmtlf",
+    "verb": "reagieren",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to react to",
+    "example": "Sie reagiert auf die Kritik.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklgy48e4",
+    "verb": "achten",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to pay attention to",
+    "example": "Achte auf die Grammatik!",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklyp5gli",
+    "verb": "warten",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to wait for",
+    "example": "Ich warte auf den Bus.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklua35kb",
+    "verb": "hören",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to listen to (advice)",
+    "example": "Er hört auf seine Mutter.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl0mgdt9",
+    "verb": "sich freuen",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to look forward to",
+    "example": "Ich freue mich auf den Urlaub.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklg3ikpq",
+    "verb": "sich konzentrieren",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to concentrate on",
+    "example": "Sie konzentriert sich auf die Prüfung.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklmzfgt9",
+    "verb": "sich auswirken",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to affect / have an effect on",
+    "example": "Das wirkt sich auf die Preise aus.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl5hki3p",
+    "verb": "sich verlassen",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to rely on",
+    "example": "Ich verlasse mich auf dich.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl5bkmgo",
+    "verb": "sich bewerben",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to apply for (a specific advertised post)",
+    "example": "Er bewirbt sich auf die Stelle.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkli49z97",
+    "verb": "fliehen",
+    "prep": "vor",
+    "case": "dat",
+    "english": "to flee from",
+    "example": "Sie fliehen vor dem Krieg.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl9ml4q9",
+    "verb": "schützen",
+    "prep": "vor",
+    "case": "dat",
+    "english": "to protect from",
+    "example": "Die Creme schützt vor der Sonne.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklqz3bn2",
+    "verb": "warnen",
+    "prep": "vor",
+    "case": "dat",
+    "english": "to warn about",
+    "example": "Ich warne dich vor dem Hund.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklwv0msy",
+    "verb": "zittern",
+    "prep": "vor",
+    "case": "dat",
+    "english": "to tremble with",
+    "example": "Er zittert vor Angst.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklhr3ynt",
+    "verb": "sich ekeln",
+    "prep": "vor",
+    "case": "dat",
+    "english": "to be disgusted by",
+    "example": "Sie ekelt sich vor Spinnen.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklt5ulm9",
+    "verb": "sich fürchten",
+    "prep": "vor",
+    "case": "dat",
+    "english": "to be afraid of",
+    "example": "Das Kind fürchtet sich vor der Dunkelheit.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkljj3sn3",
+    "verb": "ankommen",
+    "prep": "bei",
+    "case": "dat",
+    "english": "to be well received by",
+    "example": "Die Idee kommt bei den Kunden gut an.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklsqs7zy",
+    "verb": "anrufen",
+    "prep": "bei",
+    "case": "dat",
+    "english": "to call (a company / office)",
+    "example": "Ich rufe bei der Bank an.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklwypd7z",
+    "verb": "helfen",
+    "prep": "bei",
+    "case": "dat",
+    "english": "to help with (a task)",
+    "example": "Er hilft mir bei der Arbeit.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl7h9lct",
+    "verb": "arbeiten",
+    "prep": "bei",
+    "case": "dat",
+    "english": "to work at (a company)",
+    "example": "Sie arbeitet bei einer Bank.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklc8wb0p",
+    "verb": "sich bedanken",
+    "prep": "bei",
+    "case": "dat",
+    "english": "to thank (a person)",
+    "example": "Ich bedanke mich bei dir.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmklkhrg8z",
+    "verb": "sich beschweren",
+    "prep": "bei",
+    "case": "dat",
+    "english": "to complain to",
+    "example": "Er beschwert sich bei dem Chef.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkldss8it",
+    "verb": "sich anmelden",
+    "prep": "bei",
+    "case": "dat",
+    "english": "to register with",
+    "example": "Ich melde mich bei der Universität an.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkl3xhydf",
+    "verb": "sich bewerben",
+    "prep": "bei",
+    "case": "dat",
+    "english": "to apply to (a company)",
+    "example": "Sie bewirbt sich bei einer Firma.",
+    "createdAt": "2026-09-19T18:53:21.861Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.861Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkn7n2i3n",
+    "verb": "vorbereiten",
+    "prep": "auf",
+    "case": "akk",
+    "english": "to prepare",
+    "example": "",
+    "createdAt": "2026-09-19T18:53:21.863Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.863Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmkn9y3n9d",
+    "verb": "schmecken",
+    "prep": "nach",
+    "case": "dat",
+    "english": "to taste; to taste good",
+    "example": "",
+    "createdAt": "2026-09-19T18:53:21.863Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.863Z",
+      "lastResult": null
+    }
+  },
+  {
+    "id": "w_mu8qwmknfo1goo",
+    "verb": "teilnehmen",
+    "prep": "an",
+    "case": "dat",
+    "english": "to participate, to take part",
+    "example": "",
+    "createdAt": "2026-09-19T18:53:21.863Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-19T18:53:21.863Z",
+      "lastResult": null
+    }
+  }
+]
