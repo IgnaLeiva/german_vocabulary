@@ -52,6 +52,8 @@ async function init() {
     }
   }
 
+  await initVerbPreps();
+  wireVerbPreps();
   renderAll();
 }
 
@@ -129,6 +131,7 @@ function switchView(view) {
   if (view === 'study') renderStudy();
   if (view === 'words') renderWordList();
   if (view === 'grammar') renderGrammarView();
+  if (view === 'verbprep') renderVerbPreps();
 }
 
 /* ================= STUDY ================= */
@@ -1346,6 +1349,7 @@ function saveWordForm(form) {
   word.srs = freshSrs();
 
   WORDS.push(word);
+  if (syncVerbPrepsFromWord(word)) persistVerbPreps();
   persistNow();
   renderAll();
 

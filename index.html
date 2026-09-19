@@ -22,6 +22,7 @@
       <button class="tab-btn active" data-view="study">📚 Study</button>
       <button class="tab-btn" data-view="words">🗂 Words</button>
       <button class="tab-btn" data-view="grammar">📐 Grammar</button>
+      <button class="tab-btn" data-view="verbprep">🔗 Verb + Prep</button>
       <button class="tab-btn" data-view="add">➕ Add</button>
       <button class="tab-btn" data-view="settings">⚙️ Settings</button>
     </nav>
@@ -132,6 +133,62 @@
       </details>
     </section>
 
+    <!-- VERB + PREPOSITION -->
+    <section id="view-verbprep" class="view">
+      <div class="study-toolbar">
+        <div class="due-count" id="vpStats"></div>
+        <div class="direction-toggle" id="vpModeToggle">
+          <button class="dir-btn active" data-mode="browse">Browse</button>
+          <button class="dir-btn" data-mode="practice">Practice</button>
+        </div>
+      </div>
+
+      <div class="filter-chips vp-chips" id="vpPrepChips"></div>
+
+      <div id="vpBrowse">
+        <div class="words-toolbar">
+          <input type="search" id="vpSearch" placeholder="Search verb, preposition or English…">
+          <div class="direction-toggle" id="vpGroupToggle">
+            <button class="dir-btn active" data-group="prep">By preposition</button>
+            <button class="dir-btn" data-group="verb">By verb</button>
+          </div>
+        </div>
+        <div id="vpList"></div>
+
+        <details class="ref-card">
+          <summary>➕ Add verb + preposition pairs</summary>
+          <div class="ref-card-body">
+            <form id="vpAddForm" class="word-form">
+              <div class="form-row">
+                <label>Verb <input type="text" name="verb" placeholder="e.g. sich freuen" required></label>
+                <label>Preposition <input type="text" name="prep" list="vpPrepList" placeholder="e.g. auf" required></label>
+                <label>Case
+                  <select name="case">
+                    <option value="akk">Akkusativ</option>
+                    <option value="dat">Dativ</option>
+                    <option value="">Unknown</option>
+                  </select>
+                </label>
+              </div>
+              <datalist id="vpPrepList"></datalist>
+              <label>English (optional) <input type="text" name="english" placeholder="e.g. to look forward to"></label>
+              <label>Example sentence (optional, include the preposition) <input type="text" name="example" placeholder="e.g. Ich freue mich auf das Wochenende."></label>
+              <button type="submit" class="btn primary">Add pair</button>
+            </form>
+            <p class="muted" style="margin-top:18px">Or paste a whole list — one <code>verb preposition</code> per line, case optional (<code>denken an +Akk</code>):</p>
+            <textarea id="vpBulkInput" rows="4" style="width:100%" placeholder="warten auf +Akk&#10;sich interessieren für"></textarea>
+            <div class="settings-actions"><button type="button" class="btn" id="vpBulkBtn">Add list</button></div>
+            <div class="ai-status" id="vpAddStatus"></div>
+          </div>
+        </details>
+      </div>
+
+      <div id="vpPractice" hidden>
+        <p class="muted">Pick the preposition, then the case. Due pairs come first; pairs you miss come back sooner. Use the preposition chips above to drill just one (e.g. only “an”).</p>
+        <div id="vpQuiz"></div>
+      </div>
+    </section>
+
     <!-- ADD -->
     <section id="view-add" class="view">
       <div class="add-panel">
@@ -229,6 +286,7 @@
 <script src="js/speech.js"></script>
 <script src="js/ai.js"></script>
 <script src="js/seed.js"></script>
+<script src="js/verbprep.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

@@ -30,6 +30,12 @@ python3 -m http.server 8080
     across all 4 cases, singular and plural.
   - Adjectives: comparative/superlative, plus the full weak/mixed/strong declension
     ending tables.
+- **Verb + Prep** — verbs with fixed prepositions (denken **an**, sich freuen **über**…),
+  browsable by preposition or by verb (with a highlight for verbs whose preposition changes
+  the meaning, e.g. schreiben an / über), each with case (Akk/Dat), example, wo-/da- forms
+  (woran/daran) and person questions (an wen/wem). Practice mode picks the preposition,
+  then the case, using spaced repetition. Stored in `verb_prepositions.json` (synced like
+  `data.json`). Verbs saved with a preposition on their word card are added automatically.
 - **Add** — type a word, click "Look up with AI" to auto-fill everything via your Claude
   API key, review/edit the generated fields, then save. Or click "Enter manually" to fill
   a blank form yourself — no API key required for that path.

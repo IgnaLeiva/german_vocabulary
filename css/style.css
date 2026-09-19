@@ -396,3 +396,31 @@ details.ref-card[open] {
   .fc-front { font-size: 1.5rem; }
   .grade-btn { min-width: 70px; padding: 12px 10px; }
 }
+
+/* ---------- Verb + preposition ---------- */
+.vp-chips { flex-wrap: wrap; margin-bottom: 14px; }
+.vp-chips .chip .muted { margin-left: 4px; font-size: 0.75em; }
+.chip.active .muted { color: inherit; opacity: 0.7; }
+.vp-group { padding: 16px 18px; }
+.vp-group-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.vp-group-head h3 { margin: 0; font-size: 1.3rem; color: var(--cyan); }
+.vp-subhead { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin: 20px 0 8px; }
+.vp-contrast { font-size: 0.78rem; color: var(--amber); margin-bottom: 6px; }
+.vp-row {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 9px 10px; border-radius: 8px; cursor: pointer; border-bottom: 1px solid var(--border);
+}
+.vp-row:last-child { border-bottom: none; }
+.vp-row:hover { background: var(--bg-2); }
+.vp-verb { font-weight: 700; }
+.vp-prep { color: var(--cyan); }
+.vp-english { color: var(--text-dim); flex: 1; min-width: 120px; }
+.vp-case { font-size: 0.7rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; color: #0e1030; }
+.vp-case-akk { background: var(--cyan); }
+.vp-case-dat { background: var(--amber); }
+.vp-case-none { background: var(--text-dim); }
+.vp-hl { background: rgba(69, 217, 201, 0.2); color: var(--cyan); border-radius: 4px; padding: 0 3px; }
+.vp-example { font-size: 1.02rem; }
+.vp-blank { color: var(--violet); border-bottom: 2px solid var(--violet); padding: 0 6px; }
+.vp-answer { display: grid; gap: 6px; margin-top: 12px; }
+#vpPrepList { display: none; }
