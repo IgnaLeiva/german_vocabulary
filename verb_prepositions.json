@@ -1230,5 +1230,21 @@
       "due": "2026-09-28T17:13:43.129Z",
       "lastResult": null
     }
+  },
+  {
+    "id": "w_mulicpr48ultum",
+    "verb": "gehören",
+    "prep": "zu",
+    "case": "dat",
+    "english": "to belong to, to be part of",
+    "example": "Der Garten gehört zu dem Haus meiner Eltern.",
+    "createdAt": "2026-09-28T17:14:56.224Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-28T17:14:56.224Z",
+      "lastResult": null
+    }
   }
 ]
