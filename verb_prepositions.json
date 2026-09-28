@@ -1278,5 +1278,21 @@
       "due": "2026-09-28T17:21:59.180Z",
       "lastResult": null
     }
+  },
+  {
+    "id": "w_mulin8bm7iu5j1",
+    "verb": "bezeichnen",
+    "prep": "als",
+    "case": "akk",
+    "english": "to call, to describe as, to refer to as",
+    "example": "Viele Leute bezeichnen ihn als einen guten Lehrer.",
+    "createdAt": "2026-09-28T17:23:06.850Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-28T17:23:06.850Z",
+      "lastResult": null
+    }
   }
 ]
