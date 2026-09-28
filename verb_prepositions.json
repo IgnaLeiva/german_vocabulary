@@ -592,22 +592,6 @@
     }
   },
   {
-    "id": "w_mu8qwmklarnorc",
-    "verb": "bestehen",
-    "prep": "aus",
-    "case": "dat",
-    "english": "to consist of",
-    "example": "Das Team besteht aus zehn Personen.",
-    "createdAt": "2026-09-19T18:53:21.861Z",
-    "srs": {
-      "ef": 2.5,
-      "interval": 0,
-      "reps": 0,
-      "due": "2026-09-19T18:53:21.861Z",
-      "lastResult": null
-    }
-  },
-  {
     "id": "w_mu8qwmkljd3xq3",
     "verb": "erzählen",
     "prep": "von",
