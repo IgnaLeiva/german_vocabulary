@@ -1262,5 +1262,21 @@
       "due": "2026-09-28T17:15:52.354Z",
       "lastResult": null
     }
+  },
+  {
+    "id": "w_mulijofwwdlqso",
+    "verb": "sich verlieben",
+    "prep": "in",
+    "case": "akk",
+    "english": "to fall in love with",
+    "example": "Er hat sich im Urlaub in eine Frau aus Spanien verliebt.",
+    "createdAt": "2026-09-28T17:20:21.116Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-28T17:20:21.116Z",
+      "lastResult": null
+    }
   }
 ]
