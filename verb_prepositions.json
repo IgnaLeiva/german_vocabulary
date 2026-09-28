@@ -1294,5 +1294,21 @@
       "due": "2026-09-28T17:23:06.850Z",
       "lastResult": null
     }
+  },
+  {
+    "id": "w_mulj6prizkc9zb",
+    "verb": "gehen",
+    "prep": "um",
+    "case": "akk",
+    "english": "to be about, to concern (es geht um)",
+    "example": "In dem Buch geht es um eine Familie in Berlin.",
+    "createdAt": "2026-09-28T17:38:15.918Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-28T17:38:15.918Z",
+      "lastResult": null
+    }
   }
 ]
