@@ -1246,5 +1246,21 @@
       "due": "2026-09-28T17:14:56.224Z",
       "lastResult": null
     }
+  },
+  {
+    "id": "w_mulidx2atnezh6",
+    "verb": "unterhalten",
+    "prep": "über",
+    "case": "akk",
+    "english": "to talk about, to chat about",
+    "example": "Wir haben uns lange über den Film unterhalten.",
+    "createdAt": "2026-09-28T17:15:52.354Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-28T17:15:52.354Z",
+      "lastResult": null
+    }
   }
 ]
