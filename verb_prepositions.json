@@ -1214,5 +1214,21 @@
       "due": "2026-09-19T18:53:21.863Z",
       "lastResult": null
     }
+  },
+  {
+    "id": "w_mulib5cpmc8rnc",
+    "verb": "sich erkundigen",
+    "prep": "nach",
+    "case": "dat",
+    "english": "to inquire about, to ask about",
+    "example": "Ich habe mich nach dem Weg zum Bahnhof erkundigt.",
+    "createdAt": "2026-09-28T17:13:43.129Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-28T17:13:43.129Z",
+      "lastResult": null
+    }
   }
 ]
