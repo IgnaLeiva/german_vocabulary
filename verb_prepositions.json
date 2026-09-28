@@ -1262,5 +1262,21 @@
       "due": "2026-09-28T17:20:21.116Z",
       "lastResult": null
     }
+  },
+  {
+    "id": "w_mulils3w3h7muo",
+    "verb": "bestehen",
+    "prep": "in",
+    "case": "dat",
+    "english": "to consist in, to lie in",
+    "example": "Das größte Problem besteht in dem Mangel an Zeit.",
+    "createdAt": "2026-09-28T17:21:59.180Z",
+    "srs": {
+      "ef": 2.5,
+      "interval": 0,
+      "reps": 0,
+      "due": "2026-09-28T17:21:59.180Z",
+      "lastResult": null
+    }
   }
 ]
